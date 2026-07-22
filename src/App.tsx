@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import './App.css'
+import Landing from './Landing'
 import { coreKnowledge, type KnowledgeRecord, type KnowledgeType } from './knowledge'
 
 type IconProps = { size?: number }
@@ -20,6 +21,12 @@ function Avatar({ initials }: { initials: string }) { return <span className="av
 function CommandPalette({students,close,openStudent,navigate,create}:{students:Student[];close:()=>void;openStudent:(s:Student)=>void;navigate:(x:string)=>void;create:()=>void}){const[q,setQ]=useState('');const go=(f:()=>void)=>{f();close()};const pages=nav.map(([x])=>String(x)).filter(x=>x.toLowerCase().includes(q.toLowerCase())).slice(0,5);const found=students.filter(s=>s.name.toLowerCase().includes(q.toLowerCase())).slice(0,5);return <div className="overlay command-overlay" onMouseDown={close}><div className="command" onMouseDown={e=>e.stopPropagation()}><label className="search"><Search size={18}/><input autoFocus value={q} onChange={e=>setQ(e.target.value)} placeholder="Search students or run a command…"/></label><p className="eyebrow">Quick actions</p><button onClick={()=>go(create)}><Plus size={16}/>Create student</button><button onClick={()=>go(()=>navigate('Sessions'))}>Create counselling session</button><button onClick={()=>go(()=>navigate('Tasks & Follow-ups'))}>Create follow-up</button><p className="eyebrow">Navigate</p>{pages.map(p=><button key={p} onClick={()=>go(()=>navigate(p))}>{p}</button>)}{found.map(s=><button key={s.id} onClick={()=>go(()=>openStudent(s))}><Avatar initials={s.initials}/>{s.name}<small>{s.grade} · {s.stage}</small></button>)}</div></div>}
 
 export default function App() {
+  const [route,setRoute]=useState(()=>window.location.pathname)
+  useEffect(()=>{const handler=()=>setRoute(window.location.pathname);window.addEventListener('popstate',handler);return()=>window.removeEventListener('popstate',handler)},[])
+  if(route === '/') return <Landing openDashboard={()=>{window.history.pushState({},'', '/dashboard');setRoute('/dashboard')}}/>
+  return <WorkspaceApp />
+}
+function WorkspaceApp() {
   const [page, setPage] = useState('Today'); const [students, setStudents] = useState<Student[]>(() => { try { return JSON.parse(localStorage.getItem('cc-students') || '') } catch { return initialStudents } }); const [query, setQuery] = useState(''); const [selected, setSelected] = useState<Student | null>(null); const [showCreate, setShowCreate] = useState(false); const [mobileOpen, setMobileOpen] = useState(false); const [commandOpen,setCommandOpen]=useState(false); const [toast, setToast] = useState('')
   useEffect(() => localStorage.setItem('cc-students', JSON.stringify(students)), [students])
   useEffect(()=>{const listener=(e:KeyboardEvent)=>{if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'){e.preventDefault();setCommandOpen(true)}};window.addEventListener('keydown',listener);return()=>window.removeEventListener('keydown',listener)},[])
