@@ -20,15 +20,15 @@ function FoldMark({ large = false }: { large?: boolean }) {
       className={large ? 'fold-mark fold-mark-large' : 'fold-mark'}
       viewBox="0 0 72 72"
       role="img"
-      aria-label="Manyfolds woven pathways symbol"
+      aria-label="Manyfolds branching pathways symbol"
     >
-      <path className="woven-route woven-route-one" d="M5 10h20l29 20h13" />
-      <path className="woven-route woven-route-two" d="M5 23h15l34 24h13" />
-      <path className="woven-route woven-route-three" d="M5 36h17l30-13h15" />
-      <path className="woven-route woven-route-four" d="M5 49h20l27-13h15" />
-      <path className="woven-route woven-route-five" d="M5 62h25l25-13h12" />
-      <path className="woven-fold" d="m35 27 11 8-11 8-11-8Z" />
-      <path className="woven-cut" d="m35 31 5.5 4-5.5 4-5.5-4Z" />
+      <path className="branch-route branch-route-top" d="M8 36h13c5 0 7-2 11-7l11-11c3-3 6-4 11-4h11" />
+      <path className="branch-route branch-route-middle" d="M8 36h57" />
+      <path className="branch-route branch-route-bottom" d="M8 36h13c5 0 7 2 11 7l11 11c3 3 6 4 11 4h11" />
+      <circle className="branch-origin" cx="8" cy="36" r="5" />
+      <circle className="branch-end branch-end-top" cx="65" cy="14" r="3.5" />
+      <circle className="branch-end branch-end-middle" cx="65" cy="36" r="3.5" />
+      <circle className="branch-end branch-end-bottom" cx="65" cy="58" r="3.5" />
     </svg>
   )
 }
