@@ -9,6 +9,8 @@ import { savePath } from './savedPathways'
 import CounsellorLibrary from './CounsellorLibrary'
 import { deletePrivate, listPrivate, savePrivate } from './counsellorApi'
 import { AuthCallback, ProtectedWorkspace, SignIn } from './Auth'
+import BrandComparison from './BrandComparison'
+import './BrandComparison.css'
 import { coreKnowledge, type KnowledgeRecord, type KnowledgeType } from './knowledge'
 
 type IconProps = { size?: number }
@@ -37,6 +39,7 @@ export default function App() {
   if(route === '/') return <Landing openDashboard={()=>{window.history.pushState({},'', '/auth');setRoute('/auth')}}/>
   if(route === '/auth') return <SignIn />
   if(route === '/auth/callback') return <AuthCallback />
+  if(route === '/brand') return <BrandComparison />
   if(/^\/(careers|courses|colleges|programmes)\//.test(route)) return <RecommendationDetail />
   return <ProtectedWorkspace><WorkspaceApp /></ProtectedWorkspace>
 }

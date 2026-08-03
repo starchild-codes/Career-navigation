@@ -1,0 +1,1 @@
+.mf-intro .mf-mark{animation:mf-grow 1.7s cubic-bezier(.25,.7,.3,1) both}.mf-intro-bands{display:none}@keyframes mf-grow{0%{opacity:0;transform:scale(.22)}45%{opacity:1;transform:scale(.55)}100%{transform:scale(1)}}@media(prefers-reduced-motion:reduce){.mf-intro .mf-mark{animation:none}}
