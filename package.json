@@ -8,7 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "oxlint",
     "preview": "vite preview",
-    "test": "node --experimental-strip-types scripts/recommendation-quality-test.mjs",
+    "test": "node --experimental-strip-types scripts/recommendation-quality-test.mjs && node scripts/dashboard-interaction-check.mjs",
     "data:audit": "node scripts/data-audit.mjs",
     "data:import-pack": "node scripts/import-database-pack.mjs"
   },
