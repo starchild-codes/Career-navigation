@@ -8,7 +8,7 @@ import RecommendationDetail, { SavedPlan } from './RecommendationDetail'
 import { savePath } from './savedPathways'
 import CounsellorLibrary from './CounsellorLibrary'
 import { deletePrivate, listPrivate, savePrivate } from './counsellorApi'
-import { AuthCallback, SignIn } from './Auth'
+import { AuthCallback, ProtectedWorkspace, SignIn } from './Auth'
 import { coreKnowledge, type KnowledgeRecord, type KnowledgeType } from './knowledge'
 
 type IconProps = { size?: number }
@@ -37,7 +37,7 @@ export default function App() {
   if(route === '/auth') return <SignIn />
   if(route === '/auth/callback') return <AuthCallback />
   if(/^\/(careers|courses|colleges|programmes)\//.test(route)) return <RecommendationDetail />
-  return <WorkspaceApp />
+  return <ProtectedWorkspace><WorkspaceApp /></ProtectedWorkspace>
 }
 function WorkspaceApp() {
   const [page, setPage] = useState('Today'); const [students, setStudents] = useState<Student[]>(() => { try { return JSON.parse(localStorage.getItem('cc-students') || '') } catch { return initialStudents } }); const [query, setQuery] = useState(''); const [selected, setSelected] = useState<Student | null>(null); const [showCreate, setShowCreate] = useState(false); const [mobileOpen, setMobileOpen] = useState(false); const [commandOpen,setCommandOpen]=useState(false); const [toast, setToast] = useState(''); const notify=useCallback((message:string)=>{setToast(message);window.setTimeout(()=>setToast(''),2600)},[])
