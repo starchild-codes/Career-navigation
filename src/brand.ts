@@ -1,0 +1,1 @@
+export const brand={name:'Manyfolds',counsellor:'Manyfolds Counsellor',tagline:'More than one interest. More than one way forward.',description:'Manyfolds helps students and counsellors explore personalised careers, courses, colleges, and complete education pathways.'}
