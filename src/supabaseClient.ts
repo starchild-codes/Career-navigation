@@ -1,0 +1,4 @@
+import { createClient } from '@supabase/supabase-js'
+declare const __CAREER_COMPASS_SUPABASE_URL__: string
+declare const __CAREER_COMPASS_SUPABASE_ANON_KEY__: string
+export const supabase=__CAREER_COMPASS_SUPABASE_URL__&&__CAREER_COMPASS_SUPABASE_ANON_KEY__?createClient(__CAREER_COMPASS_SUPABASE_URL__,__CAREER_COMPASS_SUPABASE_ANON_KEY__):null

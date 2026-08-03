@@ -8,6 +8,7 @@ import RecommendationDetail, { SavedPlan } from './RecommendationDetail'
 import { savePath } from './savedPathways'
 import CounsellorLibrary from './CounsellorLibrary'
 import { deletePrivate, listPrivate, savePrivate } from './counsellorApi'
+import { AuthCallback, SignIn } from './Auth'
 import { coreKnowledge, type KnowledgeRecord, type KnowledgeType } from './knowledge'
 
 type IconProps = { size?: number }
@@ -32,7 +33,9 @@ function CommandPalette({students,close,openStudent,navigate,create}:{students:S
 export default function App() {
   const [route,setRoute]=useState(()=>window.location.pathname)
   useEffect(()=>{const handler=()=>setRoute(window.location.pathname);window.addEventListener('popstate',handler);return()=>window.removeEventListener('popstate',handler)},[])
-  if(route === '/') return <Landing openDashboard={()=>{window.history.pushState({},'', '/dashboard');setRoute('/dashboard')}}/>
+  if(route === '/') return <Landing openDashboard={()=>{window.history.pushState({},'', '/auth');setRoute('/auth')}}/>
+  if(route === '/auth') return <SignIn />
+  if(route === '/auth/callback') return <AuthCallback />
   if(/^\/(careers|courses|colleges|programmes)\//.test(route)) return <RecommendationDetail />
   return <WorkspaceApp />
 }

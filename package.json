@@ -13,6 +13,7 @@
     "data:import-pack": "node scripts/import-database-pack.mjs"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.112.0",
     "csv-parse": "^7.0.1",
     "lucide-react": "^1.25.0",
     "pg": "^8.22.0",
