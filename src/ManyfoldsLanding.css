@@ -27,6 +27,40 @@
   margin: 0;
 }
 
+.manyfolds-lockup {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.fold-mark {
+  width: 2.4rem;
+  height: 2.4rem;
+  flex: 0 0 auto;
+  overflow: visible;
+}
+
+.fold-sheet {
+  transform-box: fill-box;
+  transform-origin: 10px 33px;
+}
+
+.fold-sheet-one {
+  fill: #7aa58d;
+}
+
+.fold-sheet-two {
+  fill: #b7d6a7;
+}
+
+.fold-sheet-three {
+  fill: #4e806b;
+}
+
+.fold-hinge {
+  fill: #173b36;
+}
+
 .manyfolds-wordmark {
   display: inline-flex;
   align-items: baseline;
@@ -49,35 +83,84 @@
   inset: 0;
   display: grid;
   place-content: center;
-  justify-items: center;
-  gap: 1.35rem;
   background: var(--cream);
-  animation: opening-exit 0.48s cubic-bezier(0.77, 0, 0.18, 1) 1.08s both;
+  animation: opening-exit 0.55s cubic-bezier(0.77, 0, 0.18, 1) 2.2s both;
   pointer-events: none;
+}
+
+.opening-stage {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 3vw, 2.5rem);
+}
+
+.fold-mark-large {
+  width: clamp(5rem, 10vw, 8.5rem);
+  height: clamp(5rem, 10vw, 8.5rem);
+}
+
+.manyfolds-opening .fold-sheet-one {
+  animation: unfold-one 0.82s cubic-bezier(0.22, 1, 0.36, 1) 0.12s both;
+}
+
+.manyfolds-opening .fold-sheet-two {
+  animation: unfold-two 0.82s cubic-bezier(0.22, 1, 0.36, 1) 0.22s both;
+}
+
+.manyfolds-opening .fold-sheet-three {
+  animation: unfold-three 0.82s cubic-bezier(0.22, 1, 0.36, 1) 0.32s both;
+}
+
+.manyfolds-opening .fold-hinge {
+  animation: hinge-arrive 0.35s ease both;
 }
 
 .manyfolds-opening .manyfolds-wordmark {
   overflow: hidden;
-  font-size: clamp(4.2rem, 12vw, 9rem);
+  font-size: clamp(4rem, 10vw, 8rem);
   line-height: 0.95;
-  animation: wordmark-reveal 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: wordmark-reveal 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.62s both;
 }
 
 .manyfolds-opening p {
-  margin: 0;
+  margin: 0.6rem 0 0 0.15rem;
   color: var(--forest);
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   font-weight: 700;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  animation: opening-detail 0.5s ease 0.42s both;
+  animation: opening-detail 0.5s ease 1s both;
 }
 
-.opening-rule {
-  width: 0;
-  height: 2px;
-  background: var(--lime);
-  animation: opening-rule 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.18s both;
+.opening-paths {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.opening-paths i {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 120vw;
+  height: 1px;
+  background: var(--line);
+  transform-origin: left;
+  animation: path-draw 1.1s cubic-bezier(0.22, 1, 0.36, 1) 0.72s both;
+}
+
+.opening-paths i:first-child {
+  transform: rotate(-19deg);
+}
+
+.opening-paths i:nth-child(2) {
+  transform: rotate(4deg);
+}
+
+.opening-paths i:nth-child(3) {
+  transform: rotate(23deg);
 }
 
 @keyframes wordmark-reveal {
@@ -93,9 +176,54 @@
   }
 }
 
-@keyframes opening-rule {
+@keyframes unfold-one {
+  from {
+    opacity: 0;
+    transform: rotate(18deg) scaleX(0.08);
+  }
   to {
-    width: min(38rem, 72vw);
+    opacity: 1;
+    transform: rotate(0) scaleX(1);
+  }
+}
+
+@keyframes unfold-two {
+  from {
+    opacity: 0;
+    transform: scaleX(0.08);
+  }
+  to {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+@keyframes unfold-three {
+  from {
+    opacity: 0;
+    transform: rotate(-18deg) scaleX(0.08);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(0) scaleX(1);
+  }
+}
+
+@keyframes hinge-arrive {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+
+@keyframes path-draw {
+  from {
+    opacity: 0;
+    scale: 0 1;
+  }
+  to {
+    opacity: 1;
+    scale: 1 1;
   }
 }
 
@@ -295,6 +423,7 @@
 
 .pathway-preview {
   position: relative;
+  min-height: 670px;
   padding: clamp(1.5rem, 3vw, 2.4rem);
   color: white;
   background: var(--deep);
@@ -336,6 +465,235 @@
   background: var(--lime);
   border-radius: 999px;
   letter-spacing: 0.06em !important;
+}
+
+.preview-status i {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-right: 0.35rem;
+  background: var(--forest);
+  border-radius: 50%;
+  animation: status-pulse 1.5s ease infinite;
+}
+
+.possibility-map {
+  position: absolute;
+  inset: 7.2rem 1.2rem 1.2rem;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 48%, rgba(183, 214, 167, 0.11), transparent 28%),
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: auto, 32px 32px, 32px 32px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1.25rem;
+}
+
+.possibility-map > svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+}
+
+.map-route {
+  fill: none;
+  stroke: url(#route-a);
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-dasharray: 8 10;
+  opacity: 0.75;
+  animation: route-flow 7s linear infinite;
+}
+
+.route-two {
+  animation-duration: 8.4s;
+  animation-direction: reverse;
+}
+
+.route-three {
+  animation-duration: 6.5s;
+}
+
+.route-four {
+  opacity: 0.4;
+  animation-direction: reverse;
+}
+
+.map-pulse {
+  fill: none;
+  stroke: var(--lime);
+  stroke-width: 1;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: map-pulse 2.4s ease-out infinite;
+}
+
+.map-core {
+  fill: var(--lime);
+}
+
+.map-label {
+  position: absolute;
+  z-index: 2;
+  padding: 0.42rem 0.7rem;
+  color: #dbe9df;
+  background: rgba(14, 47, 43, 0.92);
+  border: 1px solid rgba(183, 214, 167, 0.34);
+  border-radius: 999px;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  animation: label-float 4s ease-in-out infinite;
+}
+
+.source-one {
+  top: 7%;
+  left: 8%;
+}
+
+.source-two {
+  top: 4%;
+  left: 46%;
+  animation-delay: -1.2s;
+}
+
+.source-three {
+  top: 10%;
+  right: 7%;
+  animation-delay: -2.5s;
+}
+
+.source-four {
+  top: 42%;
+  left: 2%;
+  animation-delay: -0.7s;
+}
+
+.source-five {
+  top: 43%;
+  right: 2%;
+  animation-delay: -1.8s;
+}
+
+.map-centre {
+  position: absolute;
+  z-index: 3;
+  top: 48%;
+  left: 50%;
+  width: 108px;
+  height: 108px;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 0.15rem;
+  color: var(--ink);
+  background: var(--cream);
+  border: 7px solid rgba(183, 214, 167, 0.25);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 0 1px var(--lime), 0 18px 45px rgba(2, 20, 17, 0.35);
+}
+
+.map-centre .fold-mark {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.map-centre span {
+  font: 400 0.8rem 'DM Serif Display', Georgia, serif;
+}
+
+.map-result {
+  position: absolute;
+  z-index: 2;
+  width: 148px;
+  padding: 0.75rem 0.8rem;
+  display: grid;
+  gap: 0.12rem;
+  color: var(--ink);
+  background: rgba(250, 250, 246, 0.96);
+  border: 1px solid rgba(183, 214, 167, 0.8);
+  border-radius: 0.8rem;
+  box-shadow: 0 12px 30px rgba(1, 22, 18, 0.25);
+  animation: result-arrive 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.map-result small {
+  color: var(--forest);
+  font-size: 0.5rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.map-result strong {
+  font: 400 1rem 'DM Serif Display', Georgia, serif;
+}
+
+.map-result > span {
+  color: #647771;
+  font-size: 0.54rem;
+}
+
+.result-one {
+  right: 2.5%;
+  bottom: 6%;
+  animation-delay: 0.35s;
+}
+
+.result-two {
+  bottom: 2%;
+  left: 34%;
+  animation-delay: 0.55s;
+}
+
+.result-three {
+  bottom: 7%;
+  left: 2.5%;
+  animation-delay: 0.75s;
+}
+
+@keyframes route-flow {
+  to {
+    stroke-dashoffset: -144;
+  }
+}
+
+@keyframes map-pulse {
+  from {
+    opacity: 0.85;
+    transform: scale(0.35);
+  }
+  to {
+    opacity: 0;
+    transform: scale(2.2);
+  }
+}
+
+@keyframes status-pulse {
+  50% {
+    opacity: 0.35;
+    transform: scale(0.75);
+  }
+}
+
+@keyframes label-float {
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes result-arrive {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 .student-pattern {
@@ -769,6 +1127,15 @@
     font-size: clamp(3.2rem, 18vw, 6rem);
   }
 
+  .opening-stage {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .manyfolds-opening p {
+    margin-left: 0;
+  }
+
   .manyfolds-hero {
     padding: 4rem 0 5rem;
     gap: 3.5rem;
@@ -789,6 +1156,7 @@
   }
 
   .pathway-preview {
+    min-height: 620px;
     padding: 1rem;
     border-radius: 1.4rem;
     box-shadow: 8px 8px 0 var(--pale);
@@ -806,21 +1174,26 @@
     display: none;
   }
 
-  .student-pattern {
-    margin-top: 1rem;
-    padding: 1.1rem;
+  .possibility-map {
+    inset: 5.5rem 0.65rem 0.65rem;
   }
 
-  .student-pattern h2 {
-    font-size: 1.55rem;
+  .map-result {
+    width: 124px;
+    padding: 0.6rem;
   }
 
-  .possibility-list article {
-    grid-template-columns: auto 1fr;
+  .map-result strong {
+    font-size: 0.83rem;
   }
 
-  .possibility-list article > small {
-    display: none;
+  .result-two {
+    left: 31%;
+  }
+
+  .map-centre {
+    width: 88px;
+    height: 88px;
   }
 
   .manyfolds-statement,

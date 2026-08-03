@@ -1,27 +1,6 @@
 import { useEffect, useState } from 'react'
 import './ManyfoldsLanding.css'
 
-const possibilityExamples = [
-  {
-    number: '01',
-    title: 'UX research',
-    detail: 'People, behaviour + technology',
-    fit: 'Strong fit',
-  },
-  {
-    number: '02',
-    title: 'Cognitive science',
-    detail: 'Research, mind + computation',
-    fit: 'Worth exploring',
-  },
-  {
-    number: '03',
-    title: 'Behavioural data',
-    detail: 'Patterns, evidence + impact',
-    fit: 'New connection',
-  },
-]
-
 const interestExamples = [
   ['Psychology + computing', 'People, behaviour, and technology.'],
   ['History + chemistry', 'Research, science, and public impact.'],
@@ -35,11 +14,85 @@ const processSteps = [
   'Build a plan you can revisit and reshape.',
 ]
 
-function Wordmark() {
+function FoldMark({ large = false }: { large?: boolean }) {
   return (
-    <span className="manyfolds-wordmark" aria-label="Manyfolds">
-      many<span>folds</span>
+    <svg
+      className={large ? 'fold-mark fold-mark-large' : 'fold-mark'}
+      viewBox="0 0 64 64"
+      role="img"
+      aria-label="Manyfolds unfolding pathways symbol"
+    >
+      <path className="fold-sheet fold-sheet-one" d="M9 30 48 7l7 10L11 35Z" />
+      <path className="fold-sheet fold-sheet-two" d="m10 30 46-7v13l-46-2Z" />
+      <path className="fold-sheet fold-sheet-three" d="m10 32 44 11-7 11L9 36Z" />
+      <circle className="fold-hinge" cx="10" cy="33" r="5" />
+    </svg>
+  )
+}
+
+function Wordmark({ withMark = true }: { withMark?: boolean }) {
+  return (
+    <span className="manyfolds-lockup">
+      {withMark && <FoldMark />}
+      <span className="manyfolds-wordmark" aria-label="Manyfolds">
+        many<span>folds</span>
+      </span>
     </span>
+  )
+}
+
+function PossibilityMap() {
+  return (
+    <div className="possibility-map" aria-label="Animated example of interests becoming pathways">
+      <svg viewBox="0 0 560 540" aria-hidden="true">
+        <defs>
+          <linearGradient id="route-a" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stopColor="#b7d6a7" />
+            <stop offset="1" stopColor="#77a58f" />
+          </linearGradient>
+          <filter id="node-glow">
+            <feGaussianBlur stdDeviation="7" result="blur" />
+            <feMerge>
+              <feMergeNode in="blur" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+        </defs>
+        <path className="map-route route-one" d="M102 92C170 120 177 225 278 268S402 347 452 438" />
+        <path className="map-route route-two" d="M280 70C274 139 230 191 278 268S285 393 268 464" />
+        <path className="map-route route-three" d="M461 110C401 140 393 220 278 268S155 348 100 430" />
+        <path className="map-route route-four" d="M82 260C148 256 205 284 278 268S409 242 481 266" />
+        <circle className="map-pulse" cx="278" cy="268" r="22" />
+        <circle className="map-core" cx="278" cy="268" r="9" filter="url(#node-glow)" />
+      </svg>
+
+      <span className="map-label source source-one">psychology</span>
+      <span className="map-label source source-two">coding</span>
+      <span className="map-label source source-three">research</span>
+      <span className="map-label source source-four">context</span>
+      <span className="map-label source source-five">priorities</span>
+
+      <div className="map-centre">
+        <FoldMark />
+        <span>Your pattern</span>
+      </div>
+
+      <article className="map-result result-one">
+        <small>01 · strong fit</small>
+        <strong>UX research</strong>
+        <span>people + technology</span>
+      </article>
+      <article className="map-result result-two">
+        <small>02 · explore</small>
+        <strong>Cognitive science</strong>
+        <span>mind + computation</span>
+      </article>
+      <article className="map-result result-three">
+        <small>03 · new link</small>
+        <strong>Behavioural data</strong>
+        <span>patterns + impact</span>
+      </article>
+    </div>
   )
 }
 
@@ -53,7 +106,7 @@ export default function Landing({ openDashboard }: { openDashboard: () => void }
       return
     }
 
-    const timer = window.setTimeout(() => setShowOpening(false), 1550)
+    const timer = window.setTimeout(() => setShowOpening(false), 2850)
     return () => window.clearTimeout(timer)
   }, [])
 
@@ -61,9 +114,18 @@ export default function Landing({ openDashboard }: { openDashboard: () => void }
     <div className="manyfolds-landing">
       {showOpening && (
         <div className="manyfolds-opening" aria-hidden="true">
-          <div className="opening-rule" />
-          <Wordmark />
-          <p>More than one way forward.</p>
+          <div className="opening-stage">
+            <FoldMark large />
+            <div>
+              <Wordmark withMark={false} />
+              <p>possibilities, unfolded.</p>
+            </div>
+          </div>
+          <div className="opening-paths">
+            <i />
+            <i />
+            <i />
+          </div>
         </div>
       )}
 
@@ -107,40 +169,12 @@ export default function Landing({ openDashboard }: { openDashboard: () => void }
           <div className="pathway-preview" aria-label="Example personalised pathway">
             <div className="preview-heading">
               <div>
-                <span>Example pattern</span>
-                <strong>What could these interests become?</strong>
+                <span>Possibility map · live example</span>
+                <strong>One student. Many connected directions.</strong>
               </div>
-              <span className="preview-status">Live map</span>
+              <span className="preview-status"><i /> Mapping</span>
             </div>
-
-            <article className="student-pattern">
-              <small>Interests that meet</small>
-              <h2>
-                Psychology <span>+</span> Computer Science
-              </h2>
-              <p>Listening · research · coding · systems thinking</p>
-            </article>
-
-            <div className="pathway-connector" aria-hidden="true">
-              <span />
-            </div>
-
-            <div className="possibility-list">
-              {possibilityExamples.map((possibility) => (
-                <article key={possibility.title}>
-                  <span className="result-number">{possibility.number}</span>
-                  <div>
-                    <h3>{possibility.title}</h3>
-                    <p>{possibility.detail}</p>
-                  </div>
-                  <small>{possibility.fit}</small>
-                </article>
-              ))}
-            </div>
-
-            <p className="preview-note">
-              Three connected possibilities. No single prescribed answer.
-            </p>
+            <PossibilityMap />
           </div>
         </section>
 
