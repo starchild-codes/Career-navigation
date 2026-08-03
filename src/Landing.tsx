@@ -18,14 +18,17 @@ function FoldMark({ large = false }: { large?: boolean }) {
   return (
     <svg
       className={large ? 'fold-mark fold-mark-large' : 'fold-mark'}
-      viewBox="0 0 64 64"
+      viewBox="0 0 72 72"
       role="img"
-      aria-label="Manyfolds unfolding pathways symbol"
+      aria-label="Manyfolds woven pathways symbol"
     >
-      <path className="fold-sheet fold-sheet-one" d="M9 30 48 7l7 10L11 35Z" />
-      <path className="fold-sheet fold-sheet-two" d="m10 30 46-7v13l-46-2Z" />
-      <path className="fold-sheet fold-sheet-three" d="m10 32 44 11-7 11L9 36Z" />
-      <circle className="fold-hinge" cx="10" cy="33" r="5" />
+      <path className="woven-route woven-route-one" d="M5 10h20l29 20h13" />
+      <path className="woven-route woven-route-two" d="M5 23h15l34 24h13" />
+      <path className="woven-route woven-route-three" d="M5 36h17l30-13h15" />
+      <path className="woven-route woven-route-four" d="M5 49h20l27-13h15" />
+      <path className="woven-route woven-route-five" d="M5 62h25l25-13h12" />
+      <path className="woven-fold" d="m35 27 11 8-11 8-11-8Z" />
+      <path className="woven-cut" d="m35 31 5.5 4-5.5 4-5.5-4Z" />
     </svg>
   )
 }
