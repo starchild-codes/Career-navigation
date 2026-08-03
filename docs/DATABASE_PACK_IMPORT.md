@@ -1,4 +1,4 @@
-# Career Compass large database-pack import
+# Manyfolds large database-pack import
 
 Imported on 24 July 2026 from `career_compass_large_database_pack`.
 

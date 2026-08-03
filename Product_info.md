@@ -1,8 +1,8 @@
-# Career Compass — Product Information and Build Specification
+# Manyfolds — Product Information and Build Specification
 
 ## 0. Mandatory Repository Instructions for Codex
 
-This document is the source of truth for rebuilding Career Compass.
+This document is the source of truth for rebuilding Manyfolds.
 
 ### Work in the existing repository only
 
@@ -25,7 +25,7 @@ Codex must:
 Codex must **not**:
 
 - Create a new root folder.
-- Create a nested folder such as `career-compass`, `career-navigation-v2`, `app`, `frontend`, or another newly scaffolded project directory containing the real application.
+- Create a nested folder such as `manyfolds`, `career-navigation-v2`, `app`, `frontend`, or another newly scaffolded project directory containing the real application.
 - Initialize a new Git repository.
 - disconnect, replace, or delete the existing `.git` directory.
 - Run a framework scaffolding command in a child directory.
@@ -41,7 +41,7 @@ C:\Users\anshi\OneDrive\เอกสาร\Career-navigation
 
 ### One complete launch
 
-Career Compass will be launched as one complete product, not as a sequence of public MVP releases.
+Manyfolds will be launched as one complete product, not as a sequence of public MVP releases.
 
 Codex may implement the system in a logical internal order, but every feature marked **Required for Launch** in this specification must be complete, integrated, tested, and production-ready before the product is treated as finished.
 
@@ -64,7 +64,7 @@ Do not leave:
 
 ## Product name
 
-**Career Compass**
+**Manyfolds**
 
 ## Product category
 
@@ -72,11 +72,11 @@ Counsellor-assistive career-guidance, student-record, intervention-management, a
 
 ## One-sentence definition
 
-Career Compass is a school-based career-guidance operating system that helps counsellors and designated senior teachers maintain longitudinal student records, conduct and document guidance sessions, build realistic education and career pathways, assign follow-ups, access verified opportunity information, manage cohort-level interventions, and measure guidance coverage and outcomes.
+Manyfolds is a school-based career-guidance operating system that helps counsellors and designated senior teachers maintain longitudinal student records, conduct and document guidance sessions, build realistic education and career pathways, assign follow-ups, access verified opportunity information, manage cohort-level interventions, and measure guidance coverage and outcomes.
 
 ## Core positioning
 
-Career Compass is **not** a student-facing career quiz.
+Manyfolds is **not** a student-facing career quiz.
 
 It is a professional workflow and decision-support system used by counsellors, senior teachers, principals, and authorized school staff during the career-guidance process.
 
@@ -94,7 +94,7 @@ All interaction with the system remains mediated by authorized school staff.
 
 ## Existing context
 
-Career Compass was created to address the lack of structured career-guidance access in schools, especially government and resource-constrained schools. The project has previously reached approximately 900 students across about five government schools.
+Manyfolds was created to address the lack of structured career-guidance access in schools, especially government and resource-constrained schools. The project has previously reached approximately 900 students across about five government schools.
 
 The rebuilt product must convert that informal or limited deployment into a credible institutional system that schools can continue using without the founder personally managing every student.
 
@@ -136,7 +136,7 @@ This causes several operational failures:
 9. Schools cannot identify cohort-level needs and organize targeted workshops.
 10. There is no reliable longitudinal record from early exploration through final outcomes.
 
-Career Compass must solve these operational problems.
+Manyfolds must solve these operational problems.
 
 ---
 
@@ -148,7 +148,7 @@ Every product and technical decision must follow these principles.
 
 The software supports professional judgment. It does not replace the counsellor.
 
-Career Compass may organize information, surface overdue actions, suggest questions, calculate transparent status indicators, and generate draft summaries. It must not autonomously decide a student’s career.
+Manyfolds may organize information, surface overdue actions, suggest questions, calculate transparent status indicators, and generate draft summaries. It must not autonomously decide a student’s career.
 
 ## 3.2 No deterministic career verdicts
 
@@ -242,7 +242,7 @@ Students and parents are records and participants in the counselling process, bu
 
 ## 4.1 Platform Super Admin
 
-A Career Compass platform-level role.
+A Manyfolds platform-level role.
 
 Can:
 
@@ -450,7 +450,7 @@ Required sections:
 
 - hero statement focused on counsellor capacity;
 - core problem;
-- how Career Compass works;
+- how Manyfolds works;
 - student-record continuity;
 - counsellor workflow;
 - verified data promise;
@@ -466,7 +466,7 @@ Suggested hero:
 
 Supporting line:
 
-> Career Compass helps school counsellors and senior teachers manage career guidance across entire cohorts without relying on scattered spreadsheets, paper forms, and memory.
+> Manyfolds helps school counsellors and senior teachers manage career guidance across entire cohorts without relying on scattered spreadsheets, paper forms, and memory.
 
 ## 7.2 For Schools
 
@@ -1522,7 +1522,7 @@ Fields:
 - confidence level;
 - final status.
 
-Never claim that Career Compass caused an outcome merely because the student used the platform.
+Never claim that Manyfolds caused an outcome merely because the student used the platform.
 
 ---
 
@@ -2091,7 +2091,7 @@ Every launch record must include a source and verification date.
 
 # 17. Definition of Done
 
-Career Compass is complete only when all of the following are true.
+Manyfolds is complete only when all of the following are true.
 
 ## Repository
 

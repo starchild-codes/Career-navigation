@@ -1,4 +1,4 @@
--- Source-attributed Career Compass discovery data. Date-sensitive fields remain text/blank until editorial verification.
+-- Source-attributed Manyfolds discovery data. Date-sensitive fields remain text/blank until editorial verification.
 create table if not exists sources (source_id text primary key, source_name text not null, publisher text, url text, content_type text, vintage text, trust_level text, notes text);
 create table if not exists career_taxonomy (node_id text primary key, level text, code text, title text, parent_code text, source_name text, source_url text, verification_status text);
 create table if not exists careers (career_id text primary key, nco_code text unique, title text not null, alternate_titles text, division_code text, division_title text, subdivision_code text, subdivision_title text, group_code text, group_title text, family_code text, family_title text, nco_2004_code text, description text, education_routes text, skills text, school_subjects text, source_name text, source_url text, source_vintage text, verification_status text not null default 'needs_review', content_status text, last_reviewed text);

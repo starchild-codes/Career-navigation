@@ -1,6 +1,6 @@
-# Career Compass
+# Manyfolds
 
-Career Compass is a counsellor-led school career-guidance workspace. This repository contains the staff-facing interface, with a daily priority queue, longitudinal student registry, follow-up surface, verified opportunity deadlines, and privacy-safe student summaries.
+Manyfolds is a counsellor-led school career-guidance workspace. This repository contains the staff-facing interface, with a daily priority queue, longitudinal student registry, follow-up surface, verified opportunity deadlines, and privacy-safe student summaries.
 
 ## Run locally
 
