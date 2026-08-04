@@ -1,0 +1,230 @@
+{
+  "harnessVersion": "manyfolds-roadmap-eval-v5",
+  "promptVersion": "manyfolds-roadmap-v3",
+  "schemaVersion": "manyfolds-roadmap-schema-v2",
+  "runId": "1826853e-797b-46ab-b446-148261bc67e5",
+  "createdAt": "2026-08-04T13:56:26.019Z",
+  "preflight": {
+    "candidates": [
+      {
+        "id": "openai/gpt-4.1-mini",
+        "requestFee": 0,
+        "promptPrice": 4e-7,
+        "completionPrice": 0.0000016,
+        "structuredOutputs": true,
+        "supportsReasoning": false,
+        "maximumCostPerCall": 0.0038399999999999997
+      }
+    ],
+    "maximumCalls": 1,
+    "profileCount": 1,
+    "candidateCount": 1,
+    "maximumRetries": 0,
+    "liveDataEnabled": false,
+    "maxInputTokensPerCall": 2800,
+    "maxTotalTokensPerCall": 5000,
+    "maximumPossibleTokens": 5000,
+    "maxOutputTokensPerCall": 1700,
+    "maximumEstimatedCostUsd": 0.0038399999999999997,
+    "evidencePackagesDistinct": true
+  },
+  "actualCalls": 1,
+  "actualTotalCostUsd": 0.0016164,
+  "models": [
+    {
+      "model": "openai/gpt-4.1-mini",
+      "profiles": [
+        {
+          "id": "diploma-employability",
+          "status": "complete",
+          "nativeSchemaValid": true,
+          "repairedSchemaValid": true,
+          "factualValid": true,
+          "safety": {
+            "outputFingerprint": "2a9a894edd3c3d2c4d54b2fad3ccefbed1633e6c1a13f05d372f1a9b38ba79f0",
+            "missingDataHandled": true,
+            "nativeFactualValid": true,
+            "inventedEntityCount": 0,
+            "unsupportedRecordIds": [],
+            "ignoredHardConstraints": [],
+            "eligibilityContradiction": false,
+            "unverifiedAdmissionsFact": false
+          },
+          "promptTokens": 1825,
+          "completionTokens": 866,
+          "reasoningTokens": 0,
+          "totalTokens": 2691,
+          "reportedCostUsd": 0.0016164,
+          "estimatedCostUsd": 0.0021155999999999996,
+          "latencyMs": 12497,
+          "errorStatus": null,
+          "errors": [],
+          "output": {
+            "stages": [
+              {
+                "stage": "now",
+                "title": "Explore Diploma Courses in Technical Fields",
+                "status": "not_started",
+                "date_type": "planning_suggestion",
+                "mandatory": true,
+                "unverified": true,
+                "description": "Research diploma courses that focus on applied technical operations, fixing systems, and building physical things, considering the preference for early employability.",
+                "source_record_ids": [],
+                "verified_deadline": null,
+                "suggested_target_date": "2024-07-31"
+              },
+              {
+                "stage": "next_6_months",
+                "title": "Prepare for Relevant Entrance Exams or Assessments",
+                "status": "not_started",
+                "date_type": "planning_suggestion",
+                "mandatory": true,
+                "unverified": true,
+                "description": "Identify and prepare for any entrance exams or assessments required for diploma admissions in technical fields.",
+                "source_record_ids": [],
+                "verified_deadline": null,
+                "suggested_target_date": "2024-12-31"
+              },
+              {
+                "stage": "before_applications",
+                "title": "Gather Application Materials and Documents",
+                "status": "not_started",
+                "date_type": "planning_suggestion",
+                "mandatory": true,
+                "unverified": true,
+                "description": "Collect academic transcripts, certificates, and other necessary documents for diploma course applications.",
+                "source_record_ids": [],
+                "verified_deadline": null,
+                "suggested_target_date": "2025-02-28"
+              }
+            ],
+            "summary": "This roadmap is tailored for a Class 10 student with a CBSE background, strong in Mathematics and Vocational Subjects, and skills in fixing systems and building physical things. The student prefers diploma courses that enable early employability, aligning well with the career in Applied Technical Operations.",
+            "career_id": "career-technical",
+            "exam_steps": [],
+            "why_it_fits": [
+              {
+                "factor": "Subject Affinities",
+                "student_evidence": "Strong interest and performance in Mathematics and Vocational Subjects"
+              },
+              {
+                "factor": "Skills",
+                "student_evidence": "Skills in fixing systems and building physical things match technical operations"
+              },
+              {
+                "factor": "Degree Route Preferences",
+                "student_evidence": "Preference for diploma courses aligns with early employability goals"
+              },
+              {
+                "factor": "Location Constraints",
+                "student_evidence": "Preference for diploma and early employability is a decisive constraint"
+              }
+            ],
+            "next_actions": [
+              {
+                "action": "Research diploma programmes aligned with Applied Technical Operations.",
+                "reason": "To identify suitable courses that match skills and preferences.",
+                "priority": "high",
+                "source_record_ids": [
+                  "career:career-technical"
+                ]
+              },
+              {
+                "action": "Seek guidance from career counsellors or technical education advisors.",
+                "reason": "To clarify eligibility and admission requirements due to lack of verified data.",
+                "priority": "medium",
+                "source_record_ids": [
+                  "career:career-technical"
+                ]
+              }
+            ],
+            "backup_routes": [],
+            "roadmap_title": "Roadmap for Applied Technical Operations with Diploma and Early Employability Focus",
+            "course_options": [],
+            "college_programmes": [],
+            "eligibility_summary": {
+              "status": "insufficient_data",
+              "explanation": "No verified programme-level eligibility or admission cycle records are available to determine eligibility for diploma courses related to Applied Technical Operations.",
+              "source_record_ids": [],
+              "missing_requirements": [
+                "Verified programme-level eligibility records"
+              ]
+            },
+            "important_tradeoffs": [
+              "Limited verified programme and course data restricts specific pathway recommendations.",
+              "No verified institution or programme relationships available to confirm eligibility or admission details.",
+              "Preference for diploma and early employability may limit options to shorter duration courses, potentially excluding degree routes."
+            ],
+            "decisive_constraints": [
+              {
+                "status": "conflicts_with_available_routes",
+                "constraint_id": "constraint-1",
+                "constraint_type": "route_preference",
+                "effect_on_roadmap": "Limits recommendations to diploma courses with short duration and early job prospects; no verified routes currently accommodate this preference due to lack of data.",
+                "source_record_ids": [
+                  "career:career-technical"
+                ],
+                "student_preference": "Prefers a diploma and early employability",
+                "affected_section_ids": [
+                  "summary",
+                  "why_it_fits",
+                  "important_tradeoffs",
+                  "next_actions"
+                ]
+              }
+            ],
+            "missing_or_unverified": [
+              {
+                "field": "Programme Eligibility",
+                "message": "No verified programme-level eligibility records available."
+              },
+              {
+                "field": "Institution-Programme Relationships",
+                "message": "No verified institution-programme relationships available."
+              },
+              {
+                "field": "Admission Cycles and Deadlines",
+                "message": "No verified admission cycle or deadline information available."
+              }
+            ],
+            "questions_for_counsellor": [
+              "Which diploma programmes are available that align with Applied Technical Operations and accept Class 10 CBSE students?",
+              "What are the eligibility criteria and admission timelines for these diploma programmes?",
+              "Are there any entrance exams required for diploma admissions in technical fields?",
+              "What institutions offer diploma courses with early employability outcomes in technical operations?"
+            ]
+          },
+          "materiallyDistinct": true
+        }
+      ],
+      "thresholds": {
+        "safeRepairSchemaValidity": false,
+        "grounding": false,
+        "constraints": false,
+        "tokenLimits": false,
+        "verifiedAdmissionsOnly": false,
+        "missingData": false,
+        "distinctness": false
+      },
+      "approved": false,
+      "metrics": {
+        "nativeSchemaPassRate": 1,
+        "safeRepairSchemaPassRate": 1,
+        "groundingPassRate": 1,
+        "constraintPassRate": 1,
+        "missingDataPassRate": 1,
+        "distinctProfiles": 1,
+        "averageInputTokens": 1825,
+        "averageOutputTokens": 866,
+        "averageTotalTokens": 2691,
+        "totalTokens": 2691,
+        "averageLatencyMs": 12497,
+        "p95LatencyMs": 12497,
+        "totalCostUsd": 0.0016164
+      }
+    }
+  ],
+  "approval": {
+    "primary": null,
+    "fallback": null
+  }
+}

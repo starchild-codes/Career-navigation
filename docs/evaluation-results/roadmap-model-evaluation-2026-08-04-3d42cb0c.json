@@ -1,0 +1,1552 @@
+{
+  "harnessVersion": "manyfolds-roadmap-eval-v5",
+  "promptVersion": "manyfolds-roadmap-v3",
+  "schemaVersion": "manyfolds-roadmap-schema-v2",
+  "runId": "3d42cb0c-e412-4c8d-a705-6bc1ff035784",
+  "createdAt": "2026-08-04T13:56:49.832Z",
+  "preflight": {
+    "candidates": [
+      {
+        "id": "openai/gpt-4.1-mini",
+        "requestFee": 0,
+        "promptPrice": 4e-7,
+        "completionPrice": 0.0000016,
+        "structuredOutputs": true,
+        "supportsReasoning": false,
+        "maximumCostPerCall": 0.0038399999999999997
+      }
+    ],
+    "maximumCalls": 10,
+    "profileCount": 10,
+    "candidateCount": 1,
+    "maximumRetries": 0,
+    "liveDataEnabled": false,
+    "maxInputTokensPerCall": 2800,
+    "maxTotalTokensPerCall": 5000,
+    "maximumPossibleTokens": 50000,
+    "maxOutputTokensPerCall": 1700,
+    "maximumEstimatedCostUsd": 0.0384,
+    "evidencePackagesDistinct": true
+  },
+  "actualCalls": 10,
+  "actualTotalCostUsd": 0.0181836,
+  "models": [
+    {
+      "model": "openai/gpt-4.1-mini",
+      "profiles": [
+        {
+          "id": "class10-psych-biology",
+          "status": "complete",
+          "nativeSchemaValid": true,
+          "repairedSchemaValid": true,
+          "factualValid": true,
+          "safety": {
+            "outputFingerprint": "057549598c3afe764ec93256b918c35333ab6537d61d9800fa1f0edea58db86c",
+            "missingDataHandled": true,
+            "nativeFactualValid": true,
+            "inventedEntityCount": 0,
+            "unsupportedRecordIds": [],
+            "ignoredHardConstraints": [],
+            "eligibilityContradiction": false,
+            "unverifiedAdmissionsFact": false
+          },
+          "promptTokens": 1757,
+          "completionTokens": 630,
+          "reasoningTokens": 0,
+          "totalTokens": 2387,
+          "reportedCostUsd": 0.0017108,
+          "estimatedCostUsd": 0.0017108,
+          "latencyMs": 11513,
+          "errorStatus": null,
+          "errors": [],
+          "output": {
+            "stages": [
+              {
+                "stage": "now",
+                "title": "Explore Psychology and Biology subjects",
+                "status": "not_started",
+                "date_type": "planning_suggestion",
+                "mandatory": true,
+                "unverified": true,
+                "description": "Continue strengthening your foundation in Psychology and Biology subjects and develop related skills like Listening and Research.",
+                "source_record_ids": [],
+                "verified_deadline": null,
+                "suggested_target_date": null
+              },
+              {
+                "stage": "next_6_months",
+                "title": "Research potential programmes and institutions",
+                "status": "not_started",
+                "date_type": "planning_suggestion",
+                "mandatory": true,
+                "unverified": true,
+                "description": "Begin researching colleges and programmes offering Psychology and Behaviour courses that align with your interests and skills.",
+                "source_record_ids": [],
+                "verified_deadline": null,
+                "suggested_target_date": null
+              },
+              {
+                "stage": "before_applications",
+                "title": "Prepare for entrance exams and application requirements",
+                "status": "not_started",
+                "date_type": "planning_suggestion",
+                "mandatory": true,
+                "unverified": true,
+                "description": "Identify and prepare for any entrance exams or application prerequisites once verified programme information is available.",
+                "source_record_ids": [],
+                "verified_deadline": null,
+                "suggested_target_date": null
+              }
+            ],
+            "summary": "You have a strong interest and affinity in Psychology and Biology, supported by skills in Listening and Research, which align well with a career in Psychology and Behaviour. However, there is insufficient verified data on specific programmes, courses, or exams to confirm eligibility or detailed pathways at this time.",
+            "career_id": "career-psychology",
+            "exam_steps": [],
+            "why_it_fits": [
+              {
+                "factor": "Subject affinity",
+                "student_evidence": "You have Psychology and Biology as your current subjects and affinities."
+              },
+              {
+                "factor": "Skills",
+                "student_evidence": "You possess Listening and Research skills relevant to Psychology."
+              }
+            ],
+            "next_actions": [
+              {
+                "action": "Monitor for verified programme and admission data in Psychology and related fields",
+                "reason": "No verified programme or eligibility data is currently available to plan specific applications.",
+                "priority": "high",
+                "source_record_ids": []
+              }
+            ],
+            "backup_routes": [],
+            "roadmap_title": "Roadmap for Psychology and Behaviour Career with Psychology and Biology Interests",
+            "course_options": [],
+            "college_programmes": [],
+            "eligibility_summary": {
+              "status": "insufficient_data",
+              "explanation": "No verified programme-level eligibility or admission cycle records are available to determine your eligibility for Psychology-related programmes.",
+              "source_record_ids": [],
+              "missing_requirements": [
+                "Verified programme-level eligibility records"
+              ]
+            },
+            "important_tradeoffs": [
+              "Lack of verified programme and course data means you cannot currently plan specific admissions or course selections.",
+              "You must remain open to exploring various institutions and programmes as more verified information becomes available.",
+              "Balancing interests in both Psychology and Biology may require choosing interdisciplinary or flexible programmes when available."
+            ],
+            "decisive_constraints": [],
+            "missing_or_unverified": [
+              {
+                "field": "Programme eligibility",
+                "message": "No verified eligibility records for Psychology programmes."
+              },
+              {
+                "field": "Admission cycles",
+                "message": "No verified admission cycle data for relevant programmes."
+              }
+            ],
+            "questions_for_counsellor": [
+              "Which institutions offer Psychology programmes suitable for students with a background in Psychology and Biology?",
+              "What entrance exams or eligibility criteria should I prepare for in Psychology-related fields?",
+              "Are there interdisciplinary programmes combining Psychology and Biology that I can consider?"
+            ]
+          },
+          "materiallyDistinct": true
+        },
+        {
+          "id": "class12-pcm-engineering",
+          "status": "complete",
+          "nativeSchemaValid": true,
+          "repairedSchemaValid": true,
+          "factualValid": true,
+          "safety": {
+            "outputFingerprint": "e6834e78c90f887a0c969f4d7c5f8dd238666fde275b355bc73e5621fa743aaf",
+            "missingDataHandled": true,
+            "nativeFactualValid": true,
+            "inventedEntityCount": 0,
+            "unsupportedRecordIds": [],
+            "ignoredHardConstraints": [],
+            "eligibilityContradiction": false,
+            "unverifiedAdmissionsFact": false
+          },
+          "promptTokens": 1774,
+          "completionTokens": 693,
+          "reasoningTokens": 0,
+          "totalTokens": 2467,
+          "reportedCostUsd": 0.0018184,
+          "estimatedCostUsd": 0.0018184,
+          "latencyMs": 9376,
+          "errorStatus": null,
+          "errors": [],
+          "output": {
+            "stages": [
+              {
+                "stage": "now",
+                "title": "Explore Applied Engineering Fundamentals",
+                "status": "not_started",
+                "date_type": "planning_suggestion",
+                "mandatory": true,
+                "unverified": true,
+                "description": "Continue strengthening your knowledge in Physics, Chemistry, and Mathematics and develop analytical and practical skills.",
+                "source_record_ids": [],
+                "verified_deadline": null,
+                "suggested_target_date": null
+              },
+              {
+                "stage": "next_6_months",
+                "title": "Research Programmes and Institutions",
+                "status": "not_started",
+                "date_type": "planning_suggestion",
+                "mandatory": true,
+                "unverified": true,
+                "description": "Identify engineering programmes that align with your interests and check their eligibility and admission requirements once verified data is available.",
+                "source_record_ids": [],
+                "verified_deadline": null,
+                "suggested_target_date": null
+              },
+              {
+                "stage": "before_applications",
+                "title": "Prepare for Entrance Exams and Applications",
+                "status": "not_started",
+                "date_type": "planning_suggestion",
+                "mandatory": true,
+                "unverified": true,
+                "description": "Prepare for relevant engineering entrance exams and gather application materials when admission cycles and exam details are verified.",
+                "source_record_ids": [],
+                "verified_deadline": null,
+                "suggested_target_date": null
+              }
+            ],
+            "summary": "You have a strong foundation in Physics, Chemistry, and Mathematics with analytical reasoning and building skills, aligning well with an Applied Engineering career. However, there is insufficient verified data on specific programmes, courses, and admissions to provide detailed pathways.",
+            "career_id": "career-engineering",
+            "exam_steps": [],
+            "why_it_fits": [
+              {
+                "factor": "Physics, Chemistry, Mathematics",
+                "student_evidence": "Current subjects and affinities include Physics, Chemistry, and Mathematics."
+              },
+              {
+                "factor": "Analytical reasoning",
+                "student_evidence": "Listed skill of analytical reasoning."
+              },
+              {
+                "factor": "Building physical things",
+                "student_evidence": "Listed skill of building physical things."
+              }
+            ],
+            "next_actions": [
+              {
+                "action": "Monitor for verified programme and admission data for Applied Engineering.",
+                "reason": "No verified programme or admission cycle data currently available to plan applications.",
+                "priority": "high",
+                "source_record_ids": [
+                  "career:career-engineering"
+                ]
+              },
+              {
+                "action": "Strengthen skills in Physics, Chemistry, Mathematics, and practical engineering projects.",
+                "reason": "These skills align well with the Applied Engineering career fit factors.",
+                "priority": "medium",
+                "source_record_ids": [
+                  "career:career-engineering"
+                ]
+              }
+            ],
+            "backup_routes": [],
+            "roadmap_title": "Roadmap for Applied Engineering Career with PCM Subjects",
+            "course_options": [],
+            "college_programmes": [],
+            "eligibility_summary": {
+              "status": "insufficient_data",
+              "explanation": "No verified programme-level eligibility or admission cycle records are available for Applied Engineering career pathways.",
+              "source_record_ids": [
+                "career:career-engineering"
+              ],
+              "missing_requirements": [
+                "Verified programme-level eligibility records"
+              ]
+            },
+            "important_tradeoffs": [
+              "No verified programme or course data is available to confirm eligibility or admission routes.",
+              "Without verified admission cycles or exam requirements, planning exact timelines is not possible.",
+              "Lack of verified scholarship and fee information limits financial planning."
+            ],
+            "decisive_constraints": [],
+            "missing_or_unverified": [
+              {
+                "field": "Programme-level eligibility",
+                "message": "No verified eligibility records for engineering programmes."
+              },
+              {
+                "field": "Admission cycles",
+                "message": "No verified admission cycle data for engineering programmes."
+              },
+              {
+                "field": "Course and programme details",
+                "message": "No verified course or programme records linked to Applied Engineering career."
+              }
+            ],
+            "questions_for_counsellor": [
+              "Are there any verified engineering programmes available for my profile?",
+              "What entrance exams should I prepare for to pursue Applied Engineering?",
+              "Can you provide information on scholarships or financial aid for engineering courses?"
+            ]
+          },
+          "materiallyDistinct": true
+        },
+        {
+          "id": "psychology-computing",
+          "status": "complete",
+          "nativeSchemaValid": true,
+          "repairedSchemaValid": true,
+          "factualValid": true,
+          "safety": {
+            "outputFingerprint": "a5554808b42109741234812d80cfdef76b24145be7654ba7eff1ba090c51118a",
+            "missingDataHandled": true,
+            "nativeFactualValid": true,
+            "inventedEntityCount": 0,
+            "unsupportedRecordIds": [],
+            "ignoredHardConstraints": [],
+            "eligibilityContradiction": false,
+            "unverifiedAdmissionsFact": false
+          },
+          "promptTokens": 1768,
+          "completionTokens": 772,
+          "reasoningTokens": 0,
+          "totalTokens": 2540,
+          "reportedCostUsd": 0.0019424,
+          "estimatedCostUsd": 0.0019424,
+          "latencyMs": 14125,
+          "errorStatus": null,
+          "errors": [],
+          "output": {
+            "stages": [
+              {
+                "stage": "now",
+                "title": "Explore interdisciplinary programmes",
+                "status": "not_started",
+                "date_type": "planning_suggestion",
+                "mandatory": false,
+                "unverified": true,
+                "description": "Research programmes that combine Psychology and Computer Science, focusing on UX research and behavioural studies.",
+                "source_record_ids": [],
+                "verified_deadline": null,
+                "suggested_target_date": null
+              },
+              {
+                "stage": "next_6_months",
+                "title": "Develop relevant skills",
+                "status": "not_started",
+                "date_type": "planning_suggestion",
+                "mandatory": false,
+                "unverified": true,
+                "description": "Enhance your research, coding, and empathy skills through projects, internships, or online courses to strengthen your profile.",
+                "source_record_ids": [],
+                "verified_deadline": null,
+                "suggested_target_date": null
+              },
+              {
+                "stage": "before_applications",
+                "title": "Identify suitable programmes and eligibility",
+                "status": "not_started",
+                "date_type": "planning_suggestion",
+                "mandatory": true,
+                "unverified": true,
+                "description": "Seek verified information on programmes offering Psychology and UX research, and confirm eligibility criteria and admission cycles.",
+                "source_record_ids": [],
+                "verified_deadline": null,
+                "suggested_target_date": null
+              }
+            ],
+            "summary": "You have a strong interest and skills in Psychology and Computer Science, including research, coding, and empathy, which align well with a career in Psychology, behaviour and UX research. However, there is insufficient verified data on specific programmes, courses, or exams to guide your admissions planning at this time.",
+            "career_id": "career-ux",
+            "exam_steps": [],
+            "why_it_fits": [
+              {
+                "factor": "Psychology",
+                "student_evidence": "You study Psychology and have an affinity for it."
+              },
+              {
+                "factor": "Computer Science",
+                "student_evidence": "You study Computer Science and have an affinity for it."
+              },
+              {
+                "factor": "Research",
+                "student_evidence": "You have skills in Research."
+              },
+              {
+                "factor": "Coding",
+                "student_evidence": "You have skills in Coding."
+              },
+              {
+                "factor": "Empathy",
+                "student_evidence": "You have skills in Empathy."
+              }
+            ],
+            "next_actions": [
+              {
+                "action": "Gather verified information on interdisciplinary programmes combining Psychology and Computer Science.",
+                "reason": "No verified programme or eligibility data is currently available to plan admissions.",
+                "priority": "high",
+                "source_record_ids": []
+              },
+              {
+                "action": "Develop and document your research and coding skills through practical experience.",
+                "reason": "These skills align well with your career interest and strengthen your profile.",
+                "priority": "medium",
+                "source_record_ids": []
+              },
+              {
+                "action": "Consult a career counsellor to identify verified admission cycles and suitable programmes.",
+                "reason": "Lack of verified admission and programme data requires expert guidance.",
+                "priority": "high",
+                "source_record_ids": []
+              }
+            ],
+            "backup_routes": [],
+            "roadmap_title": "Roadmap for Psychology, behaviour and UX research career",
+            "course_options": [],
+            "college_programmes": [],
+            "eligibility_summary": {
+              "status": "insufficient_data",
+              "explanation": "No verified programme-level eligibility records or admission cycle data are available to determine your eligibility for relevant courses or programmes.",
+              "source_record_ids": [],
+              "missing_requirements": [
+                "Verified programme-level eligibility records"
+              ]
+            },
+            "important_tradeoffs": [
+              "No verified programme or course data is available to confirm eligibility or admission routes, limiting concrete planning.",
+              "Your mixed interest in Psychology and Computer Science is a strength but may require finding interdisciplinary programmes, which are not currently verified.",
+              "Without verified admission cycles or exams, timing your applications and preparations is uncertain."
+            ],
+            "decisive_constraints": [],
+            "missing_or_unverified": [
+              {
+                "field": "Programme-level eligibility",
+                "message": "No verified eligibility records for relevant programmes."
+              },
+              {
+                "field": "Admission cycles",
+                "message": "No verified admission cycle data available."
+              },
+              {
+                "field": "Course and programme relationships",
+                "message": "No verified relationships connecting courses or programmes to the career."
+              }
+            ],
+            "questions_for_counsellor": [
+              "Are there verified programmes that combine Psychology and Computer Science focused on UX research?",
+              "What are the eligibility criteria and admission cycles for such programmes?",
+              "Which entrance exams or certifications are recommended for this career path?"
+            ]
+          },
+          "materiallyDistinct": true
+        },
+        {
+          "id": "history-chemistry",
+          "status": "complete",
+          "nativeSchemaValid": true,
+          "repairedSchemaValid": true,
+          "factualValid": false,
+          "safety": {
+            "outputFingerprint": "f9e0c95e298d115d561cc7db7cd597b8fe339f1cf7559627e596815ad5dd7ccc",
+            "missingDataHandled": true,
+            "nativeFactualValid": false,
+            "inventedEntityCount": 0,
+            "unsupportedRecordIds": [],
+            "ignoredHardConstraints": [],
+            "eligibilityContradiction": false,
+            "unverifiedAdmissionsFact": false
+          },
+          "promptTokens": 1749,
+          "completionTokens": 715,
+          "reasoningTokens": 0,
+          "totalTokens": 2464,
+          "reportedCostUsd": 0.0018436,
+          "estimatedCostUsd": 0.0018436,
+          "latencyMs": 10753,
+          "errorStatus": null,
+          "errors": [
+            "Roadmap added an unsupported competitiveness classification"
+          ],
+          "output": {
+            "stages": [
+              {
+                "stage": "now",
+                "title": "Explore Environmental Policy and Sustainability Fundamentals",
+                "status": "not_started",
+                "date_type": "planning_suggestion",
+                "mandatory": false,
+                "unverified": true,
+                "description": "Engage in self-study and extracurricular activities related to environmental issues, policy, and sustainability to strengthen your foundation.",
+                "source_record_ids": [],
+                "verified_deadline": null,
+                "suggested_target_date": null
+              },
+              {
+                "stage": "next_6_months",
+                "title": "Research Potential Programmes and Institutions",
+                "status": "not_started",
+                "date_type": "planning_suggestion",
+                "mandatory": false,
+                "unverified": true,
+                "description": "Begin researching colleges and programmes that offer environmental policy and sustainability courses, focusing on interdisciplinary options combining History and Chemistry.",
+                "source_record_ids": [],
+                "verified_deadline": null,
+                "suggested_target_date": null
+              },
+              {
+                "stage": "before_applications",
+                "title": "Prepare for Entrance Exams and Application Requirements",
+                "status": "not_started",
+                "date_type": "planning_suggestion",
+                "mandatory": false,
+                "unverified": true,
+                "description": "Identify and prepare for any entrance exams or application components required by your target programmes once identified.",
+                "source_record_ids": [],
+                "verified_deadline": null,
+                "suggested_target_date": null
+              }
+            ],
+            "summary": "You are a Class 11 CBSE student with interests and skills in History and Chemistry, aiming for a career in Environmental policy and sustainability. Your combination of subjects and skills aligns well with this career, but there is insufficient verified data on specific programmes or courses to guide precise admissions planning.",
+            "career_id": "career-environment",
+            "exam_steps": [],
+            "why_it_fits": [
+              {
+                "factor": "Subject affinity",
+                "student_evidence": "You have strong affinities for History and Chemistry, both relevant to environmental policy and sustainability."
+              },
+              {
+                "factor": "Skills",
+                "student_evidence": "Your skills in Writing and Experimentation support research, analysis, and communication needed in this career."
+              }
+            ],
+            "next_actions": [
+              {
+                "action": "Monitor for verified programme and eligibility information related to environmental policy and sustainability.",
+                "reason": "Currently, no verified programmes or eligibility data exist to plan applications effectively.",
+                "priority": "high",
+                "source_record_ids": [
+                  "career:career-environment"
+                ]
+              },
+              {
+                "action": "Continue developing skills in Writing and Experimentation through projects and coursework.",
+                "reason": "These skills support your career interests and strengthen your profile.",
+                "priority": "medium",
+                "source_record_ids": []
+              }
+            ],
+            "backup_routes": [],
+            "roadmap_title": "Roadmap for Environmental Policy and Sustainability Career with History and Chemistry Background",
+            "course_options": [],
+            "college_programmes": [],
+            "eligibility_summary": {
+              "status": "insufficient_data",
+              "explanation": "No verified programme-level eligibility records or institution-programme relationships are available to determine eligibility.",
+              "source_record_ids": [],
+              "missing_requirements": [
+                "Verified programme-level eligibility records"
+              ]
+            },
+            "important_tradeoffs": [
+              "No verified programme or course options are currently available to match your interests, limiting concrete planning.",
+              "Without verified eligibility or admission cycle data, timing and application strategies cannot be specified.",
+              "Your mixed interest in both History and Chemistry may require balancing interdisciplinary programme choices once available."
+            ],
+            "decisive_constraints": [],
+            "missing_or_unverified": [
+              {
+                "field": "Programme eligibility",
+                "message": "No verified programme-level eligibility records are available."
+              },
+              {
+                "field": "Institution-programme relationships",
+                "message": "No verified institution-programme relationships are available."
+              },
+              {
+                "field": "Admission cycles and deadlines",
+                "message": "No verified admission cycle or deadline data are available."
+              }
+            ],
+            "questions_for_counsellor": [
+              "Are there any interdisciplinary programmes combining History and Chemistry focused on environmental policy?",
+              "What entrance exams or qualifications are typically required for environmental policy and sustainability programmes?",
+              "Can you help identify institutions offering verified programmes aligned with my interests?"
+            ]
+          },
+          "materiallyDistinct": true
+        },
+        {
+          "id": "limited-finances-local",
+          "status": "complete",
+          "nativeSchemaValid": true,
+          "repairedSchemaValid": true,
+          "factualValid": true,
+          "safety": {
+            "outputFingerprint": "6718d386888ffd2c7d370af54422d3e13c03b42e45f7ef8f7a7cb22c5334fa7e",
+            "missingDataHandled": true,
+            "nativeFactualValid": true,
+            "inventedEntityCount": 0,
+            "unsupportedRecordIds": [],
+            "ignoredHardConstraints": [],
+            "eligibilityContradiction": false,
+            "unverifiedAdmissionsFact": true
+          },
+          "promptTokens": 1809,
+          "completionTokens": 901,
+          "reasoningTokens": 0,
+          "totalTokens": 2710,
+          "reportedCostUsd": 0.0021652,
+          "estimatedCostUsd": 0.0021652,
+          "latencyMs": 17260,
+          "errorStatus": null,
+          "errors": [],
+          "output": {
+            "stages": [
+              {
+                "stage": "now",
+                "title": "Research Local Low-Cost Commerce Programmes",
+                "status": "not_started",
+                "date_type": "planning_suggestion",
+                "mandatory": true,
+                "unverified": true,
+                "description": "Identify colleges near your home offering Commerce and Finance programmes with annual tuition under ₹50,000. Gather verified data on fees and admission requirements.",
+                "source_record_ids": [],
+                "verified_deadline": null,
+                "suggested_target_date": "2024-07-31"
+              },
+              {
+                "stage": "next_6_months",
+                "title": "Prepare for Relevant Entrance Exams",
+                "status": "not_started",
+                "date_type": "planning_suggestion",
+                "mandatory": false,
+                "unverified": true,
+                "description": "Since you are open to exams, prepare for any entrance tests required by local institutions offering Commerce programmes.",
+                "source_record_ids": [],
+                "verified_deadline": null,
+                "suggested_target_date": "2024-12-31"
+              },
+              {
+                "stage": "before_applications",
+                "title": "Apply to Eligible Programmes",
+                "status": "not_started",
+                "date_type": "planning_suggestion",
+                "mandatory": true,
+                "unverified": true,
+                "description": "Submit applications to programmes that meet your budget and location constraints once verified options are identified.",
+                "source_record_ids": [],
+                "verified_deadline": null,
+                "suggested_target_date": "2025-03-31"
+              }
+            ],
+            "summary": "You have a strong interest and academic background in Economics and Business Studies, aligning well with a career in Commerce and Finance. However, your hard constraints of studying near home and keeping annual tuition below ₹50,000 limit available options. Currently, there is insufficient verified data on eligible programmes, courses, and institutions that meet these financial and location requirements.",
+            "career_id": "career-commerce",
+            "exam_steps": [],
+            "why_it_fits": [
+              {
+                "factor": "Subject Affinities",
+                "student_evidence": "You study and prefer Economics and Business Studies, which are core subjects for Commerce and Finance."
+              },
+              {
+                "factor": "Skills",
+                "student_evidence": "Your planning skills support success in Commerce and Finance careers."
+              }
+            ],
+            "next_actions": [
+              {
+                "action": "Collect verified data on local Commerce programmes with tuition under ₹50,000",
+                "reason": "To identify feasible study options matching your financial and location constraints.",
+                "priority": "high",
+                "source_record_ids": []
+              },
+              {
+                "action": "Consult local education counsellors for updated information on affordable Commerce courses",
+                "reason": "They may provide insights into programmes not yet verified in the system.",
+                "priority": "medium",
+                "source_record_ids": []
+              },
+              {
+                "action": "Prepare for entrance exams commonly required by local colleges",
+                "reason": "Being exam-ready increases your chances of admission once programmes are identified.",
+                "priority": "medium",
+                "source_record_ids": []
+              }
+            ],
+            "backup_routes": [],
+            "roadmap_title": "Commerce and Finance Career Roadmap with Local, Low-Cost Study Constraints",
+            "course_options": [],
+            "college_programmes": [],
+            "eligibility_summary": {
+              "status": "insufficient_data",
+              "explanation": "No verified programme-level eligibility, institution, fee, or scholarship records are available to confirm suitable study options within your budget and location constraints.",
+              "source_record_ids": [],
+              "missing_requirements": [
+                "Verified programme-level eligibility records",
+                "Verified institution-programme relationships",
+                "Verified fee and scholarship information"
+              ]
+            },
+            "important_tradeoffs": [
+              "Limited budget and location constraints significantly reduce the number of eligible programmes and institutions.",
+              "Lack of verified programme and course data means you may need to explore options beyond currently verified pathways.",
+              "Open exam willingness offers flexibility but no verified exams are linked yet to this career path under your constraints."
+            ],
+            "decisive_constraints": [
+              {
+                "status": "conflicts_with_available_routes",
+                "constraint_id": "constraint-budget-location",
+                "constraint_type": "budget",
+                "effect_on_roadmap": "Limits available programmes and institutions; no verified options currently found.",
+                "source_record_ids": [],
+                "student_preference": "Annual tuition below ₹50,000 and must study near home",
+                "affected_section_ids": [
+                  "summary",
+                  "eligibility_summary",
+                  "course_options",
+                  "college_programmes",
+                  "next_actions"
+                ]
+              }
+            ],
+            "missing_or_unverified": [
+              {
+                "field": "Programme Eligibility",
+                "message": "No verified programme-level eligibility records available for Commerce programmes under ₹50,000 tuition near home."
+              },
+              {
+                "field": "Institution-Programme Relationships",
+                "message": "No verified data linking institutions to Commerce programmes within budget and location constraints."
+              },
+              {
+                "field": "Fee and Scholarship Information",
+                "message": "No verified fee or scholarship records to confirm affordability of programmes."
+              }
+            ],
+            "questions_for_counsellor": [
+              "Are there any Commerce or Finance programmes near my home with annual tuition below ₹50,000?",
+              "What entrance exams should I prepare for to increase my chances of admission locally?",
+              "Are there scholarships or financial aid options available for low-cost Commerce programmes nearby?"
+            ]
+          },
+          "materiallyDistinct": true
+        },
+        {
+          "id": "no-competitive-exams",
+          "status": "complete",
+          "nativeSchemaValid": true,
+          "repairedSchemaValid": true,
+          "factualValid": true,
+          "safety": {
+            "outputFingerprint": "2a5abff9cd433c799ef78444a198d4d80b4c36abae8ebce3a964b4b8cc708362",
+            "missingDataHandled": true,
+            "nativeFactualValid": true,
+            "inventedEntityCount": 0,
+            "unsupportedRecordIds": [],
+            "ignoredHardConstraints": [],
+            "eligibilityContradiction": false,
+            "unverifiedAdmissionsFact": false
+          },
+          "promptTokens": 1793,
+          "completionTokens": 1034,
+          "reasoningTokens": 0,
+          "totalTokens": 2827,
+          "reportedCostUsd": 0.0018724,
+          "estimatedCostUsd": 0.0023715999999999997,
+          "latencyMs": 15107,
+          "errorStatus": null,
+          "errors": [],
+          "output": {
+            "stages": [
+              {
+                "stage": "now",
+                "title": "Explore Design and Computer Science Skills",
+                "status": "not_started",
+                "date_type": "planning_suggestion",
+                "mandatory": true,
+                "unverified": true,
+                "description": "Continue developing your skills in Design and Computer Science through self-learning, online resources, or portfolio projects to strengthen your profile.",
+                "source_record_ids": [],
+                "verified_deadline": null,
+                "suggested_target_date": null
+              },
+              {
+                "stage": "next_6_months",
+                "title": "Research Alternative Admission Routes",
+                "status": "not_started",
+                "date_type": "planning_suggestion",
+                "mandatory": true,
+                "unverified": true,
+                "description": "Investigate institutions and programmes that do not require competitive examinations for admission in Design and Visual Communication fields.",
+                "source_record_ids": [],
+                "verified_deadline": null,
+                "suggested_target_date": null
+              },
+              {
+                "stage": "before_applications",
+                "title": "Prepare Application Materials",
+                "status": "not_started",
+                "date_type": "planning_suggestion",
+                "mandatory": true,
+                "unverified": true,
+                "description": "Prepare a strong portfolio and statement of purpose highlighting your skills in Design and Computer Science to support applications where competitive exams are not required.",
+                "source_record_ids": [],
+                "verified_deadline": null,
+                "suggested_target_date": null
+              },
+              {
+                "stage": "admissions",
+                "title": "Apply to Suitable Programmes",
+                "status": "not_started",
+                "date_type": "planning_suggestion",
+                "mandatory": true,
+                "unverified": true,
+                "description": "Apply to programmes that accept students without competitive exams, if any are found through research or counselling.",
+                "source_record_ids": [],
+                "verified_deadline": null,
+                "suggested_target_date": null
+              },
+              {
+                "stage": "during_course",
+                "title": "Engage Fully in Coursework and Projects",
+                "status": "not_started",
+                "date_type": "planning_suggestion",
+                "mandatory": true,
+                "unverified": true,
+                "description": "Focus on gaining practical experience and building a portfolio during your studies to enhance career prospects.",
+                "source_record_ids": [],
+                "verified_deadline": null,
+                "suggested_target_date": null
+              },
+              {
+                "stage": "early_career",
+                "title": "Seek Internships and Entry-Level Roles",
+                "status": "not_started",
+                "date_type": "planning_suggestion",
+                "mandatory": true,
+                "unverified": true,
+                "description": "Look for internships or entry-level positions in design and visual communication to gain industry experience.",
+                "source_record_ids": [],
+                "verified_deadline": null,
+                "suggested_target_date": null
+              }
+            ],
+            "summary": "You have a strong interest and skills in Design and Computer Science, aligning well with a career in Design and Visual Communication. However, your unwillingness to take competitive examinations currently limits access to verified programmes and courses that lead to this career.",
+            "career_id": "career-design",
+            "exam_steps": [],
+            "why_it_fits": [
+              {
+                "factor": "Design and Computer Science subjects",
+                "student_evidence": "Currently studying Design and Computer Science in Class 12"
+              },
+              {
+                "factor": "Skills in Visual design and Coding",
+                "student_evidence": "Possess skills in Visual design and Coding relevant to the career"
+              }
+            ],
+            "next_actions": [
+              {
+                "action": "Consult a career counsellor to identify programmes that do not require competitive exams for admission in Design and Visual Communication.",
+                "reason": "No verified programmes currently available without competitive exams; expert guidance is needed.",
+                "priority": "high",
+                "source_record_ids": [
+                  "career:career-design"
+                ]
+              },
+              {
+                "action": "Build a strong portfolio showcasing your design and coding skills to improve admission chances where exams are not required.",
+                "reason": "Portfolio strength can compensate for lack of competitive exam scores.",
+                "priority": "high",
+                "source_record_ids": [
+                  "career:career-design"
+                ]
+              }
+            ],
+            "backup_routes": [],
+            "roadmap_title": "Design and Visual Communication Career Roadmap Without Competitive Exams",
+            "course_options": [],
+            "college_programmes": [],
+            "eligibility_summary": {
+              "status": "insufficient_data",
+              "explanation": "No verified programme-level eligibility records or admission cycles are available that accommodate the constraint of unwillingness to take competitive examinations for this career.",
+              "source_record_ids": [
+                "career:career-design"
+              ],
+              "missing_requirements": [
+                "Verified programme-level eligibility records"
+              ]
+            },
+            "important_tradeoffs": [
+              "Unwillingness to take competitive examinations restricts access to many verified programmes and courses in Design and Visual Communication.",
+              "Lack of verified programme and admission data means planning must be cautious and flexible.",
+              "No verified courses or programmes currently match your profile without competitive exams."
+            ],
+            "decisive_constraints": [
+              {
+                "status": "conflicts_with_available_routes",
+                "constraint_id": "hard-constraint-exam-willingness",
+                "constraint_type": "exam_willingness",
+                "effect_on_roadmap": "Limits access to verified programmes and courses requiring competitive exams; no verified routes currently accommodate this constraint.",
+                "source_record_ids": [
+                  "career:career-design"
+                ],
+                "student_preference": "Unwilling to take competitive examinations",
+                "affected_section_ids": [
+                  "eligibility_summary",
+                  "course_options",
+                  "college_programmes",
+                  "exam_steps",
+                  "backup_routes"
+                ]
+              }
+            ],
+            "missing_or_unverified": [
+              {
+                "field": "Programme-level eligibility",
+                "message": "No verified eligibility records for programmes matching your profile without competitive exams."
+              },
+              {
+                "field": "Admission cycles and deadlines",
+                "message": "No verified admission cycle or deadline information available for relevant programmes."
+              }
+            ],
+            "questions_for_counsellor": [
+              "Are there any institutions or programmes offering Design and Visual Communication courses without requiring competitive examinations?",
+              "What alternative admission routes exist for students unwilling to take competitive exams?",
+              "How can I strengthen my application without competitive exam scores?"
+            ]
+          },
+          "materiallyDistinct": true
+        },
+        {
+          "id": "missing-compulsory-subject",
+          "status": "complete",
+          "nativeSchemaValid": true,
+          "repairedSchemaValid": true,
+          "factualValid": true,
+          "safety": {
+            "outputFingerprint": "7a2d88ffdfef848a0f2fc0015c61ce3835af3e6f749d932aa5a6a95537f26c2b",
+            "missingDataHandled": true,
+            "nativeFactualValid": true,
+            "inventedEntityCount": 0,
+            "unsupportedRecordIds": [],
+            "ignoredHardConstraints": [],
+            "eligibilityContradiction": false,
+            "unverifiedAdmissionsFact": false
+          },
+          "promptTokens": 1789,
+          "completionTokens": 809,
+          "reasoningTokens": 0,
+          "totalTokens": 2598,
+          "reportedCostUsd": 0.00201,
+          "estimatedCostUsd": 0.00201,
+          "latencyMs": 10600,
+          "errorStatus": null,
+          "errors": [],
+          "output": {
+            "stages": [
+              {
+                "stage": "now",
+                "title": "Assess Subject Gap and Explore Bridging Options",
+                "status": "not_started",
+                "date_type": "planning_suggestion",
+                "mandatory": true,
+                "unverified": true,
+                "description": "Identify options to acquire the missing Mathematics qualification or equivalent to meet engineering eligibility requirements.",
+                "source_record_ids": [],
+                "verified_deadline": null,
+                "suggested_target_date": null
+              },
+              {
+                "stage": "next_6_months",
+                "title": "Research Engineering Programmes and Eligibility Criteria",
+                "status": "not_started",
+                "date_type": "planning_suggestion",
+                "mandatory": true,
+                "unverified": true,
+                "description": "Gather verified information on engineering programmes that might accept students without Mathematics or offer foundation courses.",
+                "source_record_ids": [],
+                "verified_deadline": null,
+                "suggested_target_date": null
+              },
+              {
+                "stage": "before_applications",
+                "title": "Prepare and Complete Required Eligibility Exams or Courses",
+                "status": "not_started",
+                "date_type": "planning_suggestion",
+                "mandatory": true,
+                "unverified": true,
+                "description": "Complete any bridging courses or exams needed to fulfill Mathematics requirements before applying to engineering programmes.",
+                "source_record_ids": [],
+                "verified_deadline": null,
+                "suggested_target_date": null
+              }
+            ],
+            "summary": "The student is interested in Engineering but lacks the required Mathematics subject, which is a significant eligibility barrier. Their strengths in Biology, Chemistry, and Experimentation align with the career interest but the missing Mathematics subject limits direct eligibility for engineering programmes.",
+            "career_id": "career-engineering-subject-gap",
+            "exam_steps": [],
+            "why_it_fits": [
+              {
+                "factor": "Biology",
+                "student_evidence": "Student currently studies Biology and has affinity for it."
+              },
+              {
+                "factor": "Chemistry",
+                "student_evidence": "Student currently studies Chemistry and has affinity for it."
+              },
+              {
+                "factor": "Experimentation",
+                "student_evidence": "Student has skills in Experimentation."
+              }
+            ],
+            "next_actions": [
+              {
+                "action": "Investigate and enroll in Mathematics bridging or foundation courses.",
+                "reason": "Missing Mathematics subject is a hard constraint blocking eligibility for engineering programmes.",
+                "priority": "high",
+                "source_record_ids": []
+              },
+              {
+                "action": "Consult with career counsellors or institutions about alternative eligibility pathways for engineering.",
+                "reason": "No verified programme or course options currently accommodate the subject gap; expert advice is needed.",
+                "priority": "high",
+                "source_record_ids": []
+              },
+              {
+                "action": "Research engineering programmes that may accept students with Biology and Chemistry but without Mathematics, if any.",
+                "reason": "To identify any possible exceptions or alternative routes.",
+                "priority": "medium",
+                "source_record_ids": []
+              }
+            ],
+            "backup_routes": [],
+            "roadmap_title": "Roadmap for Engineering with a Subject Gap",
+            "course_options": [],
+            "college_programmes": [],
+            "eligibility_summary": {
+              "status": "insufficient_data",
+              "explanation": "No verified programme-level eligibility records or verified relationships exist to confirm eligibility or alternative routes given the missing Mathematics subject.",
+              "source_record_ids": [],
+              "missing_requirements": [
+                "Verified programme-level eligibility records"
+              ]
+            },
+            "important_tradeoffs": [
+              "Missing required Mathematics subject restricts eligibility for engineering programmes.",
+              "No verified programmes or courses currently accommodate the subject gap.",
+              "Student must consider alternative routes or bridging courses to meet eligibility requirements."
+            ],
+            "decisive_constraints": [
+              {
+                "status": "conflicts_with_available_routes",
+                "constraint_id": "missing-mathematics-subject",
+                "constraint_type": "subject_eligibility",
+                "effect_on_roadmap": "Blocks eligibility for engineering programmes; no verified routes accommodate this constraint.",
+                "source_record_ids": [
+                  "career:career-engineering-subject-gap"
+                ],
+                "student_preference": "Missing required Mathematics subject",
+                "affected_section_ids": [
+                  "summary",
+                  "why_it_fits",
+                  "important_tradeoffs",
+                  "next_actions"
+                ]
+              }
+            ],
+            "missing_or_unverified": [
+              {
+                "field": "Programme-level eligibility",
+                "message": "No verified eligibility records exist for programmes related to engineering with the student's subject profile."
+              },
+              {
+                "field": "Verified relationships",
+                "message": "No verified relationships between the student's profile and courses or programmes are available."
+              }
+            ],
+            "questions_for_counsellor": [
+              "Are there any engineering programmes that accept students without Mathematics but with Biology and Chemistry?",
+              "What bridging courses or exams can I take to fulfill the Mathematics requirement for engineering?",
+              "Are there alternative career paths related to engineering that align with my current subjects and skills?"
+            ]
+          },
+          "materiallyDistinct": true
+        },
+        {
+          "id": "changing-interests",
+          "status": "complete",
+          "nativeSchemaValid": true,
+          "repairedSchemaValid": true,
+          "factualValid": true,
+          "safety": {
+            "outputFingerprint": "e22cca675d9452dd35837fd84c821957ff30676fffc52994ad87c91931055fdd",
+            "missingDataHandled": true,
+            "nativeFactualValid": true,
+            "inventedEntityCount": 0,
+            "unsupportedRecordIds": [],
+            "ignoredHardConstraints": [],
+            "eligibilityContradiction": false,
+            "unverifiedAdmissionsFact": false
+          },
+          "promptTokens": 1821,
+          "completionTokens": 805,
+          "reasoningTokens": 0,
+          "totalTokens": 2626,
+          "reportedCostUsd": 0.0015172,
+          "estimatedCostUsd": 0.0020164,
+          "latencyMs": 11789,
+          "errorStatus": null,
+          "errors": [],
+          "output": {
+            "stages": [
+              {
+                "stage": "now",
+                "title": "Reflect on Interests and Skills",
+                "status": "not_started",
+                "date_type": "planning_suggestion",
+                "mandatory": true,
+                "unverified": true,
+                "description": "Continue exploring and reflecting on your diverse interests and skills to clarify your interdisciplinary goals.",
+                "source_record_ids": [],
+                "verified_deadline": null,
+                "suggested_target_date": null
+              },
+              {
+                "stage": "next_6_months",
+                "title": "Research Interdisciplinary Programmes",
+                "status": "not_started",
+                "date_type": "planning_suggestion",
+                "mandatory": true,
+                "unverified": true,
+                "description": "Investigate colleges and programmes that support interdisciplinary studies combining Literature, Mathematics, Fine Arts, and Biology.",
+                "source_record_ids": [],
+                "verified_deadline": null,
+                "suggested_target_date": null
+              },
+              {
+                "stage": "before_applications",
+                "title": "Prepare for Entrance Exams and Applications",
+                "status": "not_started",
+                "date_type": "planning_suggestion",
+                "mandatory": true,
+                "unverified": true,
+                "description": "Identify and prepare for entrance exams or application requirements for interdisciplinary programmes once options are identified.",
+                "source_record_ids": [],
+                "verified_deadline": null,
+                "suggested_target_date": null
+              }
+            ],
+            "summary": "You have a unique combination of interests spanning Literature, Mathematics, Fine Arts, and Biology, complemented by skills in Writing, Data Interpretation, and Visual Design. This interdisciplinary exploration career fits your diverse academic profile but currently lacks verified programme-level eligibility and pathway data to recommend specific courses or programmes.",
+            "career_id": "career-interdisciplinary",
+            "exam_steps": [],
+            "why_it_fits": [
+              {
+                "factor": "Mixed academic interests",
+                "student_evidence": "Your subject affinities include Literature, Mathematics, Fine Arts, and Biology, reflecting broad interdisciplinary interests."
+              },
+              {
+                "factor": "Relevant skills",
+                "student_evidence": "You possess skills in Writing, Data Interpretation, and Visual Design, which support interdisciplinary study and exploration."
+              }
+            ],
+            "next_actions": [
+              {
+                "action": "Gather verified information on interdisciplinary programmes and their eligibility criteria.",
+                "reason": "No verified programme or eligibility data is currently available to guide your pathway.",
+                "priority": "high",
+                "source_record_ids": []
+              },
+              {
+                "action": "Consult with academic counsellors to explore flexible interdisciplinary study options.",
+                "reason": "Your mixed interests require tailored advice to navigate available routes.",
+                "priority": "medium",
+                "source_record_ids": []
+              },
+              {
+                "action": "Continue developing skills in Writing, Data Interpretation, and Visual Design to strengthen your interdisciplinary profile.",
+                "reason": "These skills support success across multiple domains.",
+                "priority": "medium",
+                "source_record_ids": []
+              }
+            ],
+            "backup_routes": [],
+            "roadmap_title": "Roadmap for Interdisciplinary Exploration with Mixed Interests",
+            "course_options": [],
+            "college_programmes": [],
+            "eligibility_summary": {
+              "status": "insufficient_data",
+              "explanation": "No verified programme-level eligibility or admission cycle records are available to determine eligibility for specific courses or programmes.",
+              "source_record_ids": [],
+              "missing_requirements": [
+                "Verified programme-level eligibility records"
+              ]
+            },
+            "important_tradeoffs": [
+              "Your broad interests across multiple domains may limit straightforward eligibility for specialized programmes.",
+              "Lack of verified programme and admission data means you must explore options broadly and remain flexible.",
+              "Interests changing across domains is a hard constraint that complicates selecting a focused academic path."
+            ],
+            "decisive_constraints": [
+              {
+                "status": "insufficient_verified_data",
+                "constraint_id": "constraint-1",
+                "constraint_type": "other",
+                "effect_on_roadmap": "Requires flexible and broad exploration rather than fixed specialised routes; complicates eligibility determination.",
+                "source_record_ids": [
+                  "career:career-interdisciplinary"
+                ],
+                "student_preference": "Interests have changed across domains",
+                "affected_section_ids": [
+                  "summary",
+                  "why_it_fits",
+                  "important_tradeoffs",
+                  "next_actions"
+                ]
+              }
+            ],
+            "missing_or_unverified": [
+              {
+                "field": "programme-level eligibility",
+                "message": "No verified eligibility records for programmes matching your interdisciplinary interests."
+              },
+              {
+                "field": "admission cycles",
+                "message": "No verified admission cycle data available for relevant programmes."
+              }
+            ],
+            "questions_for_counsellor": [
+              "What interdisciplinary programmes are available that combine Literature, Mathematics, Fine Arts, and Biology?",
+              "How can I best prepare for entrance requirements given my broad interests?",
+              "Are there flexible degree routes that accommodate changing interests across domains?"
+            ]
+          },
+          "materiallyDistinct": true
+        },
+        {
+          "id": "diploma-employability",
+          "status": "complete",
+          "nativeSchemaValid": true,
+          "repairedSchemaValid": true,
+          "factualValid": true,
+          "safety": {
+            "outputFingerprint": "97c789e856398982ba1cd277dcef9f0619612dcaf838dd0762bf2ffca9f53878",
+            "missingDataHandled": true,
+            "nativeFactualValid": true,
+            "inventedEntityCount": 0,
+            "unsupportedRecordIds": [],
+            "ignoredHardConstraints": [],
+            "eligibilityContradiction": false,
+            "unverifiedAdmissionsFact": false
+          },
+          "promptTokens": 1825,
+          "completionTokens": 777,
+          "reasoningTokens": 0,
+          "totalTokens": 2602,
+          "reportedCostUsd": 0.001474,
+          "estimatedCostUsd": 0.0019731999999999996,
+          "latencyMs": 15256,
+          "errorStatus": null,
+          "errors": [],
+          "output": {
+            "stages": [
+              {
+                "stage": "now",
+                "title": "Explore Diploma Programmes in Technical Fields",
+                "status": "not_started",
+                "date_type": "planning_suggestion",
+                "mandatory": true,
+                "unverified": true,
+                "description": "Research diploma courses that align with applied technical operations and vocational skills.",
+                "source_record_ids": [],
+                "verified_deadline": null,
+                "suggested_target_date": null
+              },
+              {
+                "stage": "next_6_months",
+                "title": "Prepare for Relevant Entrance Exams or Assessments",
+                "status": "not_started",
+                "date_type": "planning_suggestion",
+                "mandatory": true,
+                "unverified": true,
+                "description": "Identify and prepare for any entrance exams or assessments required for diploma admissions, considering openness to exams.",
+                "source_record_ids": [],
+                "verified_deadline": null,
+                "suggested_target_date": null
+              },
+              {
+                "stage": "before_applications",
+                "title": "Gather Application Documents and Verify Eligibility",
+                "status": "not_started",
+                "date_type": "planning_suggestion",
+                "mandatory": true,
+                "unverified": true,
+                "description": "Collect necessary documents and confirm eligibility criteria once programme information is available.",
+                "source_record_ids": [],
+                "verified_deadline": null,
+                "suggested_target_date": null
+              }
+            ],
+            "summary": "The student aims for a career in Applied Technical Operations, leveraging strengths in Mathematics and Vocational Subjects, along with skills in fixing systems and building physical things. The preference is for diploma-level education with a duration of 1–3 years to enable early employability.",
+            "career_id": "career-technical",
+            "exam_steps": [],
+            "why_it_fits": [
+              {
+                "factor": "Subject Affinities",
+                "student_evidence": "Strong affinity for Mathematics and Vocational Subjects aligns with technical operations requirements."
+              },
+              {
+                "factor": "Skills",
+                "student_evidence": "Skills in fixing systems and building physical things match practical demands of applied technical roles."
+              },
+              {
+                "factor": "Course Duration Preference",
+                "student_evidence": "Prefers 1–3 year diploma courses supporting early entry into the workforce."
+              }
+            ],
+            "next_actions": [
+              {
+                "action": "Seek updated information on diploma programmes in applied technical operations from trusted sources.",
+                "reason": "No verified programme or eligibility data currently available to plan admissions.",
+                "priority": "high",
+                "source_record_ids": [
+                  "career:career-technical"
+                ]
+              }
+            ],
+            "backup_routes": [],
+            "roadmap_title": "Roadmap for Applied Technical Operations with Diploma and Early Employability Focus",
+            "course_options": [],
+            "college_programmes": [],
+            "eligibility_summary": {
+              "status": "insufficient_data",
+              "explanation": "No verified programme-level eligibility or admission cycle records are available to confirm eligibility for diploma courses in applied technical operations.",
+              "source_record_ids": [],
+              "missing_requirements": [
+                "Verified programme-level eligibility records"
+              ]
+            },
+            "important_tradeoffs": [
+              "Limited verified programme and course data restricts precise pathway planning.",
+              "Preference for diploma and early employability may limit access to some degree-level programmes.",
+              "Absence of verified admission cycles and scholarship information may affect timing and affordability planning."
+            ],
+            "decisive_constraints": [
+              {
+                "status": "conflicts_with_available_routes",
+                "constraint_id": "constraint-1",
+                "constraint_type": "route_preference",
+                "effect_on_roadmap": "Limits options to diploma courses with short duration and early job prospects; no verified routes currently accommodate this preference due to missing data.",
+                "source_record_ids": [
+                  "career:career-technical"
+                ],
+                "student_preference": "Prefers a diploma and early employability",
+                "affected_section_ids": [
+                  "summary",
+                  "why_it_fits",
+                  "important_tradeoffs",
+                  "next_actions"
+                ]
+              }
+            ],
+            "missing_or_unverified": [
+              {
+                "field": "Programme Eligibility",
+                "message": "No verified eligibility records for diploma programmes related to applied technical operations."
+              },
+              {
+                "field": "Admission Cycles",
+                "message": "No verified admission cycle information for relevant diploma programmes."
+              },
+              {
+                "field": "Course and Programme Details",
+                "message": "No verified course or programme records linked to the career."
+              }
+            ],
+            "questions_for_counsellor": [
+              "Which diploma programmes align best with applied technical operations and the student's skills?",
+              "What are the admission requirements and timelines for these diploma programmes?",
+              "Are there scholarships or financial aid options for diploma courses in this field?"
+            ]
+          },
+          "materiallyDistinct": true
+        },
+        {
+          "id": "insufficient-college-data",
+          "status": "complete",
+          "nativeSchemaValid": true,
+          "repairedSchemaValid": true,
+          "factualValid": true,
+          "safety": {
+            "outputFingerprint": "c2fe63025150f5f7752f02955e4ed814a3159726721ac61bcacf034256fc17fb",
+            "missingDataHandled": true,
+            "nativeFactualValid": true,
+            "inventedEntityCount": 0,
+            "unsupportedRecordIds": [],
+            "ignoredHardConstraints": [],
+            "eligibilityContradiction": false,
+            "unverifiedAdmissionsFact": false
+          },
+          "promptTokens": 1782,
+          "completionTokens": 698,
+          "reasoningTokens": 0,
+          "totalTokens": 2480,
+          "reportedCostUsd": 0.0018296,
+          "estimatedCostUsd": 0.0018296,
+          "latencyMs": 9546,
+          "errorStatus": null,
+          "errors": [],
+          "output": {
+            "stages": [
+              {
+                "stage": "now",
+                "title": "Gather missing profile information",
+                "status": "not_started",
+                "date_type": "planning_suggestion",
+                "mandatory": true,
+                "unverified": true,
+                "description": "Collect and verify your location, budget, academic marks, and relocation preferences to enable targeted career planning.",
+                "source_record_ids": [],
+                "verified_deadline": null,
+                "suggested_target_date": null
+              },
+              {
+                "stage": "next_6_months",
+                "title": "Research Psychology programmes",
+                "status": "not_started",
+                "date_type": "planning_suggestion",
+                "mandatory": true,
+                "unverified": true,
+                "description": "Once profile data is complete, research available Psychology programmes and their eligibility criteria.",
+                "source_record_ids": [],
+                "verified_deadline": null,
+                "suggested_target_date": null
+              },
+              {
+                "stage": "before_applications",
+                "title": "Prepare for applications",
+                "status": "not_started",
+                "date_type": "planning_suggestion",
+                "mandatory": true,
+                "unverified": true,
+                "description": "Prepare necessary documents and meet eligibility requirements for Psychology programmes.",
+                "source_record_ids": [],
+                "verified_deadline": null,
+                "suggested_target_date": null
+              }
+            ],
+            "summary": "You have an interest in Psychology and possess listening skills, which align well with exploring Psychology as a career. However, due to missing critical information such as location, budget, academic performance, and verified programme eligibility, it is currently not possible to identify specific courses or programmes for you. Gathering this missing data will be essential to progress your career planning effectively.",
+            "career_id": "career-insufficient",
+            "exam_steps": [],
+            "why_it_fits": [
+              {
+                "factor": "Psychology",
+                "student_evidence": "Current subject and affinity in Psychology"
+              },
+              {
+                "factor": "Listening",
+                "student_evidence": "Listed skill of Listening"
+              }
+            ],
+            "next_actions": [
+              {
+                "action": "Provide missing profile details such as location, budget, academic marks, and relocation preferences",
+                "reason": "Essential to identify eligible programmes and suitable institutions",
+                "priority": "high",
+                "source_record_ids": []
+              }
+            ],
+            "backup_routes": [],
+            "roadmap_title": "Psychology exploration roadmap with insufficient data",
+            "course_options": [],
+            "college_programmes": [],
+            "eligibility_summary": {
+              "status": "insufficient_data",
+              "explanation": "No verified programme-level eligibility records or admission cycles are available to determine eligibility.",
+              "source_record_ids": [],
+              "missing_requirements": [
+                "Verified programme-level eligibility records"
+              ]
+            },
+            "important_tradeoffs": [
+              "Lack of location and budget information limits ability to recommend suitable institutions or programmes.",
+              "Absence of academic band and marks prevents assessment of eligibility for specific courses.",
+              "No verified programme or admission cycle data restricts concrete planning steps."
+            ],
+            "decisive_constraints": [
+              {
+                "status": "conflicts_with_available_routes",
+                "constraint_id": "dc1",
+                "constraint_type": "location",
+                "effect_on_roadmap": "Prevents identification of suitable programmes and institutions based on location.",
+                "source_record_ids": [],
+                "student_preference": "No location, budget, marks, or relocation information",
+                "affected_section_ids": [
+                  "summary",
+                  "why_it_fits",
+                  "important_tradeoffs",
+                  "next_actions"
+                ]
+              }
+            ],
+            "missing_or_unverified": [
+              {
+                "field": "location",
+                "message": "Location information is missing and needed for programme recommendations."
+              },
+              {
+                "field": "budget",
+                "message": "Budget information is missing and needed for financial planning."
+              },
+              {
+                "field": "academic_band",
+                "message": "Academic performance data is missing and needed for eligibility assessment."
+              },
+              {
+                "field": "relocation",
+                "message": "Relocation preferences are missing and needed for location-based planning."
+              }
+            ],
+            "questions_for_counsellor": [
+              "What Psychology programmes are available that match my interests once I provide full profile data?",
+              "How can I improve my eligibility for Psychology courses given my current academic standing?"
+            ]
+          },
+          "materiallyDistinct": true
+        }
+      ],
+      "thresholds": {
+        "safeRepairSchemaValidity": true,
+        "grounding": false,
+        "constraints": true,
+        "tokenLimits": true,
+        "verifiedAdmissionsOnly": false,
+        "missingData": true,
+        "distinctness": true
+      },
+      "approved": false,
+      "metrics": {
+        "nativeSchemaPassRate": 1,
+        "safeRepairSchemaPassRate": 1,
+        "groundingPassRate": 0.9,
+        "constraintPassRate": 1,
+        "missingDataPassRate": 1,
+        "distinctProfiles": 10,
+        "averageInputTokens": 1786.7,
+        "averageOutputTokens": 783.4,
+        "averageTotalTokens": 2570.1,
+        "totalTokens": 25701,
+        "averageLatencyMs": 12532.5,
+        "p95LatencyMs": 17260,
+        "totalCostUsd": 0.0181836
+      }
+    }
+  ],
+  "approval": {
+    "primary": null,
+    "fallback": null
+  }
+}
