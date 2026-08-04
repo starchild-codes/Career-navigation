@@ -99,9 +99,9 @@ export async function rankAllowedModels(pool: Pool, config: AiConfig): Promise<R
   for (const model of config.allowedModels) {
     await pool.query(
       `insert into ai_model_allowlist(model_id,enabled,review_status,notes)
-       select $1,true,'approved','Configured server-side'
+       select $1,false,'pending_review','Configured candidate; evaluation required'
        where exists(select 1 from ai_model_catalogue where model_id=$1)
-       on conflict(model_id) do update set enabled=true`,
+       on conflict(model_id) do nothing`,
       [model],
     )
   }
@@ -110,8 +110,10 @@ export async function rankAllowedModels(pool: Pool, config: AiConfig): Promise<R
     `select c.model_id,c.estimated_roadmap_cost,c.context_length,c.supported_parameters,
             c.architecture,c.raw_metadata,coalesce(h.healthy,true) healthy
      from ai_model_catalogue c
+     join ai_model_allowlist a on a.model_id=c.model_id
      left join ai_model_health h on h.model_id=c.model_id
      where c.model_id=any($1::text[]) and c.available
+       and a.enabled and a.review_status='approved'
      order by c.estimated_roadmap_cost asc nulls last`,
     [config.allowedModels],
   )
@@ -147,14 +149,7 @@ export async function rankAllowedModels(pool: Pool, config: AiConfig): Promise<R
         (config.maxCostUsd === null || model.estimatedCost <= config.maxCostUsd),
     )
 
-  if (ranked.length) return ranked
-
-  // Catalogue outages do not permit arbitrary routing: only the reviewed configured order is used.
-  return config.allowedModels.map((id) => ({
-    id,
-    estimatedCost: Number.NaN,
-    supportsReasoning: false,
-  }))
+  return ranked
 }
 
 export async function recordModelHealth(

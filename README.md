@@ -11,9 +11,18 @@ Manyfolds can organise the existing deterministic recommendation and verified da
 - Configure only models that have passed the roadmap evaluation harness.
 - Run `npm run ai:evaluate` for a zero-cost dry run.
 - Run `npm run ai:evaluate:run` only after explicitly reviewing the configured models and expected cost.
+- Run `npm run ai:evaluate:persist` to save reviewed results; only models passing every
+  mandatory threshold are enabled.
 - Apply `supabase/migrations/20260804_ai_roadmap_architecture.sql` before using generation.
 
 The generator enforces 2,800 estimated input tokens, 1,700 output tokens, and a 5,000-token absolute session ceiling. Live retrieval is disabled by default. Missing or stale current data creates a verification task rather than becoming an unsourced claim.
+
+The **Data Verification** workspace is restricted to organisation owners and
+admins. It manages official-source review queues, pending programme imports,
+freshness/conflict states, reviewer notes, and source history. Import templates
+are in `data/templates`; the pilot scope and capability boundary are documented
+in `docs/PROGRAMME_VERIFICATION_PILOT.md` and
+`docs/AI_ROADMAP_CAPABILITY_MATRIX.md`.
 
 ## Run locally
 

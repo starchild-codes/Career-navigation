@@ -1,0 +1,52 @@
+[
+  {
+    "id": "pcm-eligible-engineering",
+    "overrides": {"requiredSubjects":["Physics","Chemistry","Mathematics"],"studentSubjects":["Physics","Chemistry","Mathematics"],"requiredExamIds":["exam-jee-main"]},
+    "expected": {"includeInEvidence":true,"eligibilityStatus":"eligible"}
+  },
+  {
+    "id": "missing-compulsory-subject",
+    "overrides": {"requiredSubjects":["Physics","Mathematics"],"studentSubjects":["Physics","Biology"]},
+    "expected": {"includeInEvidence":true,"eligibilityStatus":"currently_ineligible","warningIncludes":"Mathematics"}
+  },
+  {
+    "id": "psychology-course-routes",
+    "overrides": {"requiredSubjects":["English"],"studentSubjects":["English","Psychology"],"requiredExamIds":[]},
+    "expected": {"includeInEvidence":true,"eligibilityStatus":"eligible"}
+  },
+  {
+    "id": "low-budget-local",
+    "overrides": {"feeStatus":"verified"},
+    "expected": {"includeInEvidence":true,"eligibilityStatus":"eligible"}
+  },
+  {
+    "id": "unwilling-required-exam",
+    "overrides": {"requiredExamIds":["exam-required"],"examWillingness":"Unwilling to take competitive examinations"},
+    "expected": {"includeInEvidence":true,"eligibilityStatus":"currently_ineligible","warningIncludes":"unwilling"}
+  },
+  {
+    "id": "interdisciplinary",
+    "overrides": {"requiredSubjects":["Mathematics"],"studentSubjects":["Mathematics","Psychology","Computer Science"]},
+    "expected": {"includeInEvidence":true,"eligibilityStatus":"eligible"}
+  },
+  {
+    "id": "stale-admission-cycle",
+    "overrides": {"admissionCycleStatus":"stale"},
+    "expected": {"includeInEvidence":false,"eligibilityStatus":"insufficient_data","warningIncludes":"stale"}
+  },
+  {
+    "id": "missing-fee-data",
+    "overrides": {"feeStatus":"pending_review"},
+    "expected": {"includeInEvidence":true,"eligibilityStatus":"eligible","warningIncludes":"fee"}
+  },
+  {
+    "id": "conflicting-eligibility",
+    "overrides": {"conflictingSource":true},
+    "expected": {"includeInEvidence":false,"eligibilityStatus":"insufficient_data","warningIncludes":"conflict"}
+  },
+  {
+    "id": "complete-career-to-admission",
+    "overrides": {},
+    "expected": {"includeInEvidence":true,"eligibilityStatus":"eligible","warnings":0}
+  }
+]

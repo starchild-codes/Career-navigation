@@ -5,10 +5,12 @@ import type { GenerationUsage, RoadmapEvidencePackage } from './types.ts'
 
 export class OpenRouterError extends Error {
   readonly retryable: boolean
-  constructor(message: string, retryable = false) {
+  readonly statusCode: number | null
+  constructor(message: string, retryable = false, statusCode: number | null = null) {
     super(message)
     this.name = 'OpenRouterError'
     this.retryable = retryable
+    this.statusCode = statusCode
   }
 }
 
@@ -94,6 +96,7 @@ export async function callOpenRouter(
         ? 'AI roadmap generation is temporarily unavailable because the provider account needs attention.'
         : 'We could not generate the roadmap right now. Your saved profile and recommendations are unchanged.',
       retryable,
+      response.status,
     )
   }
 

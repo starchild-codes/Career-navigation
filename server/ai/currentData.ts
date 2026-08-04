@@ -3,6 +3,15 @@ import type { AuthContext, RoadmapEvidencePackage } from './types.ts'
 import type { AiConfig } from './config.ts'
 
 export type CurrentDataNeed = {
+  taskType:
+    | 'missing_programme_relationship'
+    | 'missing_eligibility'
+    | 'missing_exam'
+    | 'missing_admission_cycle'
+    | 'missing_fee'
+    | 'missing_scholarship'
+    | 'stale_record'
+    | 'conflicting_source'
   entityType: string
   entityId: string | null
   field: string
@@ -51,6 +60,7 @@ export function deriveCurrentDataNeeds(evidence: RoadmapEvidencePackage): Curren
   const needs: CurrentDataNeed[] = []
   if (!evidence.verified_programmes.length) {
     needs.push({
+      taskType: 'missing_programme_relationship',
       entityType: 'programme',
       entityId: null,
       field: 'verified programme offering and eligibility',
@@ -60,6 +70,7 @@ export function deriveCurrentDataNeeds(evidence: RoadmapEvidencePackage): Curren
   }
   if (!evidence.verified_admission_cycles.length) {
     needs.push({
+      taskType: 'missing_admission_cycle',
       entityType: 'admission_cycle',
       entityId: null,
       field: 'current admission cycle',
@@ -89,11 +100,13 @@ export async function queueVerificationNeeds(
     if (!exists.rowCount) {
       await pool.query(
         `insert into source_verification_tasks
-         (organisation_id,requested_by,entity_type,entity_id,missing_field,official_domain,narrow_query,status,live_lookup_used)
-         values($1,$2,$3,$4,$5,$6,$7,'pending_review',false)`,
+         (organisation_id,requested_by,task_type,entity_type,entity_id,missing_field,
+          official_domain,narrow_query,status,live_lookup_used)
+         values($1,$2,$3,$4,$5,$6,$7,$8,'pending_review',false)`,
         [
           auth.organisationId,
           auth.userId,
+          need.taskType,
           need.entityType,
           need.entityId,
           need.field,

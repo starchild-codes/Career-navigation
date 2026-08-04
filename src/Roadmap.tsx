@@ -163,6 +163,16 @@ export default function Roadmap({ notify }: { notify: (message: string) => void 
     )
   }
 
+  const verifiedSources =
+    generation?.sources.filter((source) => source.verification_status === 'verified') || []
+  const verifiedSourceTypes = new Set(verifiedSources.map((source) => source.entity_type))
+  const missingRecordTypes = ['course', 'programme', 'exam', 'scholarship', 'admission cycle']
+    .filter((type) => !verifiedSourceTypes.has(type.replace(' ', '_')))
+  const lastVerifiedTimestamp = verifiedSources.reduce((latest, source) => {
+    const timestamp = source.last_verified_at ? new Date(source.last_verified_at).getTime() : 0
+    return Math.max(latest, Number.isFinite(timestamp) ? timestamp : 0)
+  }, 0)
+
   const generate = async (force = false) => {
     if (!career) return
     if (force && !window.confirm('Regenerate this draft using the current profile and verified data?')) return
@@ -306,6 +316,26 @@ export default function Roadmap({ notify }: { notify: (message: string) => void 
 
       {generationError && <div className="ai-roadmap-error" role="alert">{generationError}</div>}
 
+      <section className="roadmap-capability" aria-label="Roadmap data capability">
+        <article>
+          <p className="eyebrow">Available now</p>
+          <h3>Career guidance from verified records</h3>
+          <p>
+            Career-fit explanations, subject and skill connections, alternatives, trade-offs,
+            questions and immediate next actions can be organised from verified career evidence.
+          </p>
+        </article>
+        <article>
+          <p className="eyebrow">Verification boundary</p>
+          <h3>Programme admissions are not yet complete</h3>
+          <p>
+            Career guidance is available, but verified course, college and admission details are
+            incomplete. Ask an authorised counsellor to add and verify programme information
+            before using this roadmap for an application decision.
+          </p>
+        </article>
+      </section>
+
       <div className="roadmap-tabs">
         {matches.slice(0, 5).map((match, index) => (
           <button
@@ -350,6 +380,15 @@ export default function Roadmap({ notify }: { notify: (message: string) => void 
             </div>
           </div>
           <p className="ai-notice">{generation.notice}</p>
+          <div className="roadmap-verification-summary">
+            <span><b>{verifiedSources.length}</b> verified sources</span>
+            <span>
+              <b>{lastVerifiedTimestamp ? new Date(lastVerifiedTimestamp).toLocaleDateString() : 'Not recorded'}</b>
+              latest verification
+            </span>
+            <span><b>{missingRecordTypes.join(', ') || 'None'}</b> missing record types</span>
+            <span><b>{generation.status.replaceAll('_', ' ')}</b> counsellor review state</span>
+          </div>
           <h2>{generation.roadmap.roadmap_title}</h2>
           <p className="diagnostic-note">{generation.roadmap.summary}</p>
 
@@ -440,6 +479,9 @@ export default function Roadmap({ notify }: { notify: (message: string) => void 
 
           <div className="ai-sources">
             <h3>Sources and verification</h3>
+            {!generation.sources.length && (
+              <p className="review">No verified source records were supplied to this draft.</p>
+            )}
             {generation.sources.map((source) => (
               <article key={source.record_id}>
                 <div>
@@ -464,6 +506,10 @@ export default function Roadmap({ notify }: { notify: (message: string) => void 
           {(generation.missingData.length > 0 || generation.validationWarnings.length > 0) && (
             <div className="ai-missing-data">
               <h3>Missing or unverified data</h3>
+              <p>
+                This roadmap does not include programme-specific admission guidance because the
+                required institution-course records have not been verified.
+              </p>
               {[...generation.missingData, ...generation.validationWarnings].map((warning) => (
                 <p key={warning}>{warning}</p>
               ))}
