@@ -114,6 +114,7 @@ export type RoadmapEvidencePackage = {
     missing_requirements: string[]
   }
   missing_data: string[]
+  personalisation: { hard_constraints: string[]; high_priority_preferences: string[]; mixed_interest_combinations: string[]; eligibility_risks: string[]; financial_constraints: string[]; exam_constraints: string[]; route_preferences: string[]; required_personalisation_effects: Array<{ profile_factor: string; roadmap_sections_affected: string[] }> }
 }
 
 export type RoadmapOutput = {

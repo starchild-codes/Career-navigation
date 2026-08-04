@@ -1,0 +1,376 @@
+{
+  "harnessVersion": "manyfolds-roadmap-eval-v5",
+  "promptVersion": "manyfolds-roadmap-v3",
+  "schemaVersion": "manyfolds-roadmap-schema-v2",
+  "runId": "1072811b-dc40-445f-90c5-cf35943ff424",
+  "createdAt": "2026-08-04T13:12:31.243Z",
+  "preflight": {
+    "candidates": [
+      {
+        "id": "meta-llama/llama-3.3-70b-instruct",
+        "requestFee": 0,
+        "promptPrice": 1e-7,
+        "completionPrice": 3.2e-7,
+        "structuredOutputs": true,
+        "supportsReasoning": false,
+        "maximumCostPerCall": 0.000824
+      }
+    ],
+    "maximumCalls": 4,
+    "profileCount": 4,
+    "candidateCount": 1,
+    "maximumRetries": 0,
+    "liveDataEnabled": false,
+    "maxInputTokensPerCall": 2800,
+    "maxTotalTokensPerCall": 5000,
+    "maximumPossibleTokens": 20000,
+    "maxOutputTokensPerCall": 1700,
+    "maximumEstimatedCostUsd": 0.003296,
+    "evidencePackagesDistinct": true
+  },
+  "actualCalls": 4,
+  "actualTotalCostUsd": 0.00251831,
+  "models": [
+    {
+      "model": "meta-llama/llama-3.3-70b-instruct",
+      "profiles": [
+        {
+          "id": "class10-psych-biology",
+          "status": "failed",
+          "nativeSchemaValid": false,
+          "repairedSchemaValid": false,
+          "factualValid": false,
+          "safety": {},
+          "promptTokens": 0,
+          "completionTokens": 0,
+          "reasoningTokens": 0,
+          "totalTokens": 0,
+          "reportedCostUsd": null,
+          "estimatedCostUsd": 0,
+          "latencyMs": 23763,
+          "errorStatus": null,
+          "errors": [
+            "null value in column \"validation_events\" of relation \"ai_evaluation_calls\" violates not-null constraint"
+          ],
+          "output": null,
+          "materiallyDistinct": false
+        },
+        {
+          "id": "class12-pcm-engineering",
+          "status": "complete",
+          "nativeSchemaValid": true,
+          "repairedSchemaValid": true,
+          "factualValid": true,
+          "safety": {
+            "outputFingerprint": "aa80f8509efd7fe537cb8cd10f1e3103652bd96836c280064ada1976b1335141",
+            "missingDataHandled": true,
+            "nativeFactualValid": true,
+            "inventedEntityCount": 0,
+            "unsupportedRecordIds": [],
+            "ignoredHardConstraints": [],
+            "eligibilityContradiction": false,
+            "unverifiedAdmissionsFact": false
+          },
+          "promptTokens": 1621,
+          "completionTokens": 616,
+          "reasoningTokens": 0,
+          "totalTokens": 2237,
+          "reportedCostUsd": 0.00161064,
+          "estimatedCostUsd": 0.00035922,
+          "latencyMs": 7939,
+          "errorStatus": null,
+          "errors": [],
+          "output": {
+            "stages": [
+              {
+                "stage": "now",
+                "title": "Research Applied Engineering Programmes",
+                "status": "not_started",
+                "date_type": "planning_suggestion",
+                "mandatory": true,
+                "unverified": true,
+                "description": "Explore programmes that align with the student's interests and skills",
+                "source_record_ids": [
+                  "career:career-engineering"
+                ],
+                "verified_deadline": null,
+                "suggested_target_date": "2024-09-30"
+              }
+            ],
+            "summary": "This roadmap is designed for a Class 12 PCM student interested in Applied Engineering, leveraging their strengths in Physics, Chemistry, Mathematics, Analytical reasoning, and Building physical things.",
+            "career_id": "career-engineering",
+            "exam_steps": [],
+            "why_it_fits": [
+              {
+                "factor": "Physics",
+                "student_evidence": "Student has Physics as a current subject and affinity"
+              },
+              {
+                "factor": "Chemistry",
+                "student_evidence": "Student has Chemistry as a current subject and affinity"
+              },
+              {
+                "factor": "Mathematics",
+                "student_evidence": "Student has Mathematics as a current subject and affinity"
+              },
+              {
+                "factor": "Analytical reasoning",
+                "student_evidence": "Student has Analytical reasoning as a skill"
+              },
+              {
+                "factor": "Building physical things",
+                "student_evidence": "Student has Building physical things as a skill"
+              }
+            ],
+            "next_actions": [
+              {
+                "action": "Research Applied Engineering programmes",
+                "reason": "To find the best fit for the student's interests and skills",
+                "priority": "high",
+                "source_record_ids": [
+                  "career:career-engineering"
+                ]
+              }
+            ],
+            "backup_routes": [],
+            "roadmap_title": "Applied Engineering Roadmap for Class 12 PCM Student",
+            "course_options": [],
+            "college_programmes": [],
+            "eligibility_summary": {
+              "status": "insufficient_data",
+              "explanation": "Insufficient verified programme-level eligibility records",
+              "source_record_ids": [
+                "career:career-engineering"
+              ],
+              "missing_requirements": [
+                "Verified programme-level eligibility records"
+              ]
+            },
+            "important_tradeoffs": [
+              "Balancing theoretical knowledge with practical application",
+              "Considering the budget and location constraints for potential programmes"
+            ],
+            "missing_or_unverified": [
+              {
+                "field": "Verified programme-level eligibility records",
+                "message": "Insufficient data to determine eligibility"
+              }
+            ],
+            "questions_for_counsellor": [
+              "What are the key factors to consider when choosing an Applied Engineering programme?",
+              "How can the student leverage their skills in Analytical reasoning and Building physical things in their future career?"
+            ]
+          },
+          "materiallyDistinct": true
+        },
+        {
+          "id": "diploma-employability",
+          "status": "complete",
+          "nativeSchemaValid": true,
+          "repairedSchemaValid": true,
+          "factualValid": true,
+          "safety": {
+            "outputFingerprint": "98c09cf508e6aaa4d1c078ee64c30d41b48be74f332850340a23154787cf215e",
+            "missingDataHandled": true,
+            "nativeFactualValid": true,
+            "inventedEntityCount": 0,
+            "unsupportedRecordIds": [],
+            "ignoredHardConstraints": [],
+            "eligibilityContradiction": false,
+            "unverifiedAdmissionsFact": false
+          },
+          "promptTokens": 878,
+          "completionTokens": 495,
+          "reasoningTokens": 0,
+          "totalTokens": 1373,
+          "reportedCostUsd": 0.00059075,
+          "estimatedCostUsd": 0.0002462,
+          "latencyMs": 6805,
+          "errorStatus": null,
+          "errors": [],
+          "output": {
+            "stages": [],
+            "summary": "The student is interested in pursuing a diploma that leads to early employability, with a preference for subjects like Mathematics and Vocational Subjects. The career in Applied technical operations aligns with their skills in Fixing systems and Building physical things.",
+            "career_id": "career-technical",
+            "exam_steps": [],
+            "why_it_fits": [
+              {
+                "factor": "Mathematics",
+                "student_evidence": "current_subjects"
+              },
+              {
+                "factor": "Vocational Subjects",
+                "student_evidence": "current_subjects"
+              },
+              {
+                "factor": "Fixing systems",
+                "student_evidence": "skills"
+              },
+              {
+                "factor": "Building physical things",
+                "student_evidence": "skills"
+              }
+            ],
+            "next_actions": [
+              {
+                "action": "Research diploma programmes in Applied technical operations",
+                "reason": "Aligns with student preferences and skills",
+                "priority": "high",
+                "source_record_ids": []
+              },
+              {
+                "action": "Look for institutions offering diploma programmes with early employability",
+                "reason": "Meets student preference for early employability",
+                "priority": "high",
+                "source_record_ids": []
+              }
+            ],
+            "backup_routes": [],
+            "roadmap_title": "Diploma in Applied Technical Operations",
+            "course_options": [],
+            "college_programmes": [],
+            "eligibility_summary": {
+              "status": "insufficient_data",
+              "explanation": "Verified programme-level eligibility records are missing.",
+              "source_record_ids": [],
+              "missing_requirements": [
+                "Verified programme-level eligibility records"
+              ]
+            },
+            "important_tradeoffs": [
+              "The student needs to consider the unavailability of verified institution-programme, eligibility, admission-cycle, fee, and scholarship records."
+            ],
+            "missing_or_unverified": [
+              {
+                "field": "Verified institution-programme records",
+                "message": "Records are unavailable."
+              },
+              {
+                "field": "Eligibility records",
+                "message": "Records are unavailable."
+              },
+              {
+                "field": "Admission-cycle records",
+                "message": "Records are unavailable."
+              },
+              {
+                "field": "Fee records",
+                "message": "Records are unavailable."
+              },
+              {
+                "field": "Scholarship records",
+                "message": "Records are unavailable."
+              }
+            ],
+            "questions_for_counsellor": [
+              "What diploma programmes in Applied technical operations are available?",
+              "How can the student ensure early employability after completing the diploma?"
+            ]
+          },
+          "materiallyDistinct": true
+        },
+        {
+          "id": "insufficient-college-data",
+          "status": "complete",
+          "nativeSchemaValid": true,
+          "repairedSchemaValid": true,
+          "factualValid": true,
+          "safety": {
+            "outputFingerprint": "5d33be6a2af29590253293144aff85155afd2105782a366c9fd0ba3219e3ca63",
+            "missingDataHandled": true,
+            "nativeFactualValid": true,
+            "inventedEntityCount": 0,
+            "unsupportedRecordIds": [],
+            "ignoredHardConstraints": [],
+            "eligibilityContradiction": false,
+            "unverifiedAdmissionsFact": false
+          },
+          "promptTokens": 836,
+          "completionTokens": 266,
+          "reasoningTokens": 0,
+          "totalTokens": 1102,
+          "reportedCostUsd": 0.00031692,
+          "estimatedCostUsd": 0.00016872,
+          "latencyMs": 11292,
+          "errorStatus": null,
+          "errors": [],
+          "output": {
+            "stages": [],
+            "summary": "Insufficient data to create a roadmap. Missing location, budget, marks, or relocation information.",
+            "career_id": "career-insufficient",
+            "exam_steps": [],
+            "why_it_fits": [],
+            "next_actions": [],
+            "backup_routes": [],
+            "roadmap_title": "Psychology Exploration Roadmap",
+            "course_options": [],
+            "college_programmes": [],
+            "eligibility_summary": {
+              "status": "insufficient_data",
+              "explanation": "No verified programme-level eligibility records available.",
+              "source_record_ids": [],
+              "missing_requirements": [
+                "Verified programme-level eligibility records"
+              ]
+            },
+            "important_tradeoffs": [],
+            "missing_or_unverified": [
+              {
+                "field": "location",
+                "message": "No location information available"
+              },
+              {
+                "field": "budget",
+                "message": "No budget information available"
+              },
+              {
+                "field": "academic_band",
+                "message": "No academic band information available"
+              },
+              {
+                "field": "relocation",
+                "message": "No relocation information available"
+              }
+            ],
+            "questions_for_counsellor": [
+              "What are the student's location preferences?",
+              "What is the student's budget for education?",
+              "What are the student's academic marks and band?",
+              "Is the student willing to relocate?"
+            ]
+          },
+          "materiallyDistinct": true
+        }
+      ],
+      "thresholds": {
+        "safeRepairSchemaValidity": false,
+        "grounding": false,
+        "constraints": false,
+        "tokenLimits": false,
+        "verifiedAdmissionsOnly": false,
+        "missingData": false,
+        "distinctness": false
+      },
+      "approved": false,
+      "metrics": {
+        "nativeSchemaPassRate": 0.75,
+        "safeRepairSchemaPassRate": 0.75,
+        "groundingPassRate": 0.75,
+        "constraintPassRate": 1,
+        "missingDataPassRate": 0.75,
+        "distinctProfiles": 3,
+        "averageInputTokens": 833.75,
+        "averageOutputTokens": 344.25,
+        "averageTotalTokens": 1178,
+        "totalTokens": 4712,
+        "averageLatencyMs": 12449.75,
+        "p95LatencyMs": 23763,
+        "totalCostUsd": 0.00251831
+      }
+    }
+  ],
+  "approval": {
+    "primary": null,
+    "fallback": null
+  }
+}

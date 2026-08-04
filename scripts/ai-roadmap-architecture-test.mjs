@@ -65,6 +65,7 @@ const evidence = {
     missing_requirements: ['Verified programme eligibility'],
   },
   missing_data: ['Programme data is incomplete'],
+  personalisation: { hard_constraints: [], high_priority_preferences: [], mixed_interest_combinations: [], eligibility_risks: [], financial_constraints: [], exam_constraints: [], route_preferences: [], required_personalisation_effects: [] },
 }
 const valid = {
   roadmap_title: 'A sourced roadmap',

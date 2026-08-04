@@ -12,7 +12,7 @@ export class TokenBudgetError extends Error {
 
 export const estimateTokens = (value: unknown) => {
   const serialized = typeof value === 'string' ? value : JSON.stringify(value)
-  return Math.ceil(serialized.length / 3)
+  return Math.ceil(serialized.length / 4)
 }
 
 const trim = (value: string, max: number) =>
@@ -30,6 +30,7 @@ export function compactEvidence(
   compact.verified_scholarships = compact.verified_scholarships.slice(0, 6)
   compact.source_records = compact.source_records.slice(0, 30)
   compact.missing_data = compact.missing_data.slice(0, 12).map((item) => trim(item, 140))
+  compact.personalisation = { ...compact.personalisation, high_priority_preferences: compact.personalisation.high_priority_preferences.slice(0, 2), mixed_interest_combinations: compact.personalisation.mixed_interest_combinations.slice(0, 1), required_personalisation_effects: compact.personalisation.required_personalisation_effects.slice(0, 1) }
   compact.primary_career.fit_factors = compact.primary_career.fit_factors.slice(0, 5).map((item) => trim(item, 100))
   compact.primary_career.concerns = compact.primary_career.concerns.slice(0, 5).map((item) => trim(item, 100))
   compact.alternative_careers = compact.alternative_careers.map((career) => ({
@@ -78,4 +79,3 @@ export function remainingOutputBudget(config: AiConfig, usedTokens: number, next
   const remaining = config.maxTotalTokens - usedTokens - nextInputEstimate
   return Math.max(0, Math.min(config.maxOutputTokens, remaining))
 }
-

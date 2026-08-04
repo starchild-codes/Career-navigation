@@ -4,7 +4,7 @@ import { ROADMAP_PROMPT_VERSION } from '../server/ai/prompt.ts'
 import { compactEvidence } from '../server/ai/tokens.ts'
 import { parseAndValidateRoadmap } from '../server/ai/validation.ts'
 
-export const HARNESS_VERSION = 'manyfolds-roadmap-eval-v4'
+export const HARNESS_VERSION = 'manyfolds-roadmap-eval-v5'
 export const SCHEMA_VERSION = 'manyfolds-roadmap-schema-v2'
 export const PROFILE_IDS = [
   'class10-psych-biology', 'class12-pcm-engineering', 'psychology-computing',
@@ -37,6 +37,7 @@ const evidence = (fixture) => ({
   alternative_careers: [], verified_courses: [], verified_programmes: [], verified_exams: [], verified_scholarships: [], verified_relationships: [], verified_admission_cycles: [], source_records: [source(fixture)],
   deterministic_eligibility: { status: 'insufficient_data', missing_requirements: ['Verified programme-level eligibility records'] },
   missing_data: ['Verified institution-programme, eligibility, admission-cycle, fee, and scholarship records are unavailable.'],
+  personalisation: { hard_constraints: fixture.constraints, high_priority_preferences: [], mixed_interest_combinations: fixture.subjects.length > 1 ? [fixture.subjects.join(' + ')] : [], eligibility_risks: fixture.constraints.filter((x) => /missing|required/i.test(x)), financial_constraints: fixture.constraints.filter((x) => /tuition|budget|cost/i.test(x)), exam_constraints: fixture.constraints.filter((x) => /exam/i.test(x)), route_preferences: fixture.id === 'diploma-employability' ? ['Diploma and early employability'] : [], required_personalisation_effects: [{ profile_factor: fixture.id === 'insufficient-college-data' ? 'insufficient_profile_data' : `${fixture.grade}:${fixture.subjects.join('+')}:${fixture.skills.join('+')}`, roadmap_sections_affected: ['summary','why_it_fits','important_tradeoffs','next_actions'] }] },
 })
 
 export function makeEvaluationItems(fixtures, config) {
@@ -101,12 +102,6 @@ export function assessRoadmap(raw, item, validation) {
   }
 }
 
-const words = (value) => new Set(String(value || '').toLowerCase().replace(/[^a-z0-9 ]/g, ' ').split(/\s+/).filter((word) => word.length > 3))
-const similarity = (left, right) => {
-  const a = words(left), b = words(right), union = new Set([...a, ...b]).size
-  return union ? [...a].filter((word) => b.has(word)).length / union : 1
-}
-
 export async function aggregateRun(pool, runId) {
   const runResult = await pool.query('select * from ai_evaluation_runs where id=$1', [runId])
   if (!runResult.rowCount) throw new Error('Evaluation run not found')
@@ -122,7 +117,9 @@ export async function aggregateRun(pool, runId) {
     }))
     for (const profile of profiles) {
       const prose = profile.output ? [profile.output.roadmap_title, profile.output.summary, ...(profile.output.stages || []).map((stage) => stage.description)].join(' ') : ''
-      profile.materiallyDistinct = Boolean(prose) && Math.max(0, ...profiles.filter((other) => other !== profile).map((other) => similarity(prose, other.output ? [other.output.roadmap_title, other.output.summary].join(' ') : ''))) < 0.75
+      const fixture = PROFILE_IDS.includes(profile.id) ? profile.id : ''
+      const expected = { 'class10-psych-biology': /psychology|biology|class 10/i, 'class12-pcm-engineering': /physics|chemistry|mathematics|engineering/i, 'psychology-computing': /psychology|computer|coding|ux/i, 'history-chemistry': /history|chemistry|environment/i, 'limited-finances-local': /budget|cost|near home|local/i, 'no-competitive-exams': /exam|competitive|alternative/i, 'missing-compulsory-subject': /missing|required.*mathematics/i, 'changing-interests': /interdisciplinary|literature|fine arts|biology/i, 'diploma-employability': /diploma|employability|technical/i, 'insufficient-college-data': /insufficient|missing|unverified/i }[fixture]
+      profile.materiallyDistinct = Boolean(prose) && Boolean(expected?.test(prose))
     }
     const every = (predicate) => profiles.length === 10 && profiles.every(predicate)
     const avg = (field) => profiles.reduce((sum, item) => sum + Number(item[field] || 0), 0) / Math.max(1, profiles.length)

@@ -381,5 +381,6 @@ export async function buildEvidencePackage(
           : [],
     },
     missing_data: missingData,
+    personalisation: { hard_constraints: student.hard_constraints, high_priority_preferences: [], mixed_interest_combinations: student.subject_affinities.length > 1 ? [student.subject_affinities.slice(0, 3).join(' + ')] : [], eligibility_risks: student.hard_constraints.filter((item) => /missing|required/i.test(item)), financial_constraints: student.hard_constraints.filter((item) => /budget|cost|fee|tuition/i.test(item)), exam_constraints: student.hard_constraints.filter((item) => /exam/i.test(item)), route_preferences: student.degree_route_preferences.slice(0, 2), required_personalisation_effects: [{ profile_factor: 'student_profile', roadmap_sections_affected: ['summary', 'next_actions'] }] },
   }
 }
