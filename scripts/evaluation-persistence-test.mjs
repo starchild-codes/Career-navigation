@@ -12,6 +12,9 @@ try {
     for (const [index, profile] of ['one', 'two', 'three'].entries()) {
       await pool.query(`insert into ai_evaluation_calls(run_id,model_id,profile_id,sequence,evidence_hash,evidence_input_estimate,status,native_schema_valid,repaired_schema_valid,factual_valid,completed_at) values($1,'test-model',$2,$3,$4,1,'complete',true,true,true,now())`, [runId, profile, index + 1, `hash-${profile}`])
     }
+    await pool.query(`update ai_evaluation_calls set raw_output=$2,structured_output=$3::jsonb,validation_events=$4::jsonb,validation_errors=$5::jsonb where run_id=$1 and profile_id='one'`, [runId, '{"raw":true}', JSON.stringify({ parsed: true }), JSON.stringify([]), JSON.stringify(['simulated validator failure'])])
+    const audit = await pool.query(`select raw_output,structured_output,validation_events,validation_errors from ai_evaluation_calls where run_id=$1 and profile_id='one'`, [runId])
+    if (audit.rows[0].raw_output !== '{"raw":true}' || audit.rows[0].structured_output?.parsed !== true || audit.rows[0].validation_events.length !== 0 || audit.rows[0].validation_errors.length !== 1) throw new Error('Persistence fallback lost raw, parsed, empty-event, or validator-failure audit data')
     throw new Error('Simulated aggregation crash after persisted calls')
   } catch (error) {
     if (!(error instanceof Error) || !error.message.startsWith('Simulated aggregation crash')) throw error

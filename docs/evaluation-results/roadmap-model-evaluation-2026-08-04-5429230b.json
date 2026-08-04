@@ -1,0 +1,160 @@
+{
+  "harnessVersion": "manyfolds-roadmap-eval-v5",
+  "promptVersion": "manyfolds-roadmap-v3",
+  "schemaVersion": "manyfolds-roadmap-schema-v2",
+  "runId": "5429230b-5474-4af9-b876-1758444372d7",
+  "createdAt": "2026-08-04T13:18:07.452Z",
+  "preflight": {
+    "candidates": [
+      {
+        "id": "meta-llama/llama-3.3-70b-instruct",
+        "requestFee": 0,
+        "promptPrice": 1e-7,
+        "completionPrice": 3.2e-7,
+        "structuredOutputs": true,
+        "supportsReasoning": false,
+        "maximumCostPerCall": 0.000824
+      }
+    ],
+    "maximumCalls": 1,
+    "profileCount": 1,
+    "candidateCount": 1,
+    "maximumRetries": 0,
+    "liveDataEnabled": false,
+    "maxInputTokensPerCall": 2800,
+    "maxTotalTokensPerCall": 5000,
+    "maximumPossibleTokens": 5000,
+    "maxOutputTokensPerCall": 1700,
+    "maximumEstimatedCostUsd": 0.000824,
+    "evidencePackagesDistinct": true
+  },
+  "actualCalls": 1,
+  "actualTotalCostUsd": 0.00049,
+  "models": [
+    {
+      "model": "meta-llama/llama-3.3-70b-instruct",
+      "profiles": [
+        {
+          "id": "class10-psych-biology",
+          "status": "complete",
+          "nativeSchemaValid": true,
+          "repairedSchemaValid": true,
+          "factualValid": true,
+          "safety": {
+            "outputFingerprint": "fb499ccf2be9a2e21ab40ad1e1872af5b6a68d400213613263c90f59de090680",
+            "missingDataHandled": true,
+            "nativeFactualValid": true,
+            "inventedEntityCount": 0,
+            "unsupportedRecordIds": [],
+            "ignoredHardConstraints": [],
+            "eligibilityContradiction": false,
+            "unverifiedAdmissionsFact": false
+          },
+          "promptTokens": 814,
+          "completionTokens": 382,
+          "reasoningTokens": 0,
+          "totalTokens": 1196,
+          "reportedCostUsd": 0.00049,
+          "estimatedCostUsd": 0.00020364,
+          "latencyMs": 5717,
+          "errorStatus": null,
+          "errors": [],
+          "output": {
+            "stages": [],
+            "summary": "The primary career of interest is Psychology and behaviour, which aligns with the student's subjects (Psychology, Biology) and skills (Listening, Research).",
+            "career_id": "career-psychology",
+            "exam_steps": [],
+            "why_it_fits": [
+              {
+                "factor": "Psychology",
+                "student_evidence": "current_subjects"
+              },
+              {
+                "factor": "Biology",
+                "student_evidence": "current_subjects"
+              },
+              {
+                "factor": "Listening",
+                "student_evidence": "skills"
+              },
+              {
+                "factor": "Research",
+                "student_evidence": "skills"
+              }
+            ],
+            "next_actions": [],
+            "backup_routes": [],
+            "roadmap_title": "Class 10 Student Roadmap for Psychology and Biology",
+            "course_options": [],
+            "college_programmes": [],
+            "eligibility_summary": {
+              "status": "insufficient_data",
+              "explanation": "Verified programme-level eligibility records are required to determine eligibility.",
+              "source_record_ids": [],
+              "missing_requirements": [
+                "Verified programme-level eligibility records"
+              ]
+            },
+            "important_tradeoffs": [],
+            "missing_or_unverified": [
+              {
+                "field": "budget_band",
+                "message": "Budget band is not specified"
+              },
+              {
+                "field": "location_constraints",
+                "message": "Location constraints are not specified"
+              },
+              {
+                "field": "relocation_preference",
+                "message": "Relocation preference is not specified"
+              },
+              {
+                "field": "course_duration_preference",
+                "message": "Course duration preference is not specified"
+              },
+              {
+                "field": "degree_route_preferences",
+                "message": "Degree route preferences are not specified"
+              }
+            ],
+            "questions_for_counsellor": [
+              "What are the eligibility criteria for programmes related to Psychology and behaviour?",
+              "What institutions offer programmes that align with the student's interests and skills?"
+            ]
+          },
+          "materiallyDistinct": true
+        }
+      ],
+      "thresholds": {
+        "safeRepairSchemaValidity": false,
+        "grounding": false,
+        "constraints": false,
+        "tokenLimits": false,
+        "verifiedAdmissionsOnly": false,
+        "missingData": false,
+        "distinctness": false
+      },
+      "approved": false,
+      "metrics": {
+        "nativeSchemaPassRate": 1,
+        "safeRepairSchemaPassRate": 1,
+        "groundingPassRate": 1,
+        "constraintPassRate": 1,
+        "missingDataPassRate": 1,
+        "distinctProfiles": 1,
+        "averageInputTokens": 814,
+        "averageOutputTokens": 382,
+        "averageTotalTokens": 1196,
+        "totalTokens": 1196,
+        "averageLatencyMs": 5717,
+        "p95LatencyMs": 5717,
+        "totalCostUsd": 0.00049
+      }
+    }
+  ],
+  "approval": {
+    "primary": null,
+    "fallback": null
+  }
+}
