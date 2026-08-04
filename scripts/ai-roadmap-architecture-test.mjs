@@ -128,6 +128,13 @@ assert.equal(accepted.factualValid, true)
 const invalidSchema = parseAndValidateRoadmap({ summary: 'not a roadmap' }, evidence)
 assert.equal(invalidSchema.schemaValid, false)
 
+const targetPlanning = structuredClone(valid)
+targetPlanning.stages[0].description = 'Research target programmes, target courses, and the target application cycle.'
+assert.equal(parseAndValidateRoadmap(targetPlanning, evidence).factualValid, true, 'ordinary target planning language must pass')
+const competitiveClaim = structuredClone(valid)
+competitiveClaim.summary = 'This is a realistic option with a strong chance of admission.'
+assert.equal(parseAndValidateRoadmap(competitiveClaim, evidence).factualValid, false, 'unsupported competitiveness claims must fail')
+
 const planning = structuredClone(valid)
 planning.stages[0].suggested_target_date = 'Shortlist courses by September'
 planning.stages[0].date_type = 'planning_suggestion'

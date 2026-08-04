@@ -89,7 +89,7 @@ export function assessRoadmap(raw, item, validation) {
   const pattern = patterns[item.fixture.id]
   const ignoredHardConstraints = pattern && !pattern.test(text) ? item.evidence.student.hard_constraints : []
   const missingDataHandled = status === 'insufficient_data' && Array.isArray(output.missing_or_unverified) && output.missing_or_unverified.length > 0 && (!Array.isArray(output.college_programmes) || output.college_programmes.length === 0)
-  const unverifiedAdmissionsFact = /\b(iit|aiims|nlu|university of|college of)\b/.test(text) || /(?:₹|inr)\s?\d/.test(text) || /\b\d{1,2}[/-]\d{1,2}[/-]\d{2,4}\b/.test(text) || /\b(eligible for|accepts (?:jee|neet|cuet)|admission deadline is)\b/.test(text)
+  const unverifiedAdmissionsFact = /\b(iit|aiims|nlu|university of|college of)\b/.test(text) || /\b(?:annual tuition|fee|cost)\s+(?:is|of)\s*(?:₹|inr)\s?\d/.test(text) || /\b\d{1,2}[/-]\d{1,2}[/-]\d{2,4}\b/.test(text) || /\b(eligible for|accepts (?:jee|neet|cuet)|admission deadline is)\b/.test(text)
   return {
     unsupportedRecordIds: [...new Set(unsupportedIds.filter(Boolean))],
     inventedEntityCount: [...new Set(unsupportedIds.filter(Boolean))].length,

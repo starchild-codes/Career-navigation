@@ -257,7 +257,7 @@ export function parseAndValidateRoadmap(
   }
 
   const classificationText = JSON.stringify(roadmap)
-  if (/\b(aspirational|target|safer)\b/i.test(classificationText)) {
+  if (/\b(aspirational|safer|realistic|reach option|match (?:school|college|university)|attainable programme|competitive applicant|highly competitive|selective programme|strong (?:admission )?chance|good chance of admission|likely admission|unlikely admission|admission probability)\b/i.test(classificationText)) {
     errors.push('Roadmap added an unsupported competitiveness classification')
   }
 
