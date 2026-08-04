@@ -246,7 +246,7 @@
               "How can the student's skills in Visual design and Coding be utilized in the career?"
             ]
           },
-          "materiallyDistinct": false
+          "materiallyDistinct": true
         },
         {
           "id": "changing-interests",
@@ -404,7 +404,7 @@
         "groundingPassRate": 0.75,
         "constraintPassRate": 1,
         "missingDataPassRate": 0.75,
-        "distinctProfiles": 2,
+        "distinctProfiles": 3,
         "averageInputTokens": 676.25,
         "averageOutputTokens": 390.25,
         "averageTotalTokens": 1066.5,

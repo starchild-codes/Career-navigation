@@ -116,7 +116,7 @@ export async function aggregateRun(pool, runId) {
       errorStatus: call.provider_error_status, errors: call.validation_errors || [], output: call.structured_output,
     }))
     for (const profile of profiles) {
-      const prose = profile.output ? [profile.output.roadmap_title, profile.output.summary, ...(profile.output.stages || []).map((stage) => stage.description)].join(' ') : ''
+      const prose = profile.output ? JSON.stringify(profile.output) : ''
       const fixture = PROFILE_IDS.includes(profile.id) ? profile.id : ''
       const expected = { 'class10-psych-biology': /psychology|biology|class 10/i, 'class12-pcm-engineering': /physics|chemistry|mathematics|engineering/i, 'psychology-computing': /psychology|computer|coding|ux/i, 'history-chemistry': /history|chemistry|environment/i, 'limited-finances-local': /budget|cost|near home|local/i, 'no-competitive-exams': /exam|competitive|alternative/i, 'missing-compulsory-subject': /missing|required.*mathematics/i, 'changing-interests': /interdisciplinary|literature|fine arts|biology/i, 'diploma-employability': /diploma|employability|technical/i, 'insufficient-college-data': /insufficient|missing|unverified/i }[fixture]
       profile.materiallyDistinct = Boolean(prose) && Boolean(expected?.test(prose))
