@@ -208,6 +208,7 @@ export async function buildEvidencePackage(
   }
   const alternatives = []
   const sources: CompactSourceRecord[] = [primary.source]
+  const relationships: RoadmapEvidencePackage['verified_relationships'] = []
   for (const item of (request.alternativeCareers || []).slice(0, 3)) {
     const found = await findCareer(pool, item)
     if (found && found.career.career_id !== primary.career.career_id) {
@@ -237,7 +238,7 @@ export async function buildEvidencePackage(
       admission_cycle: null,
       last_verified_at: null,
     })
-    return {
+    const course = {
       course_id: row.course_id as string,
       name: row.course_name as string,
       award_level: (row.award_level || '') as string,
@@ -250,6 +251,8 @@ export async function buildEvidencePackage(
         .slice(0, 8),
       source_record_ids: [id],
     }
+    relationships.push({ relationship_id: `rel:career_to_course:${primary.career.career_id}:${course.course_id}`, relationship_type: 'career_to_course', from_id: primary.career.career_id, to_id: course.course_id, verification_status: 'verified', source_record_ids: [primary.source.record_id, id] })
+    return course
   })
 
   const programmeRows =
@@ -288,7 +291,7 @@ export async function buildEvidencePackage(
       (subject: string) =>
         !student.current_subjects.some((current) => current.toLowerCase() === subject.toLowerCase()),
     )
-    return {
+    const programme = {
       programme_id: row.programme_id as string,
       institution_name: row.institution_name as string,
       programme_name: row.programme_name as string,
@@ -304,6 +307,8 @@ export async function buildEvidencePackage(
       last_verified_at: row.source_verified_at || row.last_verified_at || null,
       source_record_ids: [id],
     }
+    if (programme.course_id) relationships.push({ relationship_id: `rel:course_to_programme:${programme.course_id}:${programme.programme_id}`, relationship_type: 'course_to_programme', from_id: programme.course_id, to_id: programme.programme_id, verification_status: 'verified', source_record_ids: [id] })
+    return programme
   })
 
   const examRows =
@@ -329,12 +334,14 @@ export async function buildEvidencePackage(
       admission_cycle: null,
       last_verified_at: row.last_reviewed || null,
     })
-    return {
+    const exam = {
       exam_id: row.exam_id as string,
       name: row.exam_name as string,
       purpose: (row.typical_purpose || '') as string,
       source_record_ids: [id],
     }
+    for (const course of verifiedCourses) relationships.push({ relationship_id: `rel:course_to_exam:${course.course_id}:${exam.exam_id}`, relationship_type: 'course_to_exam', from_id: course.course_id, to_id: exam.exam_id, verification_status: 'verified', source_record_ids: [id] })
+    return exam
   })
 
   const missingData = [...student.missing_profile_fields.map((field) => `Profile missing: ${field}`)]
@@ -363,6 +370,7 @@ export async function buildEvidencePackage(
     verified_programmes: verifiedProgrammes,
     verified_exams: verifiedExams,
     verified_scholarships: [],
+    verified_relationships: relationships,
     verified_admission_cycles: [],
     source_records: sources,
     deterministic_eligibility: {

@@ -57,6 +57,7 @@ const evidence = {
   verified_programmes: [],
   verified_exams: [],
   verified_scholarships: [],
+  verified_relationships: [],
   verified_admission_cycles: [],
   source_records: [source],
   deterministic_eligibility: {
@@ -84,7 +85,9 @@ const valid = {
       description: 'Complete a small research activity.',
       mandatory: false,
       status: 'not_started',
-      target_date: null,
+      suggested_target_date: null,
+      verified_deadline: null,
+      date_type: 'unknown',
       source_record_ids: ['career:c1'],
       unverified: false,
     },
@@ -123,6 +126,45 @@ assert.equal(accepted.factualValid, true)
 const invalidSchema = parseAndValidateRoadmap({ summary: 'not a roadmap' }, evidence)
 assert.equal(invalidSchema.schemaValid, false)
 
+const planning = structuredClone(valid)
+planning.stages[0].suggested_target_date = 'Shortlist courses by September'
+planning.stages[0].date_type = 'planning_suggestion'
+planning.stages[0].source_record_ids = []
+const planningResult = parseAndValidateRoadmap(planning, evidence)
+assert.equal(planningResult.factualValid, true, 'unsourced planning suggestions are allowed')
+assert.equal(planningResult.roadmap?.stages[0].suggested_target_date, 'Shortlist courses by September')
+
+const unsourcedDeadline = structuredClone(valid)
+unsourcedDeadline.stages[0].verified_deadline = '2026-09-01'
+unsourcedDeadline.stages[0].date_type = 'verified_application_deadline'
+unsourcedDeadline.stages[0].source_record_ids = []
+const unsourcedDeadlineResult = parseAndValidateRoadmap(unsourcedDeadline, evidence)
+assert.equal(unsourcedDeadlineResult.factualValid, false, 'unsourced factual deadline must fail')
+assert.equal(unsourcedDeadlineResult.roadmap?.stages[0].verified_deadline, null)
+assert.equal(unsourcedDeadlineResult.events[0]?.originalValue, '2026-09-01')
+
+const deadlineEvidence = structuredClone(evidence)
+deadlineEvidence.source_records.push({ ...source, record_id: 'cycle:p1', entity_type: 'admission_cycle', entity_id: 'p1', admission_cycle: '2026-09-01' })
+deadlineEvidence.verified_admission_cycles.push({ cycle_id: 'cycle-1', programme_id: 'p1', cycle: '2026-09-01', source_record_ids: ['cycle:p1'] })
+const sourcedDeadline = structuredClone(valid)
+sourcedDeadline.stages[0].verified_deadline = '2026-09-01'
+sourcedDeadline.stages[0].date_type = 'verified_application_deadline'
+sourcedDeadline.stages[0].source_record_ids = ['cycle:p1']
+const sourcedDeadlineResult = parseAndValidateRoadmap(sourcedDeadline, deadlineEvidence)
+assert.equal(sourcedDeadlineResult.factualValid, true, 'sourced application deadline must pass')
+
+const sourcedExamDate = structuredClone(sourcedDeadline)
+sourcedExamDate.stages[0].date_type = 'verified_exam_date'
+const sourcedExamDateResult = parseAndValidateRoadmap(sourcedExamDate, deadlineEvidence)
+assert.equal(sourcedExamDateResult.factualValid, true, 'sourced exam date must pass')
+
+const misplacedDeadline = structuredClone(valid)
+misplacedDeadline.stages[0].suggested_target_date = 'Application deadline 2026-09-01'
+misplacedDeadline.stages[0].date_type = 'planning_suggestion'
+const misplacedDeadlineResult = parseAndValidateRoadmap(misplacedDeadline, evidence)
+assert.equal(misplacedDeadlineResult.factualValid, false, 'factual deadline cannot hide in planning field')
+assert.equal(misplacedDeadlineResult.roadmap?.stages[0].suggested_target_date, null)
+
 const safelyParsed = safelyParseRoadmapContent(JSON.stringify(valid))
 assert.equal(safelyParsed.repaired, false)
 assert.deepEqual(safelyParsed.value, valid)
@@ -141,6 +183,7 @@ fabricated.college_programmes.push({
   eligibility_status: 'eligible',
   admission_route_summary: 'Invented',
   source_record_ids: ['invented-source'],
+  relationship_ids: [],
 })
 const fabricatedResult = parseAndValidateRoadmap(fabricated, evidence)
 assert.equal(fabricatedResult.roadmap.college_programmes.length, 0)

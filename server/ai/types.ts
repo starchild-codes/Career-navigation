@@ -84,6 +84,15 @@ export type EvidenceScholarship = {
   source_record_ids: string[]
 }
 
+export type EvidenceRelationship = {
+  relationship_id: string
+  relationship_type: 'career_to_course' | 'course_to_programme' | 'course_to_exam' | 'programme_to_admission_cycle' | 'programme_to_scholarship'
+  from_id: string
+  to_id: string
+  verification_status: 'verified'
+  source_record_ids: string[]
+}
+
 export type RoadmapEvidencePackage = {
   student: RoadmapStudentSummary
   primary_career: EvidenceCareer
@@ -92,6 +101,7 @@ export type RoadmapEvidencePackage = {
   verified_programmes: EvidenceProgramme[]
   verified_exams: EvidenceExam[]
   verified_scholarships: EvidenceScholarship[]
+  verified_relationships: EvidenceRelationship[]
   verified_admission_cycles: Array<{
     cycle_id: string
     programme_id: string
@@ -124,7 +134,9 @@ export type RoadmapOutput = {
     description: string
     mandatory: boolean
     status: 'not_started' | 'in_progress' | 'complete' | 'blocked' | 'informational'
-    target_date: string | null
+    suggested_target_date: string | null
+    verified_deadline: string | null
+    date_type: 'planning_suggestion' | 'verified_application_deadline' | 'verified_exam_date' | 'verified_counselling_date' | 'verified_scholarship_deadline' | 'informational' | 'unknown'
     source_record_ids: string[]
     unverified: boolean
   }>
@@ -133,6 +145,7 @@ export type RoadmapOutput = {
     reason: string
     concerns: string[]
     source_record_ids: string[]
+    relationship_ids: string[]
   }>
   college_programmes: Array<{
     programme_id: string
@@ -140,18 +153,21 @@ export type RoadmapOutput = {
     eligibility_status: string
     admission_route_summary: string
     source_record_ids: string[]
+    relationship_ids: string[]
   }>
   exam_steps: Array<{
     exam_id: string
     reason: string
     status: string
     source_record_ids: string[]
+    relationship_ids: string[]
   }>
   backup_routes: Array<{
     title: string
     description: string
     course_ids: string[]
     programme_ids: string[]
+    relationship_ids: string[]
     source_record_ids: string[]
   }>
   next_actions: Array<{
@@ -193,4 +209,3 @@ export type GenerationRequest = {
   }>
   force?: boolean
 }
-

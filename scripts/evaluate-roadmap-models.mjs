@@ -5,13 +5,15 @@ import { createAiConfig } from '../server/ai/config.ts'
 import { callOpenRouterForEvaluation } from '../server/ai/evaluationProvider.ts'
 import { OpenRouterError } from '../server/ai/openrouter.ts'
 import { safelyParseRoadmapContent } from '../server/ai/validation.ts'
-import { HARNESS_VERSION, PROFILE_IDS, ROADMAP_PROMPT_VERSION, SCHEMA_VERSION, aggregateRun, assessRoadmap, makeEvaluationItems, parseAndValidateRoadmap, sha } from './roadmap-evaluation-lib.mjs'
+import { HARNESS_VERSION, ROADMAP_PROMPT_VERSION, SCHEMA_VERSION, aggregateRun, assessRoadmap, makeEvaluationItems, parseAndValidateRoadmap, sha } from './roadmap-evaluation-lib.mjs'
 
 const { Pool } = pg
 const env = loadEnv('development', process.cwd(), '')
 const config = createAiConfig(env)
 const runPaid = process.argv.includes('--run')
 const priorRunId = process.argv.find((argument) => argument.startsWith('--run-id='))?.slice(9)
+const requestedModel = process.argv.find((argument) => argument.startsWith('--model='))?.slice(8)
+const requestedProfiles = process.argv.find((argument) => argument.startsWith('--profiles='))?.slice(11)?.split(',').filter(Boolean)
 const fixtures = JSON.parse(await readFile('scripts/fixtures/roadmap-evaluation-profiles.json', 'utf8'))
 
 const price = (value) => {
@@ -26,7 +28,7 @@ const catalogueResponse = await fetch('https://openrouter.ai/api/v1/models', { s
 if (!catalogueResponse.ok) throw new Error(`OpenRouter model catalogue returned ${catalogueResponse.status}`)
 const catalogue = (await catalogueResponse.json()).data || []
 const catalogueById = new Map(catalogue.map((model) => [model.id, model]))
-const candidates = config.allowedModels.map((id) => {
+const candidates = config.allowedModels.filter((id) => !requestedModel || id === requestedModel).map((id) => {
   const model = catalogueById.get(id)
   if (!model) throw new Error(`Configured model ID is unavailable: ${id}`)
   const supported = new Set(model.supported_parameters || [])
@@ -37,7 +39,10 @@ const candidates = config.allowedModels.map((id) => {
   if (!Number.isFinite(promptPrice) || !Number.isFinite(completionPrice)) throw new Error(`Missing current catalogue pricing: ${id}`)
   return { id, promptPrice, completionPrice, requestFee, supportsReasoning: supported.has('reasoning'), maximumCostPerCall: promptPrice * config.maxInputTokens + completionPrice * config.maxOutputTokens + requestFee }
 })
-const items = makeEvaluationItems(fixtures, config)
+if (requestedModel && !candidates.length) throw new Error(`Requested model is not a configured fixed candidate: ${requestedModel}`)
+const allItems = makeEvaluationItems(fixtures, config)
+const items = requestedProfiles ? allItems.filter((item) => requestedProfiles.includes(item.fixture.id)) : allItems
+if (!items.length || (requestedProfiles && items.length !== requestedProfiles.length)) throw new Error('Requested regression profile IDs are invalid')
 const maximumCost = candidates.reduce((sum, candidate) => sum + candidate.maximumCostPerCall * items.length, 0)
 const preflight = { candidateCount: candidates.length, profileCount: items.length, maximumCalls: candidates.length * items.length, maximumRetries: 0, maxInputTokensPerCall: config.maxInputTokens, maxOutputTokensPerCall: config.maxOutputTokens, maxTotalTokensPerCall: config.maxTotalTokens, maximumPossibleTokens: candidates.length * items.length * config.maxTotalTokens, maximumEstimatedCostUsd: maximumCost, candidates: candidates.map((candidate) => ({ ...candidate, structuredOutputs: true })), evidencePackagesDistinct: new Set(items.map((item) => item.evidenceHash)).size === items.length, liveDataEnabled: config.liveDataEnabled }
 console.log(`Candidates: ${candidates.map((candidate) => candidate.id).join(', ')}`)
@@ -49,7 +54,7 @@ if (!runPaid) { console.log('Preflight only. No OpenRouter calls were made.'); p
   try {
     let runId = priorRunId
     if (!runId) {
-      const created = await pool.query(`insert into ai_evaluation_runs(harness_version,prompt_version,schema_version,candidate_models,profile_ids,preflight) values($1,$2,$3,$4,$5,$6) returning id`, [HARNESS_VERSION, ROADMAP_PROMPT_VERSION, SCHEMA_VERSION, candidates.map((candidate) => candidate.id), PROFILE_IDS, preflight])
+      const created = await pool.query(`insert into ai_evaluation_runs(harness_version,prompt_version,schema_version,candidate_models,profile_ids,preflight) values($1,$2,$3,$4,$5,$6) returning id`, [HARNESS_VERSION, ROADMAP_PROMPT_VERSION, SCHEMA_VERSION, candidates.map((candidate) => candidate.id), items.map((item) => item.fixture.id), preflight])
       runId = created.rows[0].id
     }
     for (const [candidateIndex, candidate] of candidates.entries()) for (const [profileIndex, item] of items.entries()) {
@@ -67,7 +72,7 @@ if (!runPaid) { console.log('Preflight only. No OpenRouter calls were made.'); p
         const validation = repaired.value === null ? { roadmap: null, schemaValid: false, factualValid: false, errors: [repaired.error || 'Invalid JSON'] } : parseAndValidateRoadmap(repaired.value, item.evidence)
         const safety = assessRoadmap(repaired.value, item, validation)
         const estimatedCost = candidate.promptPrice * response.usage.inputTokens + candidate.completionPrice * response.usage.outputTokens + candidate.requestFee
-        await pool.query(`update ai_evaluation_calls set status='complete',actual_model_used=$4,raw_provider_usage=$5::jsonb,structured_output=$6::jsonb,raw_output_hash=$7,native_schema_valid=$8,repaired_schema_valid=$9,factual_valid=$10,validation_errors=$11::jsonb,safety=$12::jsonb,prompt_tokens=$13,completion_tokens=$14,reasoning_tokens=$15,total_tokens=$16,reported_cost=$17,estimated_cost=$18,latency_ms=$19,completed_at=now() where run_id=$1 and model_id=$2 and profile_id=$3`, [runId, candidate.id, item.fixture.id, response.modelUsed, JSON.stringify({ inputTokens: response.usage.inputTokens, completionTokens: response.usage.outputTokens, reasoningTokens: response.usage.reasoningTokens, totalTokens: response.usage.totalTokens, reportedCost: response.usage.reportedCost }), JSON.stringify(validation.roadmap), sha(response.rawContent), nativeValidation.schemaValid, validation.schemaValid, validation.factualValid, JSON.stringify(validation.errors), JSON.stringify(safety), response.usage.inputTokens, response.usage.outputTokens, response.usage.reasoningTokens, response.usage.totalTokens, response.usage.reportedCost, estimatedCost, response.latencyMs])
+        await pool.query(`update ai_evaluation_calls set status='complete',actual_model_used=$4,raw_provider_usage=$5::jsonb,structured_output=$6::jsonb,raw_output=$7,raw_output_hash=$8,native_schema_valid=$9,repaired_schema_valid=$10,factual_valid=$11,validation_errors=$12::jsonb,validation_events=$13::jsonb,safety=$14::jsonb,prompt_tokens=$15,completion_tokens=$16,reasoning_tokens=$17,total_tokens=$18,reported_cost=$19,estimated_cost=$20,latency_ms=$21,completed_at=now() where run_id=$1 and model_id=$2 and profile_id=$3`, [runId, candidate.id, item.fixture.id, response.modelUsed, JSON.stringify({ inputTokens: response.usage.inputTokens, completionTokens: response.usage.outputTokens, reasoningTokens: response.usage.reasoningTokens, totalTokens: response.usage.totalTokens, reportedCost: response.usage.reportedCost }), JSON.stringify(validation.roadmap), response.rawContent, sha(response.rawContent), nativeValidation.schemaValid, validation.schemaValid, validation.factualValid, JSON.stringify(validation.errors), JSON.stringify(validation.events), JSON.stringify(safety), response.usage.inputTokens, response.usage.outputTokens, response.usage.reasoningTokens, response.usage.totalTokens, response.usage.reportedCost, estimatedCost, response.latencyMs])
       } catch (error) {
         await pool.query(`update ai_evaluation_calls set status='failed',provider_error_status=$4,provider_error=$5,latency_ms=$6,validation_errors=$7::jsonb,completed_at=now() where run_id=$1 and model_id=$2 and profile_id=$3`, [runId, candidate.id, item.fixture.id, error instanceof OpenRouterError ? error.statusCode : null, error instanceof Error ? error.message : 'Unknown provider error', Date.now() - started, JSON.stringify([error instanceof Error ? error.message : 'Unknown provider error'])])
       }

@@ -1,0 +1,484 @@
+{
+  "harnessVersion": "manyfolds-roadmap-eval-v4",
+  "promptVersion": "manyfolds-roadmap-v2",
+  "schemaVersion": "manyfolds-roadmap-schema-v2",
+  "runId": "c6646b02-f687-4396-a1e0-11950098febe",
+  "createdAt": "2026-08-04T13:03:29.362Z",
+  "preflight": {
+    "candidates": [
+      {
+        "id": "meta-llama/llama-3.3-70b-instruct",
+        "requestFee": 0,
+        "promptPrice": 1e-7,
+        "completionPrice": 3.2e-7,
+        "structuredOutputs": true,
+        "supportsReasoning": false,
+        "maximumCostPerCall": 0.000824
+      }
+    ],
+    "maximumCalls": 4,
+    "profileCount": 4,
+    "candidateCount": 1,
+    "maximumRetries": 0,
+    "liveDataEnabled": false,
+    "maxInputTokensPerCall": 2800,
+    "maxTotalTokensPerCall": 5000,
+    "maximumPossibleTokens": 20000,
+    "maxOutputTokensPerCall": 1700,
+    "maximumEstimatedCostUsd": 0.003296,
+    "evidencePackagesDistinct": true
+  },
+  "actualCalls": 4,
+  "actualTotalCostUsd": 0.00252589,
+  "models": [
+    {
+      "model": "meta-llama/llama-3.3-70b-instruct",
+      "profiles": [
+        {
+          "id": "class12-pcm-engineering",
+          "status": "complete",
+          "nativeSchemaValid": true,
+          "repairedSchemaValid": true,
+          "factualValid": true,
+          "safety": {
+            "outputFingerprint": "2a269cb442e4e42cf9c651110e20ba1258cbb0d56de1306cd66357be8cde9b08",
+            "missingDataHandled": true,
+            "nativeFactualValid": true,
+            "inventedEntityCount": 0,
+            "unsupportedRecordIds": [],
+            "ignoredHardConstraints": [],
+            "eligibilityContradiction": false,
+            "unverifiedAdmissionsFact": false
+          },
+          "promptTokens": 695,
+          "completionTokens": 537,
+          "reasoningTokens": 0,
+          "totalTokens": 1232,
+          "reportedCostUsd": 0.00030515,
+          "estimatedCostUsd": 0.00024134,
+          "latencyMs": 11691,
+          "errorStatus": null,
+          "errors": [],
+          "output": {
+            "stages": [],
+            "summary": "The student is interested in Applied Engineering with a strong affinity for Physics, Chemistry, and Mathematics.",
+            "career_id": "career-engineering",
+            "exam_steps": [],
+            "why_it_fits": [
+              {
+                "factor": "Physics",
+                "student_evidence": "current_subjects"
+              },
+              {
+                "factor": "Chemistry",
+                "student_evidence": "current_subjects"
+              },
+              {
+                "factor": "Mathematics",
+                "student_evidence": "current_subjects"
+              },
+              {
+                "factor": "Analytical reasoning",
+                "student_evidence": "skills"
+              },
+              {
+                "factor": "Building physical things",
+                "student_evidence": "skills"
+              }
+            ],
+            "next_actions": [],
+            "backup_routes": [],
+            "roadmap_title": "Class 12 PCM Engineering Student Roadmap",
+            "course_options": [],
+            "college_programmes": [],
+            "eligibility_summary": {
+              "status": "insufficient_data",
+              "explanation": "Missing verified programme-level eligibility records.",
+              "source_record_ids": [],
+              "missing_requirements": [
+                "Verified programme-level eligibility records"
+              ]
+            },
+            "important_tradeoffs": [],
+            "missing_or_unverified": [
+              {
+                "field": "budget_band",
+                "message": "Budget band is not specified."
+              },
+              {
+                "field": "location_constraints",
+                "message": "Location constraints are not specified."
+              },
+              {
+                "field": "relocation_preference",
+                "message": "Relocation preference is not specified."
+              },
+              {
+                "field": "course_duration_preference",
+                "message": "Course duration preference is not specified."
+              },
+              {
+                "field": "degree_route_preferences",
+                "message": "Degree route preferences are not specified."
+              },
+              {
+                "field": "verified_courses",
+                "message": "No verified courses are available."
+              },
+              {
+                "field": "verified_programmes",
+                "message": "No verified programmes are available."
+              },
+              {
+                "field": "verified_exams",
+                "message": "No verified exams are available."
+              },
+              {
+                "field": "verified_scholarships",
+                "message": "No verified scholarships are available."
+              },
+              {
+                "field": "verified_relationships",
+                "message": "No verified relationships are available."
+              },
+              {
+                "field": "verified_admission_cycles",
+                "message": "No verified admission cycles are available."
+              }
+            ],
+            "questions_for_counsellor": [
+              "What are the key eligibility criteria for Applied Engineering programmes?",
+              "How can I find verified institution-programme, eligibility, admission-cycle, fee, and scholarship records?"
+            ]
+          },
+          "materiallyDistinct": true
+        },
+        {
+          "id": "psychology-computing",
+          "status": "complete",
+          "nativeSchemaValid": true,
+          "repairedSchemaValid": true,
+          "factualValid": true,
+          "safety": {
+            "outputFingerprint": "d0337ab93d6cd01b4f27880e4603d54f4df37b0dee204855de2143f902ffb685",
+            "missingDataHandled": true,
+            "nativeFactualValid": true,
+            "inventedEntityCount": 0,
+            "unsupportedRecordIds": [],
+            "ignoredHardConstraints": [],
+            "eligibilityContradiction": false,
+            "unverifiedAdmissionsFact": false
+          },
+          "promptTokens": 1489,
+          "completionTokens": 622,
+          "reasoningTokens": 0,
+          "totalTokens": 2111,
+          "reportedCostUsd": 0.00151992,
+          "estimatedCostUsd": 0.00034794,
+          "latencyMs": 5467,
+          "errorStatus": null,
+          "errors": [],
+          "output": {
+            "stages": [
+              {
+                "stage": "now",
+                "title": "Explore UX Research",
+                "status": "not_started",
+                "date_type": "planning_suggestion",
+                "mandatory": true,
+                "unverified": true,
+                "description": "Learn about the field of UX research and its applications.",
+                "source_record_ids": [
+                  "career:career-ux"
+                ],
+                "verified_deadline": null,
+                "suggested_target_date": null
+              }
+            ],
+            "summary": "This roadmap outlines the steps to pursue a career in Psychology, Behaviour and UX Research, leveraging the student's strengths in Psychology, Computer Science, Research, Coding, and Empathy.",
+            "career_id": "career-ux",
+            "exam_steps": [],
+            "why_it_fits": [
+              {
+                "factor": "Psychology",
+                "student_evidence": "Student is currently studying Psychology in Class 12 and has an affinity for the subject."
+              },
+              {
+                "factor": "Computer Science",
+                "student_evidence": "Student is currently studying Computer Science in Class 12 and has an affinity for the subject."
+              },
+              {
+                "factor": "Research",
+                "student_evidence": "Student has a skill for Research."
+              },
+              {
+                "factor": "Coding",
+                "student_evidence": "Student has a skill for Coding."
+              },
+              {
+                "factor": "Empathy",
+                "student_evidence": "Student has a skill for Empathy."
+              }
+            ],
+            "next_actions": [
+              {
+                "action": "Research UX design and human-computer interaction courses",
+                "reason": "To gain a deeper understanding of the field and its requirements.",
+                "priority": "high",
+                "source_record_ids": [
+                  "career:career-ux"
+                ]
+              }
+            ],
+            "backup_routes": [],
+            "roadmap_title": "Psychology, Behaviour and UX Research Career Roadmap",
+            "course_options": [],
+            "college_programmes": [],
+            "eligibility_summary": {
+              "status": "insufficient_data",
+              "explanation": "Insufficient verified programme-level eligibility records are available to determine eligibility.",
+              "source_record_ids": [
+                "career:career-ux"
+              ],
+              "missing_requirements": [
+                "Verified programme-level eligibility records"
+              ]
+            },
+            "important_tradeoffs": [
+              "Potential high demand for UX research skills in the industry",
+              "Need for continuous learning to stay updated with industry trends"
+            ],
+            "missing_or_unverified": [
+              {
+                "field": "Verified programme-level eligibility records",
+                "message": "Insufficient verified programme-level eligibility records are available to determine eligibility."
+              }
+            ],
+            "questions_for_counsellor": [
+              "What are the key skills required for a career in UX research?",
+              "How can I gain practical experience in UX research?"
+            ]
+          },
+          "materiallyDistinct": true
+        },
+        {
+          "id": "diploma-employability",
+          "status": "complete",
+          "nativeSchemaValid": true,
+          "repairedSchemaValid": true,
+          "factualValid": true,
+          "safety": {
+            "outputFingerprint": "6e251212634fdb9acf04af872feac55bbde2f059c1a294d5f5be65c8e26ab01a",
+            "missingDataHandled": true,
+            "nativeFactualValid": true,
+            "inventedEntityCount": 0,
+            "unsupportedRecordIds": [],
+            "ignoredHardConstraints": [],
+            "eligibilityContradiction": false,
+            "unverifiedAdmissionsFact": false
+          },
+          "promptTokens": 729,
+          "completionTokens": 570,
+          "reasoningTokens": 0,
+          "totalTokens": 1299,
+          "reportedCostUsd": 0.00044538,
+          "estimatedCostUsd": 0.0002553,
+          "latencyMs": 34194,
+          "errorStatus": null,
+          "errors": [],
+          "output": {
+            "stages": [
+              {
+                "stage": "during_course",
+                "title": "Pursue a relevant diploma",
+                "status": "not_started",
+                "date_type": "planning_suggestion",
+                "mandatory": true,
+                "unverified": true,
+                "description": "Enroll in a diploma program that aligns with Applied technical operations.",
+                "source_record_ids": [],
+                "verified_deadline": null,
+                "suggested_target_date": null
+              }
+            ],
+            "summary": "Pursue a diploma in a field related to Applied technical operations to gain early employability.",
+            "career_id": "career-technical",
+            "exam_steps": [],
+            "why_it_fits": [
+              {
+                "factor": "Mathematics",
+                "student_evidence": "current_subjects"
+              },
+              {
+                "factor": "Vocational Subjects",
+                "student_evidence": "current_subjects"
+              },
+              {
+                "factor": "Fixing systems",
+                "student_evidence": "skills"
+              },
+              {
+                "factor": "Building physical things",
+                "student_evidence": "skills"
+              }
+            ],
+            "next_actions": [
+              {
+                "action": "Research diploma programs related to Applied technical operations.",
+                "reason": "To find suitable programs that match the student's preferences and skills.",
+                "priority": "high",
+                "source_record_ids": []
+              }
+            ],
+            "backup_routes": [],
+            "roadmap_title": "Diploma Employability Roadmap",
+            "course_options": [],
+            "college_programmes": [],
+            "eligibility_summary": {
+              "status": "insufficient_data",
+              "explanation": "Missing verified programme-level eligibility records.",
+              "source_record_ids": [],
+              "missing_requirements": [
+                "Verified programme-level eligibility records"
+              ]
+            },
+            "important_tradeoffs": [
+              "Prefers a diploma and early employability"
+            ],
+            "missing_or_unverified": [
+              {
+                "field": "verified_courses",
+                "message": "No verified courses available."
+              },
+              {
+                "field": "verified_programmes",
+                "message": "No verified programmes available."
+              },
+              {
+                "field": "verified_exams",
+                "message": "No verified exams available."
+              },
+              {
+                "field": "verified_scholarships",
+                "message": "No verified scholarships available."
+              },
+              {
+                "field": "verified_relationships",
+                "message": "No verified relationships available."
+              },
+              {
+                "field": "verified_admission_cycles",
+                "message": "No verified admission cycles available."
+              }
+            ],
+            "questions_for_counsellor": [
+              "What diploma programs are available in the field of Applied technical operations?",
+              "What are the eligibility criteria for these programs?",
+              "How can I ensure early employability after completing the diploma?"
+            ]
+          },
+          "materiallyDistinct": true
+        },
+        {
+          "id": "insufficient-college-data",
+          "status": "complete",
+          "nativeSchemaValid": true,
+          "repairedSchemaValid": true,
+          "factualValid": true,
+          "safety": {
+            "outputFingerprint": "6649cd7e9ed666f131a273474b69ba56827213d2a6f0e66604bb3c81bcee4e24",
+            "missingDataHandled": true,
+            "nativeFactualValid": true,
+            "inventedEntityCount": 0,
+            "unsupportedRecordIds": [],
+            "ignoredHardConstraints": [],
+            "eligibilityContradiction": false,
+            "unverifiedAdmissionsFact": false
+          },
+          "promptTokens": 703,
+          "completionTokens": 279,
+          "reasoningTokens": 0,
+          "totalTokens": 982,
+          "reportedCostUsd": 0.00025544,
+          "estimatedCostUsd": 0.00015958,
+          "latencyMs": 32884,
+          "errorStatus": null,
+          "errors": [],
+          "output": {
+            "stages": [],
+            "summary": "Insufficient verified relationship data",
+            "career_id": "career-insufficient",
+            "exam_steps": [],
+            "why_it_fits": [],
+            "next_actions": [],
+            "backup_routes": [],
+            "roadmap_title": "Insufficient Data for Roadmap Creation",
+            "course_options": [],
+            "college_programmes": [],
+            "eligibility_summary": {
+              "status": "insufficient_data",
+              "explanation": "No verified programme-level eligibility records or institution-programme, eligibility, admission-cycle, fee, and scholarship records are available.",
+              "source_record_ids": [],
+              "missing_requirements": [
+                "Verified programme-level eligibility records"
+              ]
+            },
+            "important_tradeoffs": [],
+            "missing_or_unverified": [
+              {
+                "field": "location",
+                "message": "No location information"
+              },
+              {
+                "field": "budget",
+                "message": "No budget information"
+              },
+              {
+                "field": "academic_band",
+                "message": "No academic band information"
+              },
+              {
+                "field": "relocation",
+                "message": "No relocation information"
+              }
+            ],
+            "questions_for_counsellor": [
+              "What are the potential programmes and institutions for Psychology exploration?",
+              "How can I gather more information about eligibility, admission cycles, fees, and scholarships?"
+            ]
+          },
+          "materiallyDistinct": true
+        }
+      ],
+      "thresholds": {
+        "safeRepairSchemaValidity": false,
+        "grounding": false,
+        "constraints": false,
+        "tokenLimits": false,
+        "verifiedAdmissionsOnly": false,
+        "missingData": false,
+        "distinctness": false
+      },
+      "approved": false,
+      "metrics": {
+        "nativeSchemaPassRate": 1,
+        "safeRepairSchemaPassRate": 1,
+        "groundingPassRate": 1,
+        "constraintPassRate": 1,
+        "missingDataPassRate": 1,
+        "distinctProfiles": 4,
+        "averageInputTokens": 904,
+        "averageOutputTokens": 502,
+        "averageTotalTokens": 1406,
+        "totalTokens": 5624,
+        "averageLatencyMs": 21059,
+        "p95LatencyMs": 34194,
+        "totalCostUsd": 0.00252589
+      }
+    }
+  ],
+  "approval": {
+    "primary": null,
+    "fallback": null
+  }
+}

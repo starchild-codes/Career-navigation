@@ -18,7 +18,9 @@ export type AiRoadmap = {
     description: string
     mandatory: boolean
     status: 'not_started' | 'in_progress' | 'complete' | 'blocked' | 'informational'
-    target_date: string | null
+    suggested_target_date: string | null
+    verified_deadline: string | null
+    date_type: 'planning_suggestion' | 'verified_application_deadline' | 'verified_exam_date' | 'verified_counselling_date' | 'verified_scholarship_deadline' | 'informational' | 'unknown'
     source_record_ids: string[]
     unverified: boolean
   }>
@@ -131,4 +133,3 @@ export const updateAiRoadmap = (
     method: 'PATCH',
     body: JSON.stringify(body),
   })
-

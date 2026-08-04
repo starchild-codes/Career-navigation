@@ -59,7 +59,9 @@ export const ROADMAP_JSON_SCHEMA = {
           'description',
           'mandatory',
           'status',
-          'target_date',
+          'suggested_target_date',
+          'verified_deadline',
+          'date_type',
           'source_record_ids',
           'unverified',
         ],
@@ -75,7 +77,9 @@ export const ROADMAP_JSON_SCHEMA = {
             type: 'string',
             enum: ['not_started', 'in_progress', 'complete', 'blocked', 'informational'],
           },
-          target_date: { anyOf: [text, { type: 'null' }] },
+          suggested_target_date: { anyOf: [text, { type: 'null' }] },
+          verified_deadline: { anyOf: [text, { type: 'null' }] },
+          date_type: { type: 'string', enum: ['planning_suggestion', 'verified_application_deadline', 'verified_exam_date', 'verified_counselling_date', 'verified_scholarship_deadline', 'informational', 'unknown'] },
           source_record_ids: texts,
           unverified: { type: 'boolean' },
         },
@@ -86,8 +90,8 @@ export const ROADMAP_JSON_SCHEMA = {
       items: {
         type: 'object',
         additionalProperties: false,
-        required: ['course_id', 'reason', 'concerns', 'source_record_ids'],
-        properties: { course_id: text, reason: text, concerns: texts, source_record_ids: texts },
+        required: ['course_id', 'reason', 'concerns', 'source_record_ids', 'relationship_ids'],
+        properties: { course_id: text, reason: text, concerns: texts, source_record_ids: texts, relationship_ids: texts },
       },
     },
     college_programmes: {
@@ -95,13 +99,14 @@ export const ROADMAP_JSON_SCHEMA = {
       items: {
         type: 'object',
         additionalProperties: false,
-        required: ['programme_id', 'reason', 'eligibility_status', 'admission_route_summary', 'source_record_ids'],
+        required: ['programme_id', 'reason', 'eligibility_status', 'admission_route_summary', 'source_record_ids', 'relationship_ids'],
         properties: {
           programme_id: text,
           reason: text,
           eligibility_status: text,
           admission_route_summary: text,
           source_record_ids: texts,
+          relationship_ids: texts,
         },
       },
     },
@@ -110,8 +115,8 @@ export const ROADMAP_JSON_SCHEMA = {
       items: {
         type: 'object',
         additionalProperties: false,
-        required: ['exam_id', 'reason', 'status', 'source_record_ids'],
-        properties: { exam_id: text, reason: text, status: text, source_record_ids: texts },
+        required: ['exam_id', 'reason', 'status', 'source_record_ids', 'relationship_ids'],
+        properties: { exam_id: text, reason: text, status: text, source_record_ids: texts, relationship_ids: texts },
       },
     },
     backup_routes: {
@@ -119,13 +124,14 @@ export const ROADMAP_JSON_SCHEMA = {
       items: {
         type: 'object',
         additionalProperties: false,
-        required: ['title', 'description', 'course_ids', 'programme_ids', 'source_record_ids'],
+        required: ['title', 'description', 'course_ids', 'programme_ids', 'source_record_ids', 'relationship_ids'],
         properties: {
           title: text,
           description: text,
           course_ids: texts,
           programme_ids: texts,
           source_record_ids: texts,
+          relationship_ids: texts,
         },
       },
     },
@@ -155,4 +161,3 @@ export const ROADMAP_JSON_SCHEMA = {
     },
   },
 } as const
-

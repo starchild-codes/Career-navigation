@@ -1,0 +1,1105 @@
+{
+  "harnessVersion": "manyfolds-roadmap-eval-v4",
+  "promptVersion": "manyfolds-roadmap-v2",
+  "schemaVersion": "manyfolds-roadmap-schema-v2",
+  "runId": "09cc5bab-c92b-40e5-b0a2-4592147a4152",
+  "createdAt": "2026-08-04T13:05:11.842Z",
+  "preflight": {
+    "candidates": [
+      {
+        "id": "meta-llama/llama-3.3-70b-instruct",
+        "requestFee": 0,
+        "promptPrice": 1e-7,
+        "completionPrice": 3.2e-7,
+        "structuredOutputs": true,
+        "supportsReasoning": false,
+        "maximumCostPerCall": 0.000824
+      }
+    ],
+    "maximumCalls": 10,
+    "profileCount": 10,
+    "candidateCount": 1,
+    "maximumRetries": 0,
+    "liveDataEnabled": false,
+    "maxInputTokensPerCall": 2800,
+    "maxTotalTokensPerCall": 5000,
+    "maximumPossibleTokens": 50000,
+    "maxOutputTokensPerCall": 1700,
+    "maximumEstimatedCostUsd": 0.008239999999999999,
+    "evidencePackagesDistinct": true
+  },
+  "actualCalls": 10,
+  "actualTotalCostUsd": 0.00385969,
+  "models": [
+    {
+      "model": "meta-llama/llama-3.3-70b-instruct",
+      "profiles": [
+        {
+          "id": "class10-psych-biology",
+          "status": "complete",
+          "nativeSchemaValid": true,
+          "repairedSchemaValid": true,
+          "factualValid": true,
+          "safety": {
+            "outputFingerprint": "cd442ed32f550874a1e837b1623f2130239029e8e9a0bc426b3458c51d50bd18",
+            "missingDataHandled": true,
+            "nativeFactualValid": true,
+            "inventedEntityCount": 0,
+            "unsupportedRecordIds": [],
+            "ignoredHardConstraints": [],
+            "eligibilityContradiction": false,
+            "unverifiedAdmissionsFact": false
+          },
+          "promptTokens": 689,
+          "completionTokens": 406,
+          "reasoningTokens": 0,
+          "totalTokens": 1095,
+          "reportedCostUsd": 0.00025197,
+          "estimatedCostUsd": 0.00019882,
+          "latencyMs": 9038,
+          "errorStatus": null,
+          "errors": [],
+          "output": {
+            "stages": [],
+            "summary": "Insufficient verified relationship data",
+            "career_id": "career-psychology",
+            "exam_steps": [],
+            "why_it_fits": [
+              {
+                "factor": "Psychology",
+                "student_evidence": "current_subjects"
+              },
+              {
+                "factor": "Biology",
+                "student_evidence": "current_subjects"
+              },
+              {
+                "factor": "Listening",
+                "student_evidence": "skills"
+              },
+              {
+                "factor": "Research",
+                "student_evidence": "skills"
+              }
+            ],
+            "next_actions": [],
+            "backup_routes": [],
+            "roadmap_title": "Insufficient Data for Roadmap Creation",
+            "course_options": [],
+            "college_programmes": [],
+            "eligibility_summary": {
+              "status": "insufficient_data",
+              "explanation": "Missing verified programme-level eligibility records and verified institution-programme, eligibility, admission-cycle, fee, and scholarship records.",
+              "source_record_ids": [],
+              "missing_requirements": [
+                "Verified programme-level eligibility records"
+              ]
+            },
+            "important_tradeoffs": [],
+            "missing_or_unverified": [
+              {
+                "field": "verified_courses",
+                "message": "No verified courses available"
+              },
+              {
+                "field": "verified_programmes",
+                "message": "No verified programmes available"
+              },
+              {
+                "field": "verified_exams",
+                "message": "No verified exams available"
+              },
+              {
+                "field": "verified_scholarships",
+                "message": "No verified scholarships available"
+              },
+              {
+                "field": "verified_relationships",
+                "message": "No verified relationships available"
+              },
+              {
+                "field": "verified_admission_cycles",
+                "message": "No verified admission cycles available"
+              }
+            ],
+            "questions_for_counsellor": [
+              "What are the verified programme-level eligibility records for career-psychology?",
+              "How can I obtain verified institution-programme, eligibility, admission-cycle, fee, and scholarship records?"
+            ]
+          },
+          "materiallyDistinct": false
+        },
+        {
+          "id": "class12-pcm-engineering",
+          "status": "complete",
+          "nativeSchemaValid": true,
+          "repairedSchemaValid": true,
+          "factualValid": true,
+          "safety": {
+            "outputFingerprint": "e1d5dfd91ba90976a739d51d93c2d86d9608bd28bedaac672cfd18d3909d5231",
+            "missingDataHandled": true,
+            "nativeFactualValid": true,
+            "inventedEntityCount": 0,
+            "unsupportedRecordIds": [],
+            "ignoredHardConstraints": [],
+            "eligibilityContradiction": false,
+            "unverifiedAdmissionsFact": false
+          },
+          "promptTokens": 695,
+          "completionTokens": 706,
+          "reasoningTokens": 0,
+          "totalTokens": 1401,
+          "reportedCostUsd": 0.00099471,
+          "estimatedCostUsd": 0.00029542,
+          "latencyMs": 10192,
+          "errorStatus": null,
+          "errors": [],
+          "output": {
+            "stages": [
+              {
+                "stage": "next_6_months",
+                "title": "Explore Applied Engineering Options",
+                "status": "not_started",
+                "date_type": "planning_suggestion",
+                "mandatory": true,
+                "unverified": true,
+                "description": "Research applied engineering fields, job roles, and required skills.",
+                "source_record_ids": [],
+                "verified_deadline": null,
+                "suggested_target_date": "2024-02-28"
+              },
+              {
+                "stage": "next_6_months",
+                "title": "Identify Relevant Programs and Institutions",
+                "status": "not_started",
+                "date_type": "planning_suggestion",
+                "mandatory": true,
+                "unverified": true,
+                "description": "Look for programs and institutions offering applied engineering courses, considering factors like location, budget, and reputation.",
+                "source_record_ids": [],
+                "verified_deadline": null,
+                "suggested_target_date": "2024-03-31"
+              }
+            ],
+            "summary": "Insufficient verified relationship data for specific courses, programs, exams, or scholarships. Focus on exploring applied engineering career options and gathering more information on relevant programs and institutions.",
+            "career_id": "career-engineering",
+            "exam_steps": [],
+            "why_it_fits": [
+              {
+                "factor": "Physics",
+                "student_evidence": "current_subjects"
+              },
+              {
+                "factor": "Chemistry",
+                "student_evidence": "current_subjects"
+              },
+              {
+                "factor": "Mathematics",
+                "student_evidence": "current_subjects"
+              },
+              {
+                "factor": "Analytical reasoning",
+                "student_evidence": "skills"
+              },
+              {
+                "factor": "Building physical things",
+                "student_evidence": "skills"
+              }
+            ],
+            "next_actions": [
+              {
+                "action": "Research applied engineering career paths and required skills.",
+                "reason": "To understand the career better and make informed decisions.",
+                "priority": "high",
+                "source_record_ids": [
+                  "career:career-engineering"
+                ]
+              },
+              {
+                "action": "Explore institutions and programs offering applied engineering courses.",
+                "reason": "To identify potential options for further education.",
+                "priority": "high",
+                "source_record_ids": []
+              }
+            ],
+            "backup_routes": [],
+            "roadmap_title": "Preliminary Roadmap for Class 12 PCM Engineering Student",
+            "course_options": [],
+            "college_programmes": [],
+            "eligibility_summary": {
+              "status": "insufficient_data",
+              "explanation": "Missing verified programme-level eligibility records.",
+              "source_record_ids": [],
+              "missing_requirements": [
+                "Verified programme-level eligibility records"
+              ]
+            },
+            "important_tradeoffs": [],
+            "missing_or_unverified": [
+              {
+                "field": "budget_band",
+                "message": "Budget constraints not specified."
+              },
+              {
+                "field": "location_constraints",
+                "message": "Location preferences not specified."
+              },
+              {
+                "field": "verified_courses",
+                "message": "No verified courses available."
+              },
+              {
+                "field": "verified_programmes",
+                "message": "No verified programmes available."
+              },
+              {
+                "field": "verified_exams",
+                "message": "No verified exams available."
+              },
+              {
+                "field": "verified_scholarships",
+                "message": "No verified scholarships available."
+              }
+            ],
+            "questions_for_counsellor": [
+              "What are the key skills required for a career in applied engineering?",
+              "How can I identify the best institutions and programs for applied engineering courses?"
+            ]
+          },
+          "materiallyDistinct": true
+        },
+        {
+          "id": "psychology-computing",
+          "status": "complete",
+          "nativeSchemaValid": true,
+          "repairedSchemaValid": true,
+          "factualValid": true,
+          "safety": {
+            "outputFingerprint": "aed5dd8062af77dc21bf024f25c4f9ec45c694259809cb4a5ef797164885910c",
+            "missingDataHandled": true,
+            "nativeFactualValid": true,
+            "inventedEntityCount": 0,
+            "unsupportedRecordIds": [],
+            "ignoredHardConstraints": [],
+            "eligibilityContradiction": false,
+            "unverifiedAdmissionsFact": false
+          },
+          "promptTokens": 696,
+          "completionTokens": 495,
+          "reasoningTokens": 0,
+          "totalTokens": 1191,
+          "reportedCostUsd": 0.00028848,
+          "estimatedCostUsd": 0.000228,
+          "latencyMs": 10632,
+          "errorStatus": null,
+          "errors": [],
+          "output": {
+            "stages": [],
+            "summary": "Pursue Psychology, behaviour and UX research career",
+            "career_id": "career-ux",
+            "exam_steps": [],
+            "why_it_fits": [
+              {
+                "factor": "Psychology",
+                "student_evidence": "current_subjects"
+              },
+              {
+                "factor": "Computer Science",
+                "student_evidence": "current_subjects"
+              },
+              {
+                "factor": "Research",
+                "student_evidence": "skills"
+              },
+              {
+                "factor": "Coding",
+                "student_evidence": "skills"
+              },
+              {
+                "factor": "Empathy",
+                "student_evidence": "skills"
+              }
+            ],
+            "next_actions": [],
+            "backup_routes": [],
+            "roadmap_title": "Psychology and Computing Student Roadmap",
+            "course_options": [],
+            "college_programmes": [],
+            "eligibility_summary": {
+              "status": "insufficient_data",
+              "explanation": "Missing verified programme-level eligibility records and institution details.",
+              "source_record_ids": [],
+              "missing_requirements": [
+                "Verified programme-level eligibility records"
+              ]
+            },
+            "important_tradeoffs": [],
+            "missing_or_unverified": [
+              {
+                "field": "budget_band",
+                "message": "Budget band is not specified"
+              },
+              {
+                "field": "location_constraints",
+                "message": "Location constraints are not specified"
+              },
+              {
+                "field": "relocation_preference",
+                "message": "Relocation preference is not specified"
+              },
+              {
+                "field": "course_duration_preference",
+                "message": "Course duration preference is not specified"
+              },
+              {
+                "field": "degree_route_preferences",
+                "message": "Degree route preferences are not specified"
+              },
+              {
+                "field": "verified_courses",
+                "message": "No verified courses are available"
+              },
+              {
+                "field": "verified_programmes",
+                "message": "No verified programmes are available"
+              },
+              {
+                "field": "verified_exams",
+                "message": "No verified exams are available"
+              },
+              {
+                "field": "verified_scholarships",
+                "message": "No verified scholarships are available"
+              },
+              {
+                "field": "verified_relationships",
+                "message": "No verified relationships are available"
+              },
+              {
+                "field": "verified_admission_cycles",
+                "message": "No verified admission cycles are available"
+              }
+            ],
+            "questions_for_counsellor": [
+              "What are the verified institution-programme, eligibility, admission-cycle, fee, and scholarship records for the Psychology, behaviour and UX research career?"
+            ]
+          },
+          "materiallyDistinct": true
+        },
+        {
+          "id": "history-chemistry",
+          "status": "complete",
+          "nativeSchemaValid": true,
+          "repairedSchemaValid": true,
+          "factualValid": true,
+          "safety": {
+            "outputFingerprint": "6f8cc807a964f147d3fc0ac7360b7d3b97cad29ef0e937d817a604d3fca1b16c",
+            "missingDataHandled": true,
+            "nativeFactualValid": true,
+            "inventedEntityCount": 0,
+            "unsupportedRecordIds": [],
+            "ignoredHardConstraints": [],
+            "eligibilityContradiction": false,
+            "unverifiedAdmissionsFact": false
+          },
+          "promptTokens": 681,
+          "completionTokens": 522,
+          "reasoningTokens": 0,
+          "totalTokens": 1203,
+          "reportedCostUsd": 0.00056175,
+          "estimatedCostUsd": 0.00023514,
+          "latencyMs": 7460,
+          "errorStatus": null,
+          "errors": [],
+          "output": {
+            "stages": [],
+            "summary": "Insufficient verified relationship data to provide a detailed roadmap. However, based on the student's subject affinities and skills, Environmental policy and sustainability is a potential career fit.",
+            "career_id": "career-environment",
+            "exam_steps": [],
+            "why_it_fits": [
+              {
+                "factor": "History",
+                "student_evidence": "current_subjects"
+              },
+              {
+                "factor": "Chemistry",
+                "student_evidence": "current_subjects"
+              },
+              {
+                "factor": "Writing",
+                "student_evidence": "skills"
+              },
+              {
+                "factor": "Experimentation",
+                "student_evidence": "skills"
+              }
+            ],
+            "next_actions": [],
+            "backup_routes": [],
+            "roadmap_title": "Environmental Policy and Sustainability Career Roadmap for history-chemistry Student",
+            "course_options": [],
+            "college_programmes": [],
+            "eligibility_summary": {
+              "status": "insufficient_data",
+              "explanation": "Missing verified programme-level eligibility records and institution-programme relationships.",
+              "source_record_ids": [
+                "career:career-environment"
+              ],
+              "missing_requirements": [
+                "Verified programme-level eligibility records"
+              ]
+            },
+            "important_tradeoffs": [],
+            "missing_or_unverified": [
+              {
+                "field": "budget_band",
+                "message": "Budget band not specified"
+              },
+              {
+                "field": "location_constraints",
+                "message": "Location constraints not specified"
+              },
+              {
+                "field": "relocation_preference",
+                "message": "Relocation preference not specified"
+              },
+              {
+                "field": "course_duration_preference",
+                "message": "Course duration preference not specified"
+              },
+              {
+                "field": "degree_route_preferences",
+                "message": "Degree route preferences not specified"
+              },
+              {
+                "field": "verified_courses",
+                "message": "No verified courses available"
+              },
+              {
+                "field": "verified_programmes",
+                "message": "No verified programmes available"
+              },
+              {
+                "field": "verified_exams",
+                "message": "No verified exams available"
+              },
+              {
+                "field": "verified_scholarships",
+                "message": "No verified scholarships available"
+              },
+              {
+                "field": "verified_relationships",
+                "message": "No verified relationships available"
+              },
+              {
+                "field": "verified_admission_cycles",
+                "message": "No verified admission cycles available"
+              }
+            ],
+            "questions_for_counsellor": [
+              "What are the potential programmes and institutions that align with the Environmental policy and sustainability career?",
+              "How can the student meet the eligibility criteria for these programmes?"
+            ]
+          },
+          "materiallyDistinct": true
+        },
+        {
+          "id": "limited-finances-local",
+          "status": "complete",
+          "nativeSchemaValid": true,
+          "repairedSchemaValid": true,
+          "factualValid": true,
+          "safety": {
+            "outputFingerprint": "f074e72cad868c86fb9cbbf386dfc9586bad12574b7c2c081ff294188bdd497c",
+            "missingDataHandled": true,
+            "nativeFactualValid": true,
+            "inventedEntityCount": 0,
+            "unsupportedRecordIds": [],
+            "ignoredHardConstraints": [],
+            "eligibilityContradiction": false,
+            "unverifiedAdmissionsFact": true
+          },
+          "promptTokens": 718,
+          "completionTokens": 408,
+          "reasoningTokens": 0,
+          "totalTokens": 1126,
+          "reportedCostUsd": 0.00036196,
+          "estimatedCostUsd": 0.00020236,
+          "latencyMs": 17863,
+          "errorStatus": null,
+          "errors": [],
+          "output": {
+            "stages": [],
+            "summary": "The student is interested in Commerce and finance with a budget constraint of under ₹50,000 and a preference to study near home.",
+            "career_id": "career-commerce",
+            "exam_steps": [],
+            "why_it_fits": [
+              {
+                "factor": "Economics",
+                "student_evidence": "current_subjects"
+              },
+              {
+                "factor": "Business Studies",
+                "student_evidence": "current_subjects"
+              },
+              {
+                "factor": "Planning",
+                "student_evidence": "skills"
+              }
+            ],
+            "next_actions": [],
+            "backup_routes": [],
+            "roadmap_title": "Limited Finances Local Student Roadmap",
+            "course_options": [],
+            "college_programmes": [],
+            "eligibility_summary": {
+              "status": "insufficient_data",
+              "explanation": "Missing verified programme-level eligibility records.",
+              "source_record_ids": [],
+              "missing_requirements": [
+                "Verified programme-level eligibility records"
+              ]
+            },
+            "important_tradeoffs": [
+              "Annual tuition below ₹50,000",
+              "Must study near home"
+            ],
+            "missing_or_unverified": [
+              {
+                "field": "Verified institution-programme records",
+                "message": "No verified institution-programme records are available."
+              },
+              {
+                "field": "Eligibility records",
+                "message": "No verified eligibility records are available."
+              },
+              {
+                "field": "Admission-cycle records",
+                "message": "No verified admission-cycle records are available."
+              },
+              {
+                "field": "Fee records",
+                "message": "No verified fee records are available."
+              },
+              {
+                "field": "Scholarship records",
+                "message": "No verified scholarship records are available."
+              }
+            ],
+            "questions_for_counsellor": [
+              "What are the available Commerce and finance programmes near home with annual tuition below ₹50,000?",
+              "What are the eligibility criteria for these programmes?"
+            ]
+          },
+          "materiallyDistinct": true
+        },
+        {
+          "id": "no-competitive-exams",
+          "status": "complete",
+          "nativeSchemaValid": true,
+          "repairedSchemaValid": true,
+          "factualValid": true,
+          "safety": {
+            "outputFingerprint": "1da0b8137e80bc94908fd43e749e6258502467a60638a7605ab8d40147757944",
+            "missingDataHandled": true,
+            "nativeFactualValid": true,
+            "inventedEntityCount": 0,
+            "unsupportedRecordIds": [],
+            "ignoredHardConstraints": [],
+            "eligibilityContradiction": false,
+            "unverifiedAdmissionsFact": false
+          },
+          "promptTokens": 706,
+          "completionTokens": 373,
+          "reasoningTokens": 0,
+          "totalTokens": 1079,
+          "reportedCostUsd": 0.00024098,
+          "estimatedCostUsd": 0.00018996,
+          "latencyMs": 7308,
+          "errorStatus": null,
+          "errors": [],
+          "output": {
+            "stages": [],
+            "summary": "Insufficient verified relationship data",
+            "career_id": "career-design",
+            "exam_steps": [],
+            "why_it_fits": [
+              {
+                "factor": "Design",
+                "student_evidence": "current_subjects"
+              },
+              {
+                "factor": "Computer Science",
+                "student_evidence": "current_subjects"
+              },
+              {
+                "factor": "Visual design",
+                "student_evidence": "skills"
+              },
+              {
+                "factor": "Coding",
+                "student_evidence": "skills"
+              }
+            ],
+            "next_actions": [],
+            "backup_routes": [],
+            "roadmap_title": "Design and Visual Communication Career Roadmap",
+            "course_options": [],
+            "college_programmes": [],
+            "eligibility_summary": {
+              "status": "insufficient_data",
+              "explanation": "Missing verified programme-level eligibility records and verified institution-programme, eligibility, admission-cycle, fee, and scholarship records are unavailable.",
+              "source_record_ids": [],
+              "missing_requirements": [
+                "Verified programme-level eligibility records"
+              ]
+            },
+            "important_tradeoffs": [
+              "Unwilling to take competitive examinations"
+            ],
+            "missing_or_unverified": [
+              {
+                "field": "budget_band",
+                "message": "Missing budget information"
+              },
+              {
+                "field": "location_constraints",
+                "message": "Location constraints are present but no specific location is mentioned"
+              },
+              {
+                "field": "relocation_preference",
+                "message": "Relocation preference is not specified"
+              },
+              {
+                "field": "course_duration_preference",
+                "message": "Course duration preference is not specified"
+              },
+              {
+                "field": "degree_route_preferences",
+                "message": "Degree route preferences are not specified"
+              }
+            ],
+            "questions_for_counsellor": []
+          },
+          "materiallyDistinct": true
+        },
+        {
+          "id": "missing-compulsory-subject",
+          "status": "complete",
+          "nativeSchemaValid": true,
+          "repairedSchemaValid": true,
+          "factualValid": true,
+          "safety": {
+            "outputFingerprint": "90a8c08f7bc5811f249b3a10178ec8eca66299d2c3f560ad7f5caf8010bb2d6d",
+            "missingDataHandled": true,
+            "nativeFactualValid": true,
+            "inventedEntityCount": 0,
+            "unsupportedRecordIds": [],
+            "ignoredHardConstraints": [],
+            "eligibilityContradiction": false,
+            "unverifiedAdmissionsFact": false
+          },
+          "promptTokens": 709,
+          "completionTokens": 505,
+          "reasoningTokens": 0,
+          "totalTokens": 1214,
+          "reportedCostUsd": 0.00029417,
+          "estimatedCostUsd": 0.0002325,
+          "latencyMs": 10582,
+          "errorStatus": null,
+          "errors": [],
+          "output": {
+            "stages": [
+              {
+                "stage": "next_6_months",
+                "title": "Address Subject Gap",
+                "status": "not_started",
+                "date_type": "planning_suggestion",
+                "mandatory": true,
+                "unverified": true,
+                "description": "Consider taking additional courses or certifications in Mathematics to fill the subject gap.",
+                "source_record_ids": [],
+                "verified_deadline": null,
+                "suggested_target_date": "2024-06-01"
+              }
+            ],
+            "summary": "The student is interested in pursuing an Engineering career but has a subject gap due to missing Mathematics in their current subjects.",
+            "career_id": "career-engineering-subject-gap",
+            "exam_steps": [],
+            "why_it_fits": [
+              {
+                "factor": "Biology",
+                "student_evidence": "current_subjects"
+              },
+              {
+                "factor": "Chemistry",
+                "student_evidence": "current_subjects"
+              },
+              {
+                "factor": "Experimentation",
+                "student_evidence": "skills"
+              }
+            ],
+            "next_actions": [
+              {
+                "action": "Research Mathematics courses",
+                "reason": "Address subject gap for Engineering career",
+                "priority": "high",
+                "source_record_ids": []
+              }
+            ],
+            "backup_routes": [],
+            "roadmap_title": "Addressing Subject Gap for Engineering Career",
+            "course_options": [],
+            "college_programmes": [],
+            "eligibility_summary": {
+              "status": "insufficient_data",
+              "explanation": "Missing verified programme-level eligibility records.",
+              "source_record_ids": [],
+              "missing_requirements": [
+                "Verified programme-level eligibility records"
+              ]
+            },
+            "important_tradeoffs": [
+              "Missing required Mathematics subject"
+            ],
+            "missing_or_unverified": [
+              {
+                "field": "verified_courses",
+                "message": "No verified courses available"
+              },
+              {
+                "field": "verified_programmes",
+                "message": "No verified programmes available"
+              },
+              {
+                "field": "verified_exams",
+                "message": "No verified exams available"
+              },
+              {
+                "field": "verified_scholarships",
+                "message": "No verified scholarships available"
+              },
+              {
+                "field": "verified_relationships",
+                "message": "No verified relationships available"
+              },
+              {
+                "field": "verified_admission_cycles",
+                "message": "No verified admission cycles available"
+              }
+            ],
+            "questions_for_counsellor": [
+              "What are the available Mathematics courses for the student to address the subject gap?"
+            ]
+          },
+          "materiallyDistinct": true
+        },
+        {
+          "id": "changing-interests",
+          "status": "complete",
+          "nativeSchemaValid": true,
+          "repairedSchemaValid": true,
+          "factualValid": true,
+          "safety": {
+            "outputFingerprint": "87096e9eccacc3ab928030037e64ef4785f7cefab5be7bba12d0da7afc353176",
+            "missingDataHandled": true,
+            "nativeFactualValid": true,
+            "inventedEntityCount": 0,
+            "unsupportedRecordIds": [],
+            "ignoredHardConstraints": [],
+            "eligibilityContradiction": false,
+            "unverifiedAdmissionsFact": false
+          },
+          "promptTokens": 718,
+          "completionTokens": 414,
+          "reasoningTokens": 0,
+          "totalTokens": 1132,
+          "reportedCostUsd": 0.00025894,
+          "estimatedCostUsd": 0.00020428,
+          "latencyMs": 9974,
+          "errorStatus": null,
+          "errors": [],
+          "output": {
+            "stages": [],
+            "summary": "Insufficient verified relationship data",
+            "career_id": "career-interdisciplinary",
+            "exam_steps": [],
+            "why_it_fits": [
+              {
+                "factor": "Literature",
+                "student_evidence": "current_subjects"
+              },
+              {
+                "factor": "Mathematics",
+                "student_evidence": "current_subjects"
+              },
+              {
+                "factor": "Fine Arts",
+                "student_evidence": "current_subjects"
+              },
+              {
+                "factor": "Biology",
+                "student_evidence": "current_subjects"
+              },
+              {
+                "factor": "Writing",
+                "student_evidence": "skills"
+              }
+            ],
+            "next_actions": [],
+            "backup_routes": [],
+            "roadmap_title": "Interdisciplinary Exploration Roadmap",
+            "course_options": [],
+            "college_programmes": [],
+            "eligibility_summary": {
+              "status": "insufficient_data",
+              "explanation": "Missing verified programme-level eligibility records and institution-programme, eligibility, admission-cycle, fee, and scholarship records are unavailable.",
+              "source_record_ids": [],
+              "missing_requirements": [
+                "Verified programme-level eligibility records"
+              ]
+            },
+            "important_tradeoffs": [
+              "Interests have changed across domains"
+            ],
+            "missing_or_unverified": [
+              {
+                "field": "budget_band",
+                "message": "Budget band is not specified"
+              },
+              {
+                "field": "location_constraints",
+                "message": "Location constraints are not clearly defined"
+              },
+              {
+                "field": "relocation_preference",
+                "message": "Relocation preference is not specified"
+              },
+              {
+                "field": "course_duration_preference",
+                "message": "Course duration preference is not specified"
+              },
+              {
+                "field": "degree_route_preferences",
+                "message": "Degree route preferences are not specified"
+              }
+            ],
+            "questions_for_counsellor": [
+              "What verified courses or programmes are available for interdisciplinary exploration?",
+              "How can I determine eligibility for these programmes with changing interests across domains?"
+            ]
+          },
+          "materiallyDistinct": true
+        },
+        {
+          "id": "diploma-employability",
+          "status": "complete",
+          "nativeSchemaValid": true,
+          "repairedSchemaValid": true,
+          "factualValid": true,
+          "safety": {
+            "outputFingerprint": "18385cf5384a869f6a1bc45b2e6bee2c3788a8a82f03acc1bd426697b1022522",
+            "missingDataHandled": true,
+            "nativeFactualValid": true,
+            "inventedEntityCount": 0,
+            "unsupportedRecordIds": [],
+            "ignoredHardConstraints": [],
+            "eligibilityContradiction": false,
+            "unverifiedAdmissionsFact": false
+          },
+          "promptTokens": 729,
+          "completionTokens": 537,
+          "reasoningTokens": 0,
+          "totalTokens": 1266,
+          "reportedCostUsd": 0.00030957,
+          "estimatedCostUsd": 0.00024474,
+          "latencyMs": 10541,
+          "errorStatus": null,
+          "errors": [],
+          "output": {
+            "stages": [
+              {
+                "stage": "next_6_months",
+                "title": "Explore Diploma Options",
+                "status": "not_started",
+                "date_type": "planning_suggestion",
+                "mandatory": true,
+                "unverified": true,
+                "description": "Research diploma courses aligned with applied technical operations",
+                "source_record_ids": [],
+                "verified_deadline": null,
+                "suggested_target_date": "2024-03-01"
+              }
+            ],
+            "summary": "Applied technical operations",
+            "career_id": "career-technical",
+            "exam_steps": [],
+            "why_it_fits": [
+              {
+                "factor": "Mathematics",
+                "student_evidence": "current_subjects"
+              },
+              {
+                "factor": "Vocational Subjects",
+                "student_evidence": "current_subjects"
+              },
+              {
+                "factor": "Fixing systems",
+                "student_evidence": "skills"
+              },
+              {
+                "factor": "Building physical things",
+                "student_evidence": "skills"
+              }
+            ],
+            "next_actions": [
+              {
+                "action": "Research diploma courses",
+                "reason": "To explore options aligned with applied technical operations",
+                "priority": "high",
+                "source_record_ids": []
+              }
+            ],
+            "backup_routes": [],
+            "roadmap_title": "Diploma Employability Roadmap",
+            "course_options": [],
+            "college_programmes": [],
+            "eligibility_summary": {
+              "status": "insufficient_data",
+              "explanation": "Missing verified programme-level eligibility records",
+              "source_record_ids": [],
+              "missing_requirements": [
+                "Verified programme-level eligibility records"
+              ]
+            },
+            "important_tradeoffs": [
+              "Prefers a diploma and early employability"
+            ],
+            "missing_or_unverified": [
+              {
+                "field": "verified_courses",
+                "message": "No verified courses available"
+              },
+              {
+                "field": "verified_programmes",
+                "message": "No verified programmes available"
+              },
+              {
+                "field": "verified_exams",
+                "message": "No verified exams available"
+              },
+              {
+                "field": "verified_scholarships",
+                "message": "No verified scholarships available"
+              }
+            ],
+            "questions_for_counsellor": [
+              "What diploma courses are available for applied technical operations?"
+            ]
+          },
+          "materiallyDistinct": true
+        },
+        {
+          "id": "insufficient-college-data",
+          "status": "complete",
+          "nativeSchemaValid": true,
+          "repairedSchemaValid": true,
+          "factualValid": true,
+          "safety": {
+            "outputFingerprint": "e11a814ad212bd7b45d5f4914d575f6d42787c0bc1be6b4047aa8782874ae96d",
+            "missingDataHandled": true,
+            "nativeFactualValid": true,
+            "inventedEntityCount": 0,
+            "unsupportedRecordIds": [],
+            "ignoredHardConstraints": [],
+            "eligibilityContradiction": false,
+            "unverifiedAdmissionsFact": false
+          },
+          "promptTokens": 703,
+          "completionTokens": 285,
+          "reasoningTokens": 0,
+          "totalTokens": 988,
+          "reportedCostUsd": 0.00029716,
+          "estimatedCostUsd": 0.00016150000000000002,
+          "latencyMs": 22286,
+          "errorStatus": null,
+          "errors": [],
+          "output": {
+            "stages": [],
+            "summary": "Insufficient verified relationship data",
+            "career_id": "career-insufficient",
+            "exam_steps": [],
+            "why_it_fits": [],
+            "next_actions": [],
+            "backup_routes": [],
+            "roadmap_title": "Insufficient Data for Roadmap Creation",
+            "course_options": [],
+            "college_programmes": [],
+            "eligibility_summary": {
+              "status": "insufficient_data",
+              "explanation": "No verified programme-level eligibility records or verified institution-programme, eligibility, admission-cycle, fee, and scholarship records are available.",
+              "source_record_ids": [],
+              "missing_requirements": [
+                "Verified programme-level eligibility records"
+              ]
+            },
+            "important_tradeoffs": [],
+            "missing_or_unverified": [
+              {
+                "field": "location",
+                "message": "No location information available"
+              },
+              {
+                "field": "budget",
+                "message": "No budget information available"
+              },
+              {
+                "field": "academic_band",
+                "message": "No academic band information available"
+              },
+              {
+                "field": "relocation",
+                "message": "No relocation information available"
+              }
+            ],
+            "questions_for_counsellor": [
+              "What are the potential programmes and institutions for Psychology exploration?",
+              "How can I gather more information about eligibility, admission cycles, fees, and scholarships?"
+            ]
+          },
+          "materiallyDistinct": false
+        }
+      ],
+      "thresholds": {
+        "safeRepairSchemaValidity": true,
+        "grounding": true,
+        "constraints": true,
+        "tokenLimits": true,
+        "verifiedAdmissionsOnly": false,
+        "missingData": true,
+        "distinctness": false
+      },
+      "approved": false,
+      "metrics": {
+        "nativeSchemaPassRate": 1,
+        "safeRepairSchemaPassRate": 1,
+        "groundingPassRate": 1,
+        "constraintPassRate": 1,
+        "missingDataPassRate": 1,
+        "distinctProfiles": 8,
+        "averageInputTokens": 704.4,
+        "averageOutputTokens": 465.1,
+        "averageTotalTokens": 1169.5,
+        "totalTokens": 11695,
+        "averageLatencyMs": 11587.6,
+        "p95LatencyMs": 22286,
+        "totalCostUsd": 0.00385969
+      }
+    }
+  ],
+  "approval": {
+    "primary": null,
+    "fallback": null
+  }
+}

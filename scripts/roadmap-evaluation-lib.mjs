@@ -4,8 +4,8 @@ import { ROADMAP_PROMPT_VERSION } from '../server/ai/prompt.ts'
 import { compactEvidence } from '../server/ai/tokens.ts'
 import { parseAndValidateRoadmap } from '../server/ai/validation.ts'
 
-export const HARNESS_VERSION = 'manyfolds-roadmap-eval-v3'
-export const SCHEMA_VERSION = 'manyfolds-roadmap-schema-v1'
+export const HARNESS_VERSION = 'manyfolds-roadmap-eval-v4'
+export const SCHEMA_VERSION = 'manyfolds-roadmap-schema-v2'
 export const PROFILE_IDS = [
   'class10-psych-biology', 'class12-pcm-engineering', 'psychology-computing',
   'history-chemistry', 'limited-finances-local', 'no-competitive-exams',
@@ -34,7 +34,7 @@ const evidence = (fixture) => ({
     missing_profile_fields: fixture.id === 'insufficient-college-data' ? ['location', 'budget', 'academic_band', 'relocation'] : [],
   },
   primary_career: { career_id: fixture.careerId, name: fixture.careerName, fit_factors: [...fixture.subjects, ...fixture.skills].slice(0, 5), concerns: fixture.constraints, source_record_ids: [`career:${fixture.careerId}`] },
-  alternative_careers: [], verified_courses: [], verified_programmes: [], verified_exams: [], verified_scholarships: [], verified_admission_cycles: [], source_records: [source(fixture)],
+  alternative_careers: [], verified_courses: [], verified_programmes: [], verified_exams: [], verified_scholarships: [], verified_relationships: [], verified_admission_cycles: [], source_records: [source(fixture)],
   deterministic_eligibility: { status: 'insufficient_data', missing_requirements: ['Verified programme-level eligibility records'] },
   missing_data: ['Verified institution-programme, eligibility, admission-cycle, fee, and scholarship records are unavailable.'],
 })

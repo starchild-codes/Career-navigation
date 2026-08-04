@@ -297,7 +297,7 @@ export class RoadmapService {
                 stage.title,
                 stage.description,
                 stage.mandatory,
-                stage.target_date || null,
+                stage.verified_deadline || stage.suggested_target_date || null,
                 compacted.evidence.source_records.find((source) =>
                   stage.source_record_ids.includes(source.record_id),
                 )?.source_url || null,
