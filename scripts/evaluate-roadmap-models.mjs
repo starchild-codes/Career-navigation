@@ -32,8 +32,10 @@ const candidates = config.allowedModels.filter((id) => !requestedModel || id ===
   const model = catalogueById.get(id)
   if (!model) throw new Error(`Configured model ID is unavailable: ${id}`)
   const supported = new Set(model.supported_parameters || [])
-  const architecture = JSON.stringify(model.architecture || {}).toLowerCase()
-  const valid = !id.includes(':free') && !['openrouter/auto', 'openrouter/free'].includes(id) && !/(experimental|preview|beta|roleplay|uncensored)/i.test(id) && !/(image|audio|embedding|moderation)/.test(architecture) && (model.context_length || 0) >= config.maxTotalTokens && supported.has('response_format') && supported.has('structured_outputs') && (supported.has('max_tokens') || supported.has('max_completion_tokens'))
+  const modality = String(model.architecture?.modality || '').toLowerCase()
+  const outputModalities = String(model.architecture?.output_modalities || '').toLowerCase()
+  const textGeneration = !/(embedding|moderation|rerank|transcription|speech)/.test(modality) && (!outputModalities || outputModalities.includes('text'))
+  const valid = !id.includes(':free') && !['openrouter/auto', 'openrouter/free'].includes(id) && !/(experimental|preview|beta|roleplay|uncensored)/i.test(id) && textGeneration && (model.context_length || 0) >= config.maxTotalTokens && supported.has('response_format') && supported.has('structured_outputs') && (supported.has('max_tokens') || supported.has('max_completion_tokens'))
   if (!valid) throw new Error(`Configured model does not meet strict structured-output evaluation requirements: ${id}`)
   const promptPrice = price(model.pricing?.prompt), completionPrice = price(model.pricing?.completion), requestFee = Number.isFinite(price(model.pricing?.request)) ? price(model.pricing?.request) : 0
   if (!Number.isFinite(promptPrice) || !Number.isFinite(completionPrice)) throw new Error(`Missing current catalogue pricing: ${id}`)

@@ -1,0 +1,875 @@
+{
+  "harnessVersion": "manyfolds-roadmap-eval-v5",
+  "promptVersion": "manyfolds-roadmap-v3",
+  "schemaVersion": "manyfolds-roadmap-schema-v2",
+  "runId": "b5b6e13c-c41f-49a7-8e58-cbad7cfc03e2",
+  "createdAt": "2026-08-04T13:51:05.534Z",
+  "preflight": {
+    "candidates": [
+      {
+        "id": "openai/gpt-4.1-mini",
+        "requestFee": 0,
+        "promptPrice": 4e-7,
+        "completionPrice": 0.0000016,
+        "structuredOutputs": true,
+        "supportsReasoning": false,
+        "maximumCostPerCall": 0.0038399999999999997
+      },
+      {
+        "id": "openai/gpt-5-mini",
+        "requestFee": 0,
+        "promptPrice": 2.5e-7,
+        "completionPrice": 0.000002,
+        "structuredOutputs": true,
+        "supportsReasoning": true,
+        "maximumCostPerCall": 0.0040999999999999995
+      },
+      {
+        "id": "google/gemini-2.5-flash",
+        "requestFee": 0,
+        "promptPrice": 3e-7,
+        "completionPrice": 0.0000025,
+        "structuredOutputs": true,
+        "supportsReasoning": true,
+        "maximumCostPerCall": 0.00509
+      }
+    ],
+    "maximumCalls": 12,
+    "profileCount": 4,
+    "candidateCount": 3,
+    "maximumRetries": 0,
+    "liveDataEnabled": false,
+    "maxInputTokensPerCall": 2800,
+    "maxTotalTokensPerCall": 5000,
+    "maximumPossibleTokens": 60000,
+    "maxOutputTokensPerCall": 1700,
+    "maximumEstimatedCostUsd": 0.05212,
+    "evidencePackagesDistinct": true
+  },
+  "actualCalls": 12,
+  "actualTotalCostUsd": 0.0247124,
+  "models": [
+    {
+      "model": "openai/gpt-4.1-mini",
+      "profiles": [
+        {
+          "id": "limited-finances-local",
+          "status": "complete",
+          "nativeSchemaValid": true,
+          "repairedSchemaValid": true,
+          "factualValid": true,
+          "safety": {
+            "outputFingerprint": "dfc7d7d4a7fa527df92ad2f3df0cd94cc7a3651de71a3aa33022b16de6665c58",
+            "missingDataHandled": true,
+            "nativeFactualValid": true,
+            "inventedEntityCount": 0,
+            "unsupportedRecordIds": [],
+            "ignoredHardConstraints": [],
+            "eligibilityContradiction": false,
+            "unverifiedAdmissionsFact": true
+          },
+          "promptTokens": 1809,
+          "completionTokens": 906,
+          "reasoningTokens": 0,
+          "totalTokens": 2715,
+          "reportedCostUsd": 0.0021732,
+          "estimatedCostUsd": 0.0021731999999999997,
+          "latencyMs": 19116,
+          "errorStatus": null,
+          "errors": [],
+          "output": {
+            "stages": [
+              {
+                "stage": "now",
+                "title": "Explore Local Low-Cost Commerce Programmes",
+                "status": "not_started",
+                "date_type": "planning_suggestion",
+                "mandatory": true,
+                "unverified": true,
+                "description": "Research colleges near your home that offer Commerce and Finance programmes with annual tuition under ₹50,000.",
+                "source_record_ids": [],
+                "verified_deadline": null,
+                "suggested_target_date": null
+              },
+              {
+                "stage": "next_6_months",
+                "title": "Prepare for Relevant Entrance Exams if Required",
+                "status": "not_started",
+                "date_type": "planning_suggestion",
+                "mandatory": false,
+                "unverified": true,
+                "description": "Identify and prepare for any entrance exams needed for local commerce programmes once identified.",
+                "source_record_ids": [],
+                "verified_deadline": null,
+                "suggested_target_date": null
+              },
+              {
+                "stage": "before_applications",
+                "title": "Gather Verified Programme and Admission Information",
+                "status": "not_started",
+                "date_type": "planning_suggestion",
+                "mandatory": true,
+                "unverified": true,
+                "description": "Obtain verified details on eligibility, fees, and admission cycles for local commerce programmes.",
+                "source_record_ids": [],
+                "verified_deadline": null,
+                "suggested_target_date": null
+              }
+            ],
+            "summary": "You have a strong interest and academic background in Economics and Business Studies, aligning well with a career in Commerce and Finance. However, your hard constraints of studying near home and keeping annual tuition below ₹50,000 limit available options. Currently, there is insufficient verified data on eligible programmes, courses, or exams that meet these constraints, so specific pathways cannot be recommended at this time.",
+            "career_id": "career-commerce",
+            "exam_steps": [],
+            "why_it_fits": [
+              {
+                "factor": "Subject affinity in Economics and Business Studies",
+                "student_evidence": "Current subjects and affinities include Economics and Business Studies, which are core to Commerce and Finance."
+              },
+              {
+                "factor": "Skill in Planning",
+                "student_evidence": "You have identified Planning as a skill, which is valuable in Commerce and Finance careers."
+              }
+            ],
+            "next_actions": [
+              {
+                "action": "Contact local colleges to inquire about Commerce and Finance programmes under ₹50,000 annual tuition.",
+                "reason": "No verified programme data available; direct inquiry is needed to identify options.",
+                "priority": "high",
+                "source_record_ids": []
+              },
+              {
+                "action": "Seek guidance from a career counsellor to explore low-cost local study options and possible scholarships.",
+                "reason": "To address missing verified data and explore financial aid possibilities.",
+                "priority": "medium",
+                "source_record_ids": []
+              },
+              {
+                "action": "Monitor official admission portals for updates on eligibility and admission cycles for Commerce programmes.",
+                "reason": "To obtain verified admission information when available.",
+                "priority": "medium",
+                "source_record_ids": []
+              }
+            ],
+            "backup_routes": [],
+            "roadmap_title": "Commerce and Finance Career Roadmap with Local, Low-Cost Study Constraints",
+            "course_options": [],
+            "college_programmes": [],
+            "eligibility_summary": {
+              "status": "insufficient_data",
+              "explanation": "No verified programme-level eligibility or admission cycle data is available to confirm suitable courses or programmes.",
+              "source_record_ids": [],
+              "missing_requirements": [
+                "Verified programme-level eligibility records"
+              ]
+            },
+            "important_tradeoffs": [
+              "Limited budget and location constraints significantly reduce available programme and course options.",
+              "Lack of verified programme and course data means no specific admissions or exam steps can be planned currently.",
+              "You may need to consider expanding budget or location flexibility in future to access more opportunities."
+            ],
+            "decisive_constraints": [
+              {
+                "status": "insufficient_verified_data",
+                "constraint_id": "constraint-budget",
+                "constraint_type": "budget",
+                "effect_on_roadmap": "Limits programme and course options; no verified low-cost programmes found yet.",
+                "source_record_ids": [],
+                "student_preference": "Annual tuition below ₹50,000",
+                "affected_section_ids": [
+                  "summary",
+                  "why_it_fits",
+                  "important_tradeoffs",
+                  "next_actions"
+                ]
+              },
+              {
+                "status": "insufficient_verified_data",
+                "constraint_id": "constraint-location",
+                "constraint_type": "location",
+                "effect_on_roadmap": "Restricts study options to local institutions; no verified local programmes identified.",
+                "source_record_ids": [],
+                "student_preference": "Must study near home",
+                "affected_section_ids": [
+                  "summary",
+                  "why_it_fits",
+                  "important_tradeoffs",
+                  "next_actions"
+                ]
+              }
+            ],
+            "missing_or_unverified": [
+              {
+                "field": "Programme eligibility and admission data",
+                "message": "No verified records available for programmes matching your constraints."
+              },
+              {
+                "field": "Course and exam details",
+                "message": "No verified courses or exams linked to Commerce and Finance career found."
+              }
+            ],
+            "questions_for_counsellor": [
+              "Are there any local colleges offering Commerce and Finance programmes within my budget?",
+              "What entrance exams should I prepare for to access local commerce programmes?",
+              "Are there scholarships or financial aid options available for low-income students in my area?"
+            ]
+          },
+          "materiallyDistinct": true
+        },
+        {
+          "id": "no-competitive-exams",
+          "status": "complete",
+          "nativeSchemaValid": true,
+          "repairedSchemaValid": true,
+          "factualValid": true,
+          "safety": {
+            "outputFingerprint": "0e633d6bed48f2762de7e4b74308a1bca6764fa7c985df269351ae98999e96db",
+            "missingDataHandled": true,
+            "nativeFactualValid": true,
+            "inventedEntityCount": 0,
+            "unsupportedRecordIds": [],
+            "ignoredHardConstraints": [],
+            "eligibilityContradiction": false,
+            "unverifiedAdmissionsFact": false
+          },
+          "promptTokens": 1793,
+          "completionTokens": 879,
+          "reasoningTokens": 0,
+          "totalTokens": 2672,
+          "reportedCostUsd": 0.0021236,
+          "estimatedCostUsd": 0.0021236,
+          "latencyMs": 15631,
+          "errorStatus": null,
+          "errors": [],
+          "output": {
+            "stages": [
+              {
+                "stage": "now",
+                "title": "Research Non-Competitive Education Options",
+                "status": "not_started",
+                "date_type": "planning_suggestion",
+                "mandatory": true,
+                "unverified": true,
+                "description": "Explore diploma courses, certifications, online programmes, and workshops in Design and Visual Communication that do not require competitive exams.",
+                "source_record_ids": [],
+                "verified_deadline": null,
+                "suggested_target_date": "2024-07-31"
+              },
+              {
+                "stage": "next_6_months",
+                "title": "Build Portfolio and Practical Skills",
+                "status": "not_started",
+                "date_type": "planning_suggestion",
+                "mandatory": true,
+                "unverified": true,
+                "description": "Develop a strong portfolio showcasing your design and coding projects to improve employability and practical experience.",
+                "source_record_ids": [],
+                "verified_deadline": null,
+                "suggested_target_date": "2024-12-31"
+              },
+              {
+                "stage": "before_applications",
+                "title": "Identify Institutions Offering Non-Competitive Admission",
+                "status": "not_started",
+                "date_type": "planning_suggestion",
+                "mandatory": true,
+                "unverified": true,
+                "description": "Contact institutions to confirm admission criteria and availability of programmes without competitive exams.",
+                "source_record_ids": [],
+                "verified_deadline": null,
+                "suggested_target_date": "2025-02-28"
+              }
+            ],
+            "summary": "You have a strong interest and skills in Design and Computer Science, aligning well with a career in Design and Visual Communication. However, your unwillingness to take competitive examinations limits access to many verified programmes and courses. Currently, there is insufficient verified data on eligible programmes that do not require competitive exams, so planning should focus on exploring alternative routes and gathering more information.",
+            "career_id": "career-design",
+            "exam_steps": [],
+            "why_it_fits": [
+              {
+                "factor": "Design and Computer Science subjects",
+                "student_evidence": "You study Design and Computer Science, which are core to Design and Visual Communication."
+              },
+              {
+                "factor": "Skills in Visual design and Coding",
+                "student_evidence": "Your skills in Visual design and Coding support the practical demands of this career."
+              }
+            ],
+            "next_actions": [
+              {
+                "action": "Research and list diploma and certificate programmes in Design and Visual Communication that do not require competitive exams.",
+                "reason": "No verified programmes currently available; this will help identify feasible education paths.",
+                "priority": "high",
+                "source_record_ids": []
+              },
+              {
+                "action": "Develop a portfolio of design and coding projects to demonstrate skills to potential employers or institutions.",
+                "reason": "Practical skills and portfolio can compensate for lack of formal competitive exam qualifications.",
+                "priority": "high",
+                "source_record_ids": []
+              },
+              {
+                "action": "Reach out to educational institutions to verify admission criteria and explore alternative admission routes.",
+                "reason": "Direct confirmation is needed due to lack of verified admission data.",
+                "priority": "medium",
+                "source_record_ids": []
+              }
+            ],
+            "backup_routes": [],
+            "roadmap_title": "Design and Visual Communication Career Roadmap Without Competitive Exams",
+            "course_options": [],
+            "college_programmes": [],
+            "eligibility_summary": {
+              "status": "insufficient_data",
+              "explanation": "No verified programme-level eligibility records or admission routes without competitive exams are available in the supplied data.",
+              "source_record_ids": [],
+              "missing_requirements": [
+                "Verified programme-level eligibility records"
+              ]
+            },
+            "important_tradeoffs": [
+              "Avoiding competitive examinations restricts access to many formal programmes and admission routes.",
+              "Lack of verified programme and course options means you may need to consider alternative education paths such as diplomas, certifications, or self-learning.",
+              "Limited verified data on suitable courses may require more effort in researching and validating options independently."
+            ],
+            "decisive_constraints": [
+              {
+                "status": "conflicts_with_available_routes",
+                "constraint_id": "constraint-exam-willingness",
+                "constraint_type": "exam_willingness",
+                "effect_on_roadmap": "Limits access to many verified programmes and courses requiring competitive exams; no verified routes accommodate this preference.",
+                "source_record_ids": [],
+                "student_preference": "Unwilling to take competitive examinations",
+                "affected_section_ids": [
+                  "summary",
+                  "eligibility_summary",
+                  "course_options",
+                  "college_programmes",
+                  "exam_steps",
+                  "backup_routes"
+                ]
+              }
+            ],
+            "missing_or_unverified": [
+              {
+                "field": "Programme eligibility",
+                "message": "No verified programme-level eligibility records available."
+              },
+              {
+                "field": "Admission routes",
+                "message": "No verified admission cycle or route data for programmes without competitive exams."
+              }
+            ],
+            "questions_for_counsellor": [
+              "Are there any recognised diploma or certificate programmes in Design and Visual Communication that do not require competitive exams?",
+              "What alternative admission routes exist for students unwilling to take competitive examinations?",
+              "How can I best build a portfolio to improve my chances of admission or employment without formal competitive exam qualifications?"
+            ]
+          },
+          "materiallyDistinct": true
+        },
+        {
+          "id": "changing-interests",
+          "status": "complete",
+          "nativeSchemaValid": true,
+          "repairedSchemaValid": true,
+          "factualValid": true,
+          "safety": {
+            "outputFingerprint": "65fe5237cf365e5f84e762211df61b04d2f8094c4c05876bf510fd8845939863",
+            "missingDataHandled": true,
+            "nativeFactualValid": true,
+            "inventedEntityCount": 0,
+            "unsupportedRecordIds": [],
+            "ignoredHardConstraints": [],
+            "eligibilityContradiction": false,
+            "unverifiedAdmissionsFact": false
+          },
+          "promptTokens": 1821,
+          "completionTokens": 1060,
+          "reasoningTokens": 0,
+          "totalTokens": 2881,
+          "reportedCostUsd": 0.0024244,
+          "estimatedCostUsd": 0.0024244,
+          "latencyMs": 14220,
+          "errorStatus": null,
+          "errors": [],
+          "output": {
+            "stages": [
+              {
+                "stage": "now",
+                "title": "Explore and Reflect on Interests",
+                "status": "in_progress",
+                "date_type": "planning_suggestion",
+                "mandatory": true,
+                "unverified": true,
+                "description": "Continue engaging with your current subjects and skills to clarify which interdisciplinary areas excite you most.",
+                "source_record_ids": [],
+                "verified_deadline": null,
+                "suggested_target_date": null
+              },
+              {
+                "stage": "next_6_months",
+                "title": "Research Interdisciplinary Programmes",
+                "status": "not_started",
+                "date_type": "planning_suggestion",
+                "mandatory": true,
+                "unverified": true,
+                "description": "Investigate colleges and programmes that offer interdisciplinary studies combining Literature, Mathematics, Fine Arts, and Biology.",
+                "source_record_ids": [],
+                "verified_deadline": null,
+                "suggested_target_date": null
+              },
+              {
+                "stage": "before_applications",
+                "title": "Seek Guidance from Counsellors",
+                "status": "not_started",
+                "date_type": "planning_suggestion",
+                "mandatory": true,
+                "unverified": true,
+                "description": "Discuss your mixed interests and skills with academic counsellors to identify suitable programmes and admission requirements.",
+                "source_record_ids": [],
+                "verified_deadline": null,
+                "suggested_target_date": null
+              },
+              {
+                "stage": "admissions",
+                "title": "Prepare for Application Process",
+                "status": "not_started",
+                "date_type": "planning_suggestion",
+                "mandatory": true,
+                "unverified": true,
+                "description": "Gather necessary documents and prepare for any entrance exams or interviews once suitable programmes are identified.",
+                "source_record_ids": [],
+                "verified_deadline": null,
+                "suggested_target_date": null
+              },
+              {
+                "stage": "during_course",
+                "title": "Engage in Interdisciplinary Learning",
+                "status": "not_started",
+                "date_type": "planning_suggestion",
+                "mandatory": true,
+                "unverified": true,
+                "description": "Focus on integrating your diverse interests through coursework, projects, and extracurricular activities.",
+                "source_record_ids": [],
+                "verified_deadline": null,
+                "suggested_target_date": null
+              },
+              {
+                "stage": "early_career",
+                "title": "Explore Diverse Career Paths",
+                "status": "not_started",
+                "date_type": "planning_suggestion",
+                "mandatory": true,
+                "unverified": true,
+                "description": "Leverage your interdisciplinary background to explore varied career opportunities that align with your skills and interests.",
+                "source_record_ids": [],
+                "verified_deadline": null,
+                "suggested_target_date": null
+              }
+            ],
+            "summary": "You have a unique combination of interests spanning Literature, Mathematics, Fine Arts, and Biology, complemented by skills in Writing, Data Interpretation, and Visual Design. This interdisciplinary exploration career fits your diverse academic profile but currently lacks verified programme or course pathways to concretely pursue. Your changing interests across domains present both opportunities and challenges in selecting a focused academic route.",
+            "career_id": "career-interdisciplinary",
+            "exam_steps": [],
+            "why_it_fits": [
+              {
+                "factor": "Mixed academic interests across Literature, Mathematics, Fine Arts, and Biology",
+                "student_evidence": "You study and have affinities in Literature, Mathematics, Fine Arts, and Biology, indicating a broad interdisciplinary inclination."
+              },
+              {
+                "factor": "Skills in Writing, Data Interpretation, and Visual Design",
+                "student_evidence": "Your skills align well with interdisciplinary fields that require communication, analytical, and creative abilities."
+              }
+            ],
+            "next_actions": [
+              {
+                "action": "Research interdisciplinary programmes combining your subjects",
+                "reason": "No verified programmes currently available; proactive research is essential to find suitable options.",
+                "priority": "high",
+                "source_record_ids": []
+              },
+              {
+                "action": "Consult academic counsellors about mixed interests",
+                "reason": "Guidance is crucial to navigate your changing interests and identify feasible academic routes.",
+                "priority": "high",
+                "source_record_ids": []
+              },
+              {
+                "action": "Continue developing skills in Writing, Data Interpretation, and Visual Design",
+                "reason": "These skills support interdisciplinary learning and future career flexibility.",
+                "priority": "medium",
+                "source_record_ids": []
+              }
+            ],
+            "backup_routes": [],
+            "roadmap_title": "Roadmap for Interdisciplinary Exploration with Mixed Interests in Literature, Mathematics, Fine Arts, and Biology",
+            "course_options": [],
+            "college_programmes": [],
+            "eligibility_summary": {
+              "status": "insufficient_data",
+              "explanation": "No verified programme-level eligibility or admission cycle records are available for this interdisciplinary career to determine eligibility.",
+              "source_record_ids": [],
+              "missing_requirements": [
+                "Verified programme-level eligibility records"
+              ]
+            },
+            "important_tradeoffs": [
+              "Lack of verified programme-level eligibility and admission pathways means you may need to explore multiple options and remain flexible.",
+              "Changing interests across diverse domains may require balancing depth and breadth in your studies.",
+              "Absence of verified courses or exams aligned with this interdisciplinary career suggests a need for self-driven exploration or consultation with counsellors."
+            ],
+            "decisive_constraints": [
+              {
+                "status": "conflicts_with_available_routes",
+                "constraint_id": "constraint-1",
+                "constraint_type": "other",
+                "effect_on_roadmap": "Requires flexible, interdisciplinary exploration without fixed subject boundaries; no verified routes currently accommodate this fully.",
+                "source_record_ids": [
+                  "career:career-interdisciplinary"
+                ],
+                "student_preference": "Interests have changed across domains",
+                "affected_section_ids": [
+                  "summary",
+                  "why_it_fits",
+                  "important_tradeoffs",
+                  "next_actions"
+                ]
+              }
+            ],
+            "missing_or_unverified": [
+              {
+                "field": "Programme-level eligibility and admission data",
+                "message": "No verified records available to confirm eligibility or admission pathways for interdisciplinary programmes."
+              }
+            ],
+            "questions_for_counsellor": [
+              "What interdisciplinary programmes are available that combine Literature, Mathematics, Fine Arts, and Biology?",
+              "How can I balance my diverse interests when choosing a college programme?",
+              "Are there entrance exams or prerequisites I should prepare for given my mixed subject profile?"
+            ]
+          },
+          "materiallyDistinct": true
+        },
+        {
+          "id": "diploma-employability",
+          "status": "failed",
+          "nativeSchemaValid": false,
+          "repairedSchemaValid": false,
+          "factualValid": false,
+          "safety": {},
+          "promptTokens": 0,
+          "completionTokens": 0,
+          "reasoningTokens": 0,
+          "totalTokens": 0,
+          "reportedCostUsd": null,
+          "estimatedCostUsd": 0,
+          "latencyMs": 45023,
+          "errorStatus": null,
+          "errors": [
+            "The operation was aborted due to timeout"
+          ],
+          "output": null,
+          "materiallyDistinct": false
+        }
+      ],
+      "thresholds": {
+        "safeRepairSchemaValidity": false,
+        "grounding": false,
+        "constraints": false,
+        "tokenLimits": false,
+        "verifiedAdmissionsOnly": false,
+        "missingData": false,
+        "distinctness": false
+      },
+      "approved": false,
+      "metrics": {
+        "nativeSchemaPassRate": 0.75,
+        "safeRepairSchemaPassRate": 0.75,
+        "groundingPassRate": 0.75,
+        "constraintPassRate": 1,
+        "missingDataPassRate": 0.75,
+        "distinctProfiles": 3,
+        "averageInputTokens": 1355.75,
+        "averageOutputTokens": 711.25,
+        "averageTotalTokens": 2067,
+        "totalTokens": 8268,
+        "averageLatencyMs": 23497.5,
+        "p95LatencyMs": 45023,
+        "totalCostUsd": 0.0067212
+      }
+    },
+    {
+      "model": "openai/gpt-5-mini",
+      "profiles": [
+        {
+          "id": "limited-finances-local",
+          "status": "failed",
+          "nativeSchemaValid": false,
+          "repairedSchemaValid": false,
+          "factualValid": false,
+          "safety": {},
+          "promptTokens": 0,
+          "completionTokens": 0,
+          "reasoningTokens": 0,
+          "totalTokens": 0,
+          "reportedCostUsd": null,
+          "estimatedCostUsd": 0,
+          "latencyMs": 530,
+          "errorStatus": 404,
+          "errors": [
+            "Evaluation provider returned 404."
+          ],
+          "output": null,
+          "materiallyDistinct": false
+        },
+        {
+          "id": "no-competitive-exams",
+          "status": "failed",
+          "nativeSchemaValid": false,
+          "repairedSchemaValid": false,
+          "factualValid": false,
+          "safety": {},
+          "promptTokens": 0,
+          "completionTokens": 0,
+          "reasoningTokens": 0,
+          "totalTokens": 0,
+          "reportedCostUsd": null,
+          "estimatedCostUsd": 0,
+          "latencyMs": 64,
+          "errorStatus": 404,
+          "errors": [
+            "Evaluation provider returned 404."
+          ],
+          "output": null,
+          "materiallyDistinct": false
+        },
+        {
+          "id": "changing-interests",
+          "status": "failed",
+          "nativeSchemaValid": false,
+          "repairedSchemaValid": false,
+          "factualValid": false,
+          "safety": {},
+          "promptTokens": 0,
+          "completionTokens": 0,
+          "reasoningTokens": 0,
+          "totalTokens": 0,
+          "reportedCostUsd": null,
+          "estimatedCostUsd": 0,
+          "latencyMs": 61,
+          "errorStatus": 404,
+          "errors": [
+            "Evaluation provider returned 404."
+          ],
+          "output": null,
+          "materiallyDistinct": false
+        },
+        {
+          "id": "diploma-employability",
+          "status": "failed",
+          "nativeSchemaValid": false,
+          "repairedSchemaValid": false,
+          "factualValid": false,
+          "safety": {},
+          "promptTokens": 0,
+          "completionTokens": 0,
+          "reasoningTokens": 0,
+          "totalTokens": 0,
+          "reportedCostUsd": null,
+          "estimatedCostUsd": 0,
+          "latencyMs": 70,
+          "errorStatus": 404,
+          "errors": [
+            "Evaluation provider returned 404."
+          ],
+          "output": null,
+          "materiallyDistinct": false
+        }
+      ],
+      "thresholds": {
+        "safeRepairSchemaValidity": false,
+        "grounding": false,
+        "constraints": false,
+        "tokenLimits": false,
+        "verifiedAdmissionsOnly": false,
+        "missingData": false,
+        "distinctness": false
+      },
+      "approved": false,
+      "metrics": {
+        "nativeSchemaPassRate": 0,
+        "safeRepairSchemaPassRate": 0,
+        "groundingPassRate": 0,
+        "constraintPassRate": 1,
+        "missingDataPassRate": 0,
+        "distinctProfiles": 0,
+        "averageInputTokens": 0,
+        "averageOutputTokens": 0,
+        "averageTotalTokens": 0,
+        "totalTokens": 0,
+        "averageLatencyMs": 181.25,
+        "p95LatencyMs": 530,
+        "totalCostUsd": 0
+      }
+    },
+    {
+      "model": "google/gemini-2.5-flash",
+      "profiles": [
+        {
+          "id": "limited-finances-local",
+          "status": "complete",
+          "nativeSchemaValid": false,
+          "repairedSchemaValid": false,
+          "factualValid": false,
+          "safety": {
+            "outputFingerprint": null,
+            "missingDataHandled": false,
+            "nativeFactualValid": false,
+            "inventedEntityCount": 0,
+            "unsupportedRecordIds": [],
+            "ignoredHardConstraints": [
+              "Annual tuition below ₹50,000",
+              "Must study near home"
+            ],
+            "eligibilityContradiction": true,
+            "unverifiedAdmissionsFact": false
+          },
+          "promptTokens": 966,
+          "completionTokens": 1686,
+          "reasoningTokens": 336,
+          "totalTokens": 2988,
+          "reportedCostUsd": 0.0045048,
+          "estimatedCostUsd": 0.0045048,
+          "latencyMs": 9570,
+          "errorStatus": null,
+          "errors": [
+            "Response could not be safely repaired to JSON."
+          ],
+          "output": null,
+          "materiallyDistinct": false
+        },
+        {
+          "id": "no-competitive-exams",
+          "status": "complete",
+          "nativeSchemaValid": false,
+          "repairedSchemaValid": false,
+          "factualValid": false,
+          "safety": {
+            "outputFingerprint": null,
+            "missingDataHandled": false,
+            "nativeFactualValid": false,
+            "inventedEntityCount": 0,
+            "unsupportedRecordIds": [],
+            "ignoredHardConstraints": [
+              "Unwilling to take competitive examinations"
+            ],
+            "eligibilityContradiction": true,
+            "unverifiedAdmissionsFact": false
+          },
+          "promptTokens": 929,
+          "completionTokens": 1685,
+          "reasoningTokens": 336,
+          "totalTokens": 2950,
+          "reportedCostUsd": 0.0044912,
+          "estimatedCostUsd": 0.0044912,
+          "latencyMs": 9508,
+          "errorStatus": null,
+          "errors": [
+            "Response could not be safely repaired to JSON."
+          ],
+          "output": null,
+          "materiallyDistinct": false
+        },
+        {
+          "id": "changing-interests",
+          "status": "complete",
+          "nativeSchemaValid": false,
+          "repairedSchemaValid": false,
+          "factualValid": false,
+          "safety": {
+            "outputFingerprint": null,
+            "missingDataHandled": false,
+            "nativeFactualValid": false,
+            "inventedEntityCount": 0,
+            "unsupportedRecordIds": [],
+            "ignoredHardConstraints": [
+              "Interests have changed across domains"
+            ],
+            "eligibilityContradiction": true,
+            "unverifiedAdmissionsFact": false
+          },
+          "promptTokens": 941,
+          "completionTokens": 1686,
+          "reasoningTokens": 336,
+          "totalTokens": 2963,
+          "reportedCostUsd": 0.0044973,
+          "estimatedCostUsd": 0.0044973,
+          "latencyMs": 11389,
+          "errorStatus": null,
+          "errors": [
+            "Response could not be safely repaired to JSON."
+          ],
+          "output": null,
+          "materiallyDistinct": false
+        },
+        {
+          "id": "diploma-employability",
+          "status": "complete",
+          "nativeSchemaValid": false,
+          "repairedSchemaValid": false,
+          "factualValid": false,
+          "safety": {
+            "outputFingerprint": null,
+            "missingDataHandled": false,
+            "nativeFactualValid": false,
+            "inventedEntityCount": 0,
+            "unsupportedRecordIds": [],
+            "ignoredHardConstraints": [
+              "Prefers a diploma and early employability"
+            ],
+            "eligibilityContradiction": true,
+            "unverifiedAdmissionsFact": false
+          },
+          "promptTokens": 943,
+          "completionTokens": 1686,
+          "reasoningTokens": 330,
+          "totalTokens": 2959,
+          "reportedCostUsd": 0.0044979,
+          "estimatedCostUsd": 0.0044979,
+          "latencyMs": 10201,
+          "errorStatus": null,
+          "errors": [
+            "Response could not be safely repaired to JSON."
+          ],
+          "output": null,
+          "materiallyDistinct": false
+        }
+      ],
+      "thresholds": {
+        "safeRepairSchemaValidity": false,
+        "grounding": false,
+        "constraints": false,
+        "tokenLimits": false,
+        "verifiedAdmissionsOnly": false,
+        "missingData": false,
+        "distinctness": false
+      },
+      "approved": false,
+      "metrics": {
+        "nativeSchemaPassRate": 0,
+        "safeRepairSchemaPassRate": 0,
+        "groundingPassRate": 0,
+        "constraintPassRate": 0,
+        "missingDataPassRate": 0,
+        "distinctProfiles": 0,
+        "averageInputTokens": 944.75,
+        "averageOutputTokens": 1685.75,
+        "averageTotalTokens": 2965,
+        "totalTokens": 11860,
+        "averageLatencyMs": 10167,
+        "p95LatencyMs": 11389,
+        "totalCostUsd": 0.0179912
+      }
+    }
+  ],
+  "approval": {
+    "primary": null,
+    "fallback": null
+  }
+}
