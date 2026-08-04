@@ -12,6 +12,7 @@ dist
 dist-ssr
 *.local
 imports/
+reports/*.json
 
 # Editor directories and files
 .vscode/*

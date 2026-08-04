@@ -8,12 +8,15 @@
     "build": "tsc -b && vite build",
     "lint": "oxlint",
     "preview": "vite preview",
-    "test": "node --experimental-strip-types scripts/recommendation-quality-test.mjs && node scripts/dashboard-interaction-check.mjs && node scripts/auth-flow-check.mjs",
+    "test": "node --experimental-strip-types scripts/recommendation-quality-test.mjs && node scripts/dashboard-interaction-check.mjs && node scripts/auth-flow-check.mjs && node --experimental-strip-types scripts/ai-roadmap-architecture-test.mjs",
+    "ai:evaluate": "node --experimental-strip-types scripts/evaluate-roadmap-models.mjs",
+    "ai:evaluate:run": "node --experimental-strip-types scripts/evaluate-roadmap-models.mjs --run",
     "data:audit": "node scripts/data-audit.mjs",
     "data:import-pack": "node scripts/import-database-pack.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.112.0",
+    "ajv": "^8.20.0",
     "csv-parse": "^7.0.1",
     "lucide-react": "^1.25.0",
     "pg": "^8.22.0",

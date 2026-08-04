@@ -1,0 +1,102 @@
+[
+  {
+    "id": "class10-psych-biology",
+    "grade": "Class 10",
+    "subjects": ["Psychology", "Biology"],
+    "skills": ["Listening", "Research"],
+    "constraints": [],
+    "careerId": "career-psychology",
+    "careerName": "Psychology and behaviour",
+    "expectedSignal": "biology"
+  },
+  {
+    "id": "class12-pcm-engineering",
+    "grade": "Class 12",
+    "subjects": ["Physics", "Chemistry", "Mathematics"],
+    "skills": ["Analytical reasoning", "Building physical things"],
+    "constraints": [],
+    "careerId": "career-engineering",
+    "careerName": "Applied engineering",
+    "expectedSignal": "mathematics"
+  },
+  {
+    "id": "psychology-computing",
+    "grade": "Class 12",
+    "subjects": ["Psychology", "Computer Science"],
+    "skills": ["Research", "Coding", "Empathy"],
+    "constraints": [],
+    "careerId": "career-ux",
+    "careerName": "Psychology, behaviour and UX research",
+    "expectedSignal": "computer"
+  },
+  {
+    "id": "history-chemistry",
+    "grade": "Class 11",
+    "subjects": ["History", "Chemistry"],
+    "skills": ["Writing", "Experimentation"],
+    "constraints": [],
+    "careerId": "career-environment",
+    "careerName": "Environmental policy and sustainability",
+    "expectedSignal": "history"
+  },
+  {
+    "id": "limited-finances-local",
+    "grade": "Class 12",
+    "subjects": ["Economics", "Business Studies"],
+    "skills": ["Planning"],
+    "constraints": ["Annual tuition below ₹50,000", "Must study near home"],
+    "careerId": "career-commerce",
+    "careerName": "Commerce and finance",
+    "expectedSignal": "near home"
+  },
+  {
+    "id": "no-competitive-exams",
+    "grade": "Class 12",
+    "subjects": ["Design", "Computer Science"],
+    "skills": ["Visual design", "Coding"],
+    "constraints": ["Unwilling to take competitive examinations"],
+    "careerId": "career-design",
+    "careerName": "Design and visual communication",
+    "expectedSignal": "examination"
+  },
+  {
+    "id": "missing-compulsory-subject",
+    "grade": "Class 12",
+    "subjects": ["Biology", "Chemistry"],
+    "skills": ["Experimentation"],
+    "constraints": ["Missing required Mathematics subject"],
+    "careerId": "career-engineering-subject-gap",
+    "careerName": "Engineering with a subject gap",
+    "expectedSignal": "missing"
+  },
+  {
+    "id": "changing-interests",
+    "grade": "Class 11",
+    "subjects": ["Literature", "Mathematics", "Fine Arts", "Biology"],
+    "skills": ["Writing", "Data interpretation", "Visual design"],
+    "constraints": ["Interests have changed across domains"],
+    "careerId": "career-interdisciplinary",
+    "careerName": "Interdisciplinary exploration",
+    "expectedSignal": "interdisciplinary"
+  },
+  {
+    "id": "diploma-employability",
+    "grade": "Class 10",
+    "subjects": ["Mathematics", "Vocational Subjects"],
+    "skills": ["Fixing systems", "Building physical things"],
+    "constraints": ["Prefers a diploma and early employability"],
+    "careerId": "career-technical",
+    "careerName": "Applied technical operations",
+    "expectedSignal": "diploma"
+  },
+  {
+    "id": "insufficient-college-data",
+    "grade": "Class 12",
+    "subjects": ["Psychology"],
+    "skills": ["Listening"],
+    "constraints": ["No location, budget, marks, or relocation information"],
+    "careerId": "career-insufficient",
+    "careerName": "Psychology exploration",
+    "expectedSignal": "insufficient"
+  }
+]
