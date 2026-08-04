@@ -4,7 +4,7 @@ import { createAiConfig } from '../server/ai/config.ts'
 import { assessSourceFreshness } from '../server/ai/currentData.ts'
 import { summariseStudent } from '../server/ai/evidence.ts'
 import { compactEvidence, remainingOutputBudget, TokenBudgetError } from '../server/ai/tokens.ts'
-import { parseAndValidateRoadmap } from '../server/ai/validation.ts'
+import { parseAndValidateRoadmap, safelyParseRoadmapContent } from '../server/ai/validation.ts'
 
 const config = createAiConfig({
   OPENROUTER_MAX_INPUT_TOKENS: '2800',
@@ -122,6 +122,17 @@ assert.equal(accepted.factualValid, true)
 
 const invalidSchema = parseAndValidateRoadmap({ summary: 'not a roadmap' }, evidence)
 assert.equal(invalidSchema.schemaValid, false)
+
+const safelyParsed = safelyParseRoadmapContent(JSON.stringify(valid))
+assert.equal(safelyParsed.repaired, false)
+assert.deepEqual(safelyParsed.value, valid)
+
+const safelyRepaired = safelyParseRoadmapContent(`\`\`\`json\n${JSON.stringify(valid)}\n\`\`\``)
+assert.equal(safelyRepaired.repaired, true)
+assert.deepEqual(safelyRepaired.value, valid)
+
+const unsafeRepair = safelyParseRoadmapContent('Here is a roadmap: definitely not JSON.')
+assert.equal(unsafeRepair.value, null)
 
 const fabricated = structuredClone(valid)
 fabricated.college_programmes.push({

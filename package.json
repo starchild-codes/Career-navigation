@@ -11,8 +11,10 @@
     "test": "node --experimental-strip-types scripts/recommendation-quality-test.mjs && node scripts/dashboard-interaction-check.mjs && node scripts/auth-flow-check.mjs && node --experimental-strip-types scripts/ai-roadmap-architecture-test.mjs && node --experimental-strip-types scripts/programme-pilot-validation-test.mjs",
     "ai:evaluate": "node --experimental-strip-types scripts/evaluate-roadmap-models.mjs",
     "ai:evaluate:run": "node --experimental-strip-types scripts/evaluate-roadmap-models.mjs --run",
+    "ai:evaluate:aggregate": "node scripts/aggregate-roadmap-evaluation.mjs",
     "ai:evaluate:persist": "node scripts/persist-roadmap-evaluation.mjs",
     "test:rls": "node scripts/rls-isolation-test.mjs",
+    "test:evaluation-persistence": "node scripts/evaluation-persistence-test.mjs",
     "data:audit": "node scripts/data-audit.mjs",
     "data:import-pack": "node scripts/import-database-pack.mjs"
   },

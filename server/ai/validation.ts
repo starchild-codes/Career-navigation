@@ -16,6 +16,27 @@ export type ValidationResult = {
 const truncate = (value: string, max: number) =>
   value.length > max ? `${value.slice(0, Math.max(0, max - 1))}…` : value
 
+export function safelyParseRoadmapContent(content: string): {
+  value: unknown | null
+  repaired: boolean
+  error: string | null
+} {
+  try {
+    return { value: JSON.parse(content), repaired: false, error: null }
+  } catch {
+    const fenced = content.match(/^\s*```(?:json)?\s*([\s\S]*?)\s*```\s*$/i)?.[1]
+    const candidate = fenced || content.slice(content.indexOf('{'), content.lastIndexOf('}') + 1)
+    if (!candidate || candidate === content) {
+      return { value: null, repaired: false, error: 'Response was not valid JSON.' }
+    }
+    try {
+      return { value: JSON.parse(candidate), repaired: true, error: null }
+    } catch {
+      return { value: null, repaired: false, error: 'Response could not be safely repaired to JSON.' }
+    }
+  }
+}
+
 export function parseAndValidateRoadmap(
   raw: unknown,
   evidence: RoadmapEvidencePackage,
