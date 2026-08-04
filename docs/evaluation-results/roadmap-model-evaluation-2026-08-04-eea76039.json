@@ -1,0 +1,182 @@
+{
+  "harnessVersion": "manyfolds-roadmap-eval-v5",
+  "promptVersion": "manyfolds-roadmap-v3",
+  "schemaVersion": "manyfolds-roadmap-schema-v2",
+  "runId": "eea76039-7d88-4cb0-9ee4-667ef25a6743",
+  "createdAt": "2026-08-04T13:34:27.744Z",
+  "preflight": {
+    "candidates": [
+      {
+        "id": "meta-llama/llama-3.3-70b-instruct",
+        "requestFee": 0,
+        "promptPrice": 1e-7,
+        "completionPrice": 3.2e-7,
+        "structuredOutputs": true,
+        "supportsReasoning": false,
+        "maximumCostPerCall": 0.000824
+      }
+    ],
+    "maximumCalls": 1,
+    "profileCount": 1,
+    "candidateCount": 1,
+    "maximumRetries": 0,
+    "liveDataEnabled": false,
+    "maxInputTokensPerCall": 2800,
+    "maxTotalTokensPerCall": 5000,
+    "maximumPossibleTokens": 5000,
+    "maxOutputTokensPerCall": 1700,
+    "maximumEstimatedCostUsd": 0.000824,
+    "evidencePackagesDistinct": true
+  },
+  "actualCalls": 1,
+  "actualTotalCostUsd": 0.00183024,
+  "models": [
+    {
+      "model": "meta-llama/llama-3.3-70b-instruct",
+      "profiles": [
+        {
+          "id": "changing-interests",
+          "status": "complete",
+          "nativeSchemaValid": true,
+          "repairedSchemaValid": true,
+          "factualValid": false,
+          "safety": {
+            "outputFingerprint": "1801c2ced64d9bfe9186c1f13b579e36b4e12a4b430b327b69b89dd370fdb150",
+            "missingDataHandled": true,
+            "nativeFactualValid": false,
+            "inventedEntityCount": 0,
+            "unsupportedRecordIds": [],
+            "ignoredHardConstraints": [],
+            "eligibilityContradiction": false,
+            "unverifiedAdmissionsFact": false
+          },
+          "promptTokens": 1839,
+          "completionTokens": 703,
+          "reasoningTokens": 0,
+          "totalTokens": 2542,
+          "reportedCostUsd": 0.00183024,
+          "estimatedCostUsd": 0.00040886000000000004,
+          "latencyMs": 11386,
+          "errorStatus": null,
+          "errors": [
+            "Missing decisive constraint reflection: Interests have changed across domains"
+          ],
+          "output": {
+            "stages": [
+              {
+                "stage": "now",
+                "title": "Self-Reflection and Research",
+                "status": "not_started",
+                "date_type": "planning_suggestion",
+                "mandatory": true,
+                "unverified": true,
+                "description": "The student should reflect on their interests and skills, and research potential career paths and programmes.",
+                "source_record_ids": [],
+                "verified_deadline": null,
+                "suggested_target_date": null
+              }
+            ],
+            "summary": "This roadmap is designed for a Class 11 student with interests in Literature, Mathematics, Fine Arts, and Biology, and skills in Writing, Data interpretation, and Visual design. The student is open to exploring various career paths and has a preference for interdisciplinary exploration.",
+            "career_id": "career-interdisciplinary",
+            "exam_steps": [],
+            "why_it_fits": [
+              {
+                "factor": "Interests in multiple subjects",
+                "student_evidence": "The student has listed Literature, Mathematics, Fine Arts, and Biology as their subject affinities."
+              },
+              {
+                "factor": "Skills in creative and analytical fields",
+                "student_evidence": "The student has listed Writing, Data interpretation, and Visual design as their skills."
+              }
+            ],
+            "next_actions": [
+              {
+                "action": "Research potential career paths and programmes",
+                "reason": "To determine the best fit for the student's interests and skills",
+                "priority": "high",
+                "source_record_ids": [
+                  "career:career-interdisciplinary"
+                ]
+              }
+            ],
+            "backup_routes": [],
+            "roadmap_title": "Exploring Interdisciplinary Paths",
+            "course_options": [],
+            "college_programmes": [],
+            "eligibility_summary": {
+              "status": "insufficient_data",
+              "explanation": "There is insufficient data to determine the student's eligibility for specific programmes or careers.",
+              "source_record_ids": [
+                "career:career-interdisciplinary"
+              ],
+              "missing_requirements": [
+                "Verified programme-level eligibility records"
+              ]
+            },
+            "important_tradeoffs": [
+              "Potential difficulty in choosing a single career path",
+              "Need to balance multiple interests and skills"
+            ],
+            "decisive_constraints": [
+              {
+                "status": "accommodated",
+                "constraint_id": "Interests have changed across domains",
+                "constraint_type": "other",
+                "effect_on_roadmap": "The student's openness to exploring various career paths has led to a focus on interdisciplinary exploration.",
+                "source_record_ids": [
+                  "career:career-interdisciplinary"
+                ],
+                "student_preference": "Exploring various career paths",
+                "affected_section_ids": [
+                  "summary",
+                  "why_it_fits",
+                  "important_tradeoffs"
+                ]
+              }
+            ],
+            "missing_or_unverified": [
+              {
+                "field": "Verified programme-level eligibility records",
+                "message": "These records are necessary to determine the student's eligibility for specific programmes or careers."
+              }
+            ],
+            "questions_for_counsellor": [
+              "What are some potential career paths that combine the student's interests in Literature, Mathematics, Fine Arts, and Biology?",
+              "How can the student balance their multiple interests and skills in their future career?"
+            ]
+          },
+          "materiallyDistinct": true
+        }
+      ],
+      "thresholds": {
+        "safeRepairSchemaValidity": false,
+        "grounding": false,
+        "constraints": false,
+        "tokenLimits": false,
+        "verifiedAdmissionsOnly": false,
+        "missingData": false,
+        "distinctness": false
+      },
+      "approved": false,
+      "metrics": {
+        "nativeSchemaPassRate": 1,
+        "safeRepairSchemaPassRate": 1,
+        "groundingPassRate": 0,
+        "constraintPassRate": 1,
+        "missingDataPassRate": 1,
+        "distinctProfiles": 1,
+        "averageInputTokens": 1839,
+        "averageOutputTokens": 703,
+        "averageTotalTokens": 2542,
+        "totalTokens": 2542,
+        "averageLatencyMs": 11386,
+        "p95LatencyMs": 11386,
+        "totalCostUsd": 0.00183024
+      }
+    }
+  ],
+  "approval": {
+    "primary": null,
+    "fallback": null
+  }
+}
