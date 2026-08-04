@@ -226,6 +226,13 @@ export function parseAndValidateRoadmap(
     reason: truncate(action.reason, 260),
     source_record_ids: filterSourceIds(action.source_record_ids, `Action "${action.action}"`),
   }))
+  const expectedConstraints = evidence.personalisation.hard_constraints
+  for (const constraint of expectedConstraints) {
+    const match = roadmap.decisive_constraints.find((item) => item.student_preference.toLowerCase().includes(constraint.toLowerCase()) || constraint.toLowerCase().includes(item.student_preference.toLowerCase()))
+    if (!match) errors.push(`Missing decisive constraint reflection: ${constraint}`)
+    else if (!match.effect_on_roadmap || !match.affected_section_ids.length) errors.push(`Decisive constraint lacks visible roadmap effect: ${constraint}`)
+  }
+  roadmap.decisive_constraints = roadmap.decisive_constraints.map((item) => ({ ...item, source_record_ids: filterSourceIds(item.source_record_ids, `Decisive constraint ${item.constraint_id}`) }))
   roadmap.summary = truncate(roadmap.summary, 700)
   roadmap.important_tradeoffs = roadmap.important_tradeoffs.slice(0, 8).map((item) => truncate(item, 220))
   roadmap.questions_for_counsellor = roadmap.questions_for_counsellor.slice(0, 8).map((item) => truncate(item, 220))

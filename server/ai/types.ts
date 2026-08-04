@@ -179,6 +179,7 @@ export type RoadmapOutput = {
   }>
   questions_for_counsellor: string[]
   missing_or_unverified: Array<{ field: string; message: string }>
+  decisive_constraints: Array<{ constraint_id: string; constraint_type: 'exam_willingness' | 'budget' | 'location' | 'subject_eligibility' | 'route_preference' | 'course_duration' | 'other'; student_preference: string; effect_on_roadmap: string; status: 'accommodated' | 'partially_accommodated' | 'conflicts_with_available_routes' | 'insufficient_verified_data'; affected_section_ids: string[]; source_record_ids: string[] }>
 }
 
 export type GenerationUsage = {

@@ -58,6 +58,7 @@ export type AiRoadmap = {
   }>
   questions_for_counsellor: string[]
   missing_or_unverified: Array<{ field: string; message: string }>
+  decisive_constraints: Array<{ constraint_id: string; constraint_type: string; student_preference: string; effect_on_roadmap: string; status: string; affected_section_ids: string[]; source_record_ids: string[] }>
 }
 
 export type AiRoadmapSource = {

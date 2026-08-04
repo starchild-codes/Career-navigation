@@ -19,6 +19,7 @@ export const ROADMAP_JSON_SCHEMA = {
     'next_actions',
     'questions_for_counsellor',
     'missing_or_unverified',
+    'decisive_constraints',
   ],
   properties: {
     roadmap_title: text,
@@ -159,5 +160,6 @@ export const ROADMAP_JSON_SCHEMA = {
         properties: { field: text, message: text },
       },
     },
+    decisive_constraints: { type: 'array', items: { type: 'object', additionalProperties: false, required: ['constraint_id','constraint_type','student_preference','effect_on_roadmap','status','affected_section_ids','source_record_ids'], properties: { constraint_id: text, constraint_type: { type: 'string', enum: ['exam_willingness','budget','location','subject_eligibility','route_preference','course_duration','other'] }, student_preference: text, effect_on_roadmap: text, status: { type: 'string', enum: ['accommodated','partially_accommodated','conflicts_with_available_routes','insufficient_verified_data'] }, affected_section_ids: texts, source_record_ids: texts } } },
   },
 } as const

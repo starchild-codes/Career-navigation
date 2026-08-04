@@ -107,6 +107,7 @@ const valid = {
   ],
   questions_for_counsellor: ['Which verified local routes should be investigated?'],
   missing_or_unverified: [{ field: 'programmes', message: 'No verified records supplied.' }],
+  decisive_constraints: [{ constraint_id: 'exam', constraint_type: 'exam_willingness', student_preference: 'Avoid competitive examinations', effect_on_roadmap: 'No exam-dependent route is presented.', status: 'insufficient_verified_data', affected_section_ids: ['next_actions'], source_record_ids: [] }],
 }
 
 const compacted = compactEvidence(evidence, config)

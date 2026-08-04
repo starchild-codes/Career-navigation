@@ -1,0 +1,422 @@
+{
+  "harnessVersion": "manyfolds-roadmap-eval-v5",
+  "promptVersion": "manyfolds-roadmap-v3",
+  "schemaVersion": "manyfolds-roadmap-schema-v2",
+  "runId": "4a7652bd-adb0-431b-87f1-e41f7e5615dd",
+  "createdAt": "2026-08-04T13:24:53.965Z",
+  "preflight": {
+    "candidates": [
+      {
+        "id": "meta-llama/llama-3.3-70b-instruct",
+        "requestFee": 0,
+        "promptPrice": 1e-7,
+        "completionPrice": 3.2e-7,
+        "structuredOutputs": true,
+        "supportsReasoning": false,
+        "maximumCostPerCall": 0.000824
+      }
+    ],
+    "maximumCalls": 4,
+    "profileCount": 4,
+    "candidateCount": 1,
+    "maximumRetries": 0,
+    "liveDataEnabled": false,
+    "maxInputTokensPerCall": 2800,
+    "maxTotalTokensPerCall": 5000,
+    "maximumPossibleTokens": 20000,
+    "maxOutputTokensPerCall": 1700,
+    "maximumEstimatedCostUsd": 0.003296,
+    "evidencePackagesDistinct": true
+  },
+  "actualCalls": 4,
+  "actualTotalCostUsd": 0.00125982,
+  "models": [
+    {
+      "model": "meta-llama/llama-3.3-70b-instruct",
+      "profiles": [
+        {
+          "id": "limited-finances-local",
+          "status": "complete",
+          "nativeSchemaValid": true,
+          "repairedSchemaValid": true,
+          "factualValid": true,
+          "safety": {
+            "outputFingerprint": "b2b7ebda7b7dc96dc482328ff1e499f389225eadd7e6f5929966926132bb8713",
+            "missingDataHandled": true,
+            "nativeFactualValid": true,
+            "inventedEntityCount": 0,
+            "unsupportedRecordIds": [],
+            "ignoredHardConstraints": [],
+            "eligibilityContradiction": false,
+            "unverifiedAdmissionsFact": true
+          },
+          "promptTokens": 901,
+          "completionTokens": 518,
+          "reasoningTokens": 0,
+          "totalTokens": 1419,
+          "reportedCostUsd": 0.00032433,
+          "estimatedCostUsd": 0.00025586,
+          "latencyMs": 17597,
+          "errorStatus": null,
+          "errors": [],
+          "output": {
+            "stages": [],
+            "summary": "The Commerce and finance career aligns with your interests in Economics and Business Studies, and utilizes your Planning skills.",
+            "career_id": "career-commerce",
+            "exam_steps": [],
+            "why_it_fits": [
+              {
+                "factor": "Economics",
+                "student_evidence": "current_subjects"
+              },
+              {
+                "factor": "Business Studies",
+                "student_evidence": "current_subjects"
+              },
+              {
+                "factor": "Planning",
+                "student_evidence": "skills"
+              }
+            ],
+            "next_actions": [],
+            "backup_routes": [],
+            "roadmap_title": "Commerce and Finance Roadmap for limited-finances-local",
+            "course_options": [],
+            "college_programmes": [],
+            "eligibility_summary": {
+              "status": "insufficient_data",
+              "explanation": "Missing verified programme-level eligibility records and institution-programme, eligibility, admission-cycle, fee, and scholarship records.",
+              "source_record_ids": [],
+              "missing_requirements": [
+                "Verified programme-level eligibility records"
+              ]
+            },
+            "important_tradeoffs": [
+              "Annual tuition below ₹50,000",
+              "Must study near home"
+            ],
+            "decisive_constraints": [
+              {
+                "status": "insufficient_verified_data",
+                "constraint_id": "annual_tuition",
+                "constraint_type": "budget",
+                "effect_on_roadmap": "Limits institution and programme options",
+                "source_record_ids": [],
+                "student_preference": "Annual tuition below ₹50,000",
+                "affected_section_ids": [
+                  "eligibility_summary",
+                  "next_actions"
+                ]
+              },
+              {
+                "status": "insufficient_verified_data",
+                "constraint_id": "location",
+                "constraint_type": "location",
+                "effect_on_roadmap": "Restricts institution options to those near the student's location",
+                "source_record_ids": [],
+                "student_preference": "Must study near home",
+                "affected_section_ids": [
+                  "eligibility_summary",
+                  "next_actions"
+                ]
+              }
+            ],
+            "missing_or_unverified": [
+              {
+                "field": "verified_courses",
+                "message": "No verified courses available"
+              },
+              {
+                "field": "verified_programmes",
+                "message": "No verified programmes available"
+              },
+              {
+                "field": "verified_exams",
+                "message": "No verified exams available"
+              },
+              {
+                "field": "verified_scholarships",
+                "message": "No verified scholarships available"
+              }
+            ],
+            "questions_for_counsellor": [
+              "What are the available Commerce and finance programmes near my location?",
+              "How can I find institutions that offer annual tuition below ₹50,000?"
+            ]
+          },
+          "materiallyDistinct": true
+        },
+        {
+          "id": "no-competitive-exams",
+          "status": "complete",
+          "nativeSchemaValid": true,
+          "repairedSchemaValid": true,
+          "factualValid": true,
+          "safety": {
+            "outputFingerprint": "d59fd7df9f9be255f74ea2237e36e0b7da25108deee27772575036cdcc11784e",
+            "missingDataHandled": true,
+            "nativeFactualValid": true,
+            "inventedEntityCount": 0,
+            "unsupportedRecordIds": [],
+            "ignoredHardConstraints": [],
+            "eligibilityContradiction": false,
+            "unverifiedAdmissionsFact": false
+          },
+          "promptTokens": 886,
+          "completionTokens": 507,
+          "reasoningTokens": 0,
+          "totalTokens": 1393,
+          "reportedCostUsd": 0.00060175,
+          "estimatedCostUsd": 0.00025084,
+          "latencyMs": 21002,
+          "errorStatus": null,
+          "errors": [],
+          "output": {
+            "stages": [],
+            "summary": "This roadmap is designed for a Class 12 CBSE student with a strong affinity for Design and Computer Science, possessing skills in Visual design and Coding. The primary career aspiration is Design and visual communication.",
+            "career_id": "career-design",
+            "exam_steps": [],
+            "why_it_fits": [
+              {
+                "factor": "Design",
+                "student_evidence": "current_subjects"
+              },
+              {
+                "factor": "Computer Science",
+                "student_evidence": "current_subjects"
+              },
+              {
+                "factor": "Visual design",
+                "student_evidence": "skills"
+              },
+              {
+                "factor": "Coding",
+                "student_evidence": "skills"
+              }
+            ],
+            "next_actions": [
+              {
+                "action": "Explore non-competitive examination pathways for Design and visual communication programmes",
+                "reason": "Aligns with student's unwillingness to take competitive examinations and leverages their skills and subject affinities.",
+                "priority": "high",
+                "source_record_ids": []
+              }
+            ],
+            "backup_routes": [],
+            "roadmap_title": "Design and Visual Communication Career Roadmap",
+            "course_options": [],
+            "college_programmes": [],
+            "eligibility_summary": {
+              "status": "insufficient_data",
+              "explanation": "Insufficient verified programme-level eligibility records are available to determine specific course or programme eligibility.",
+              "source_record_ids": [],
+              "missing_requirements": [
+                "Verified programme-level eligibility records"
+              ]
+            },
+            "important_tradeoffs": [
+              "The student's unwillingness to take competitive examinations may limit programme and institution options."
+            ],
+            "decisive_constraints": [
+              {
+                "status": "insufficient_verified_data",
+                "constraint_id": "unwilling_to_take_competitive_exams",
+                "constraint_type": "exam_willingness",
+                "effect_on_roadmap": "Limits programme and institution options.",
+                "source_record_ids": [],
+                "student_preference": "Unwilling to take competitive examinations",
+                "affected_section_ids": [
+                  "eligibility_summary",
+                  "next_actions"
+                ]
+              }
+            ],
+            "missing_or_unverified": [
+              {
+                "field": "budget_band",
+                "message": "Budget band information is missing."
+              },
+              {
+                "field": "location_constraints",
+                "message": "Location constraints beyond unwillingness to take competitive examinations are not specified."
+              }
+            ],
+            "questions_for_counsellor": [
+              "What non-competitive examination pathways are available for Design and visual communication programmes?",
+              "How can the student's skills in Visual design and Coding be utilized in the career?"
+            ]
+          },
+          "materiallyDistinct": false
+        },
+        {
+          "id": "changing-interests",
+          "status": "failed",
+          "nativeSchemaValid": false,
+          "repairedSchemaValid": false,
+          "factualValid": false,
+          "safety": {},
+          "promptTokens": 0,
+          "completionTokens": 0,
+          "reasoningTokens": 0,
+          "totalTokens": 0,
+          "reportedCostUsd": null,
+          "estimatedCostUsd": 0,
+          "latencyMs": 45021,
+          "errorStatus": null,
+          "errors": [
+            "The operation was aborted due to timeout"
+          ],
+          "output": null,
+          "materiallyDistinct": false
+        },
+        {
+          "id": "diploma-employability",
+          "status": "complete",
+          "nativeSchemaValid": true,
+          "repairedSchemaValid": true,
+          "factualValid": true,
+          "safety": {
+            "outputFingerprint": "4116aa0617b432c1bfc2696a49c592a65d2f26d6ee31e2e2a0a69be86f47dc3c",
+            "missingDataHandled": true,
+            "nativeFactualValid": true,
+            "inventedEntityCount": 0,
+            "unsupportedRecordIds": [],
+            "ignoredHardConstraints": [],
+            "eligibilityContradiction": false,
+            "unverifiedAdmissionsFact": false
+          },
+          "promptTokens": 918,
+          "completionTokens": 536,
+          "reasoningTokens": 0,
+          "totalTokens": 1454,
+          "reportedCostUsd": 0.00033374,
+          "estimatedCostUsd": 0.00026332,
+          "latencyMs": 20099,
+          "errorStatus": null,
+          "errors": [],
+          "output": {
+            "stages": [],
+            "summary": "Pursue a diploma in applied technical operations, leveraging strengths in Mathematics and Vocational Subjects, with a focus on fixing systems and building physical things.",
+            "career_id": "career-technical",
+            "exam_steps": [],
+            "why_it_fits": [
+              {
+                "factor": "Mathematics",
+                "student_evidence": "current_subjects"
+              },
+              {
+                "factor": "Vocational Subjects",
+                "student_evidence": "current_subjects"
+              },
+              {
+                "factor": "Fixing systems",
+                "student_evidence": "skills"
+              },
+              {
+                "factor": "Building physical things",
+                "student_evidence": "skills"
+              }
+            ],
+            "next_actions": [
+              {
+                "action": "Research diploma programs in applied technical operations",
+                "reason": "Aligns with student preferences and career fit",
+                "priority": "high",
+                "source_record_ids": []
+              },
+              {
+                "action": "Explore institutions offering relevant diplomas",
+                "reason": "Necessary for application and admission process",
+                "priority": "high",
+                "source_record_ids": []
+              }
+            ],
+            "backup_routes": [],
+            "roadmap_title": "Diploma in Applied Technical Operations",
+            "course_options": [],
+            "college_programmes": [],
+            "eligibility_summary": {
+              "status": "insufficient_data",
+              "explanation": "Missing verified programme-level eligibility records and institution-programme information.",
+              "source_record_ids": [],
+              "missing_requirements": [
+                "Verified programme-level eligibility records"
+              ]
+            },
+            "important_tradeoffs": [
+              "Limited information on specific diploma programs and institutions"
+            ],
+            "decisive_constraints": [
+              {
+                "status": "insufficient_verified_data",
+                "constraint_id": "Prefers a diploma and early employability",
+                "constraint_type": "location",
+                "effect_on_roadmap": "Limited to diploma programs with early employability options",
+                "source_record_ids": [],
+                "student_preference": "Prefers a diploma and early employability",
+                "affected_section_ids": [
+                  "summary",
+                  "why_it_fits",
+                  "important_tradeoffs",
+                  "next_actions"
+                ]
+              }
+            ],
+            "missing_or_unverified": [
+              {
+                "field": "verified_courses",
+                "message": "No verified courses available"
+              },
+              {
+                "field": "verified_programmes",
+                "message": "No verified programmes available"
+              },
+              {
+                "field": "verified_exams",
+                "message": "No verified exams available"
+              },
+              {
+                "field": "verified_scholarships",
+                "message": "No verified scholarships available"
+              }
+            ],
+            "questions_for_counsellor": [
+              "What diploma programs in applied technical operations are available after Class 10?",
+              "How can I find institutions offering these programs?"
+            ]
+          },
+          "materiallyDistinct": true
+        }
+      ],
+      "thresholds": {
+        "safeRepairSchemaValidity": false,
+        "grounding": false,
+        "constraints": false,
+        "tokenLimits": false,
+        "verifiedAdmissionsOnly": false,
+        "missingData": false,
+        "distinctness": false
+      },
+      "approved": false,
+      "metrics": {
+        "nativeSchemaPassRate": 0.75,
+        "safeRepairSchemaPassRate": 0.75,
+        "groundingPassRate": 0.75,
+        "constraintPassRate": 1,
+        "missingDataPassRate": 0.75,
+        "distinctProfiles": 2,
+        "averageInputTokens": 676.25,
+        "averageOutputTokens": 390.25,
+        "averageTotalTokens": 1066.5,
+        "totalTokens": 4266,
+        "averageLatencyMs": 25929.75,
+        "p95LatencyMs": 45021,
+        "totalCostUsd": 0.00125982
+      }
+    }
+  ],
+  "approval": {
+    "primary": null,
+    "fallback": null
+  }
+}
