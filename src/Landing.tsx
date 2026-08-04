@@ -46,54 +46,60 @@ function Wordmark({ withMark = true }: { withMark?: boolean }) {
 
 function PossibilityMap() {
   return (
-    <div className="possibility-map" aria-label="Animated example of interests becoming pathways">
-      <svg viewBox="0 0 560 540" aria-hidden="true">
+    <div className="possibility-map" aria-label="Profile signals combine into three career directions">
+      <svg viewBox="0 0 560 520" aria-hidden="true">
         <defs>
-          <linearGradient id="route-a" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stopColor="#b7d6a7" />
-            <stop offset="1" stopColor="#77a58f" />
-          </linearGradient>
-          <filter id="node-glow">
-            <feGaussianBlur stdDeviation="7" result="blur" />
-            <feMerge>
-              <feMergeNode in="blur" />
-              <feMergeNode in="SourceGraphic" />
-            </feMerge>
-          </filter>
+          <marker id="arrow-in" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+            <path d="M0 0 10 5 0 10Z" fill="#92b79f" />
+          </marker>
+          <marker id="arrow-one" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+            <path d="M0 0 10 5 0 10Z" fill="#b7d6a7" />
+          </marker>
+          <marker id="arrow-two" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+            <path d="M0 0 10 5 0 10Z" fill="#8fbda7" />
+          </marker>
+          <marker id="arrow-three" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+            <path d="M0 0 10 5 0 10Z" fill="#69a18b" />
+          </marker>
         </defs>
-        <path className="map-route route-one" d="M102 92C170 120 177 225 278 268S402 347 452 438" />
-        <path className="map-route route-two" d="M280 70C274 139 230 191 278 268S285 393 268 464" />
-        <path className="map-route route-three" d="M461 110C401 140 393 220 278 268S155 348 100 430" />
-        <path className="map-route route-four" d="M82 260C148 256 205 284 278 268S409 242 481 266" />
-        <circle className="map-pulse" cx="278" cy="268" r="22" />
-        <circle className="map-core" cx="278" cy="268" r="9" filter="url(#node-glow)" />
+        <path className="signal-route" d="M72 104C100 145 180 159 242 226" />
+        <path className="signal-route" d="M176 87C198 142 229 167 262 219" />
+        <path className="signal-route" d="M280 80V211" />
+        <path className="signal-route" d="M384 87C361 142 331 167 298 219" />
+        <path className="signal-route" d="M489 104C460 145 381 159 318 226" />
+        <path className="outcome-route outcome-one" d="M251 294C214 330 149 344 103 401" />
+        <path className="outcome-route outcome-two" d="M280 302V401" />
+        <path className="outcome-route outcome-three" d="M309 294C346 330 411 344 457 401" />
       </svg>
 
-      <span className="map-label source source-one">psychology</span>
-      <span className="map-label source source-two">coding</span>
-      <span className="map-label source source-three">research</span>
-      <span className="map-label source source-four">context</span>
-      <span className="map-label source source-five">priorities</span>
+      <div className="map-step map-step-inputs"><b>1</b><span>Profile signals</span></div>
+      <span className="map-label source source-one"><small>Interest</small><b>Psychology</b></span>
+      <span className="map-label source source-two"><small>Subject</small><b>Computing</b></span>
+      <span className="map-label source source-three"><small>Skill</small><b>Research</b></span>
+      <span className="map-label source source-four"><small>Context</small><b>Location + budget</b></span>
+      <span className="map-label source source-five"><small>Priority</small><b>People-focused</b></span>
 
       <div className="map-centre">
-        <FoldMark />
-        <span>Your pattern</span>
+        <small>2 · Combined</small>
+        <strong>Student profile</strong>
+        <span>Interests + skills + context</span>
       </div>
 
+      <div className="map-step map-step-results"><b>3</b><span>Directions to explore</span></div>
       <article className="map-result result-one">
         <small>01 · strong fit</small>
         <strong>UX research</strong>
-        <span>people + technology</span>
+        <span>People + technology</span>
       </article>
       <article className="map-result result-two">
         <small>02 · explore</small>
         <strong>Cognitive science</strong>
-        <span>mind + computation</span>
+        <span>Mind + computation</span>
       </article>
       <article className="map-result result-three">
         <small>03 · new link</small>
         <strong>Behavioural data</strong>
-        <span>patterns + impact</span>
+        <span>Patterns + impact</span>
       </article>
     </div>
   )
@@ -172,10 +178,10 @@ export default function Landing({ openDashboard }: { openDashboard: () => void }
           <div className="pathway-preview" aria-label="Example personalised pathway">
             <div className="preview-heading">
               <div>
-                <span>Possibility map · live example</span>
-                <strong>One student. Many connected directions.</strong>
+                <span>Personalisation · worked example</span>
+                <strong>How one profile becomes three directions.</strong>
               </div>
-              <span className="preview-status"><i /> Mapping</span>
+              <span className="preview-status"><i /> Example</span>
             </div>
             <PossibilityMap />
           </div>
